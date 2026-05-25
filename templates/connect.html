@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block title %}手機連線 — 日文學習{% endblock %}
+{% block content %}
+<style>
+.connect-card {
+  max-width: 420px;
+  margin: 40px auto;
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 36px 32px;
+  text-align: center;
+  box-shadow: 0 4px 24px rgba(0,0,0,.12);
+}
+.connect-card h2 { margin: 0 0 8px; font-size: 22px; }
+.connect-card .subtitle { color: var(--text-mute); font-size: 14px; margin-bottom: 28px; }
+.qr-wrap {
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  display: inline-block;
+  margin-bottom: 24px;
+}
+.qr-wrap img { width: 200px; height: 200px; display: block; }
+.url-box {
+  background: var(--bg);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-family: monospace;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+  word-break: break-all;
+}
+.steps {
+  text-align: left;
+  background: var(--bg);
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: 14px;
+  color: var(--text-mute);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.steps strong { color: var(--text); }
+.ping-result {
+  font-size: 14px;
+  margin-top: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  display: none;
+}
+.ping-result.ok { background: #d4edda; color: #155724; }
+.ping-result.fail { background: #f8d7da; color: #721c24; }
+</style>
+
+<div class="connect-card">
+  <h2>📱 手機掃描連線</h2>
+  <p class="subtitle">確保手機與電腦在同一個 Wi-Fi</p>
+
+  <div class="qr-wrap">
+    <img src="/api/qr.svg" alt="QR Code" />
+  </div>
+
+  <div class="url-box">{{ lan_url }}</div>
+
+  <div class="steps">
+    <strong>連線步驟：</strong><br>
+    1️⃣ 手機確認連接 Wi-Fi（非行動數據）<br>
+    2️⃣ 用相機或 QR 掃描 App 掃上方圖<br>
+    3️⃣ 點連結即可開啟學習工具<br>
+    <br>
+    <strong>如果掃描後還是打不開：</strong><br>
+    → 手動輸入上方網址到瀏覽器<br>
+    → 確認手機 Wi-Fi 與電腦 Wi-Fi 相同
+  </div>
+
+  <button class="btn" onclick="testConnection()">🔍 測試這台電腦是否可連線</button>
+  <div class="ping-result" id="ping-result"></div>
+
+  <br><br>
+  <a class="btn ghost" href="/">← 回首頁</a>
+</div>
+
+<script>
+async function testConnection() {
+  const el = document.getElementById("ping-result");
+  el.className = "ping-result";
+  el.style.display = "block";
+  el.textContent = "測試中…";
+  try {
+    const t0 = Date.now();
+    const res = await fetch("/", { cache: "no-store" });
+    const ms = Date.now() - t0;
+    if (res.ok) {
+      el.className = "ping-result ok";
+      el.textContent = `✅ 伺服器正常（回應 ${ms}ms）。若手機仍無法連線，問題在路由器（AP 隔離）或手機 Wi-Fi。`;
+    } else {
+      el.className = "ping-result fail";
+      el.textContent = `❌ 伺服器回應異常（HTTP ${res.status}）`;
+    }
+  } catch (e) {
+    el.className = "ping-result fail";
+    el.textContent = `❌ 無法連線：${e.message}`;
+  }
+}
+</script>
+{% endblock %}

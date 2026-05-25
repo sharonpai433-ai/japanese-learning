@@ -1,0 +1,157 @@
+{
+  "scenes": {
+    "greetings": {
+      "name_zh": "問候・自我介紹",
+      "sentences": [
+        {"id": "s_g_001", "level": "beginner", "jp": "はじめまして。", "kana": "はじめまして。", "romaji": "hajimemashite.", "zh": "初次見面。", "key_word_kana": "はじめまして"},
+        {"id": "s_g_002", "level": "beginner", "jp": "私は田中です。", "kana": "わたしはたなかです。", "romaji": "watashi wa tanaka desu.", "zh": "我是田中。", "key_word_kana": "わたし"},
+        {"id": "s_g_003", "level": "beginner", "jp": "よろしくお願いします。", "kana": "よろしくおねがいします。", "romaji": "yoroshiku onegaishimasu.", "zh": "請多多指教。", "key_word_kana": "おねがい"},
+        {"id": "s_g_004", "level": "beginner", "jp": "お元気ですか。", "kana": "おげんきですか。", "romaji": "ogenki desu ka.", "zh": "你好嗎？", "key_word_kana": "げんき"},
+        {"id": "s_g_005", "level": "beginner", "jp": "はい、元気です。", "kana": "はい、げんきです。", "romaji": "hai, genki desu.", "zh": "我很好。", "key_word_kana": "げんき"},
+        {"id": "s_g_006", "level": "n5", "jp": "お名前は何ですか。", "kana": "おなまえはなんですか。", "romaji": "onamae wa nan desu ka.", "zh": "您叫什麼名字？", "key_word_kana": "なまえ"},
+        {"id": "s_g_007", "level": "n5", "jp": "どこから来ましたか。", "kana": "どこからきましたか。", "romaji": "doko kara kimashita ka.", "zh": "你從哪裡來？", "key_word_kana": "どこ"},
+        {"id": "s_g_008", "level": "n5", "jp": "台湾から来ました。", "kana": "たいわんからきました。", "romaji": "taiwan kara kimashita.", "zh": "我從台灣來。", "key_word_kana": "たいわん"}
+      ]
+    },
+    "restaurant": {
+      "name_zh": "餐廳・點餐",
+      "sentences": [
+        {"id": "s_r_001", "level": "beginner", "jp": "メニューをください。", "kana": "メニューをください。", "romaji": "menyuu wo kudasai.", "zh": "請給我菜單。", "key_word_kana": "メニュー"},
+        {"id": "s_r_002", "level": "beginner", "jp": "水をください。", "kana": "みずをください。", "romaji": "mizu wo kudasai.", "zh": "請給我水。", "key_word_kana": "みず"},
+        {"id": "s_r_003", "level": "beginner", "jp": "美味しいです。", "kana": "おいしいです。", "romaji": "oishii desu.", "zh": "很好吃。", "key_word_kana": "おいしい"},
+        {"id": "s_r_004", "level": "n5", "jp": "おすすめは何ですか。", "kana": "おすすめはなんですか。", "romaji": "osusume wa nan desu ka.", "zh": "推薦的是什麼？", "key_word_kana": "おすすめ"},
+        {"id": "s_r_005", "level": "n5", "jp": "これを一つください。", "kana": "これをひとつください。", "romaji": "kore wo hitotsu kudasai.", "zh": "請給我一個這個。", "key_word_kana": "ひとつ"},
+        {"id": "s_r_006", "level": "n5", "jp": "お会計をお願いします。", "kana": "おかいけいをおねがいします。", "romaji": "okaikei wo onegaishimasu.", "zh": "麻煩結帳。", "key_word_kana": "おかいけい"},
+        {"id": "s_r_007", "level": "n5", "jp": "持ち帰りでお願いします。", "kana": "もちかえりでおねがいします。", "romaji": "mochikaeri de onegaishimasu.", "zh": "我要外帶。", "key_word_kana": "もちかえり"},
+        {"id": "s_r_008", "level": "n5", "jp": "辛くないですか。", "kana": "からくないですか。", "romaji": "karakunai desu ka.", "zh": "會辣嗎？", "key_word_kana": "からい"},
+        {"id": "s_r_009", "level": "n5", "jp": "席はありますか。", "kana": "せきはありますか。", "romaji": "seki wa arimasu ka.", "zh": "有位子嗎？", "key_word_kana": "せき"},
+        {"id": "s_r_010", "level": "n5", "jp": "いただきます。", "kana": "いただきます。", "romaji": "itadakimasu.", "zh": "我開動了。", "key_word_kana": "いただきます"}
+      ]
+    },
+    "shopping": {
+      "name_zh": "購物・金額",
+      "sentences": [
+        {"id": "s_s_001", "level": "beginner", "jp": "いくらですか。", "kana": "いくらですか。", "romaji": "ikura desu ka.", "zh": "多少錢？", "key_word_kana": "いくら"},
+        {"id": "s_s_002", "level": "n5", "jp": "これはいくらですか。", "kana": "これはいくらですか。", "romaji": "kore wa ikura desu ka.", "zh": "這個多少錢？", "key_word_kana": "いくら"},
+        {"id": "s_s_003", "level": "n5", "jp": "高いですね。", "kana": "たかいですね。", "romaji": "takai desu ne.", "zh": "好貴啊。", "key_word_kana": "たかい"},
+        {"id": "s_s_004", "level": "n5", "jp": "安くしてください。", "kana": "やすくしてください。", "romaji": "yasuku shite kudasai.", "zh": "請算便宜一點。", "key_word_kana": "やすい"},
+        {"id": "s_s_005", "level": "n5", "jp": "カードで払います。", "kana": "カードではらいます。", "romaji": "kaado de haraimasu.", "zh": "我用卡片付款。", "key_word_kana": "カード"},
+        {"id": "s_s_006", "level": "n5", "jp": "袋はいりません。", "kana": "ふくろはいりません。", "romaji": "fukuro wa irimasen.", "zh": "我不需要袋子。", "key_word_kana": "ふくろ"},
+        {"id": "s_s_007", "level": "n5", "jp": "これをください。", "kana": "これをください。", "romaji": "kore wo kudasai.", "zh": "請給我這個。", "key_word_kana": "これ"},
+        {"id": "s_s_008", "level": "n5", "jp": "他の色はありますか。", "kana": "ほかのいろはありますか。", "romaji": "hoka no iro wa arimasu ka.", "zh": "有其他顏色嗎？", "key_word_kana": "いろ"}
+      ]
+    },
+    "transportation": {
+      "name_zh": "交通・方向",
+      "sentences": [
+        {"id": "s_t_001", "level": "n5", "jp": "駅はどこですか。", "kana": "えきはどこですか。", "romaji": "eki wa doko desu ka.", "zh": "車站在哪裡？", "key_word_kana": "えき"},
+        {"id": "s_t_002", "level": "n5", "jp": "切符を一枚ください。", "kana": "きっぷをいちまいください。", "romaji": "kippu wo ichimai kudasai.", "zh": "請給我一張車票。", "key_word_kana": "きっぷ"},
+        {"id": "s_t_003", "level": "n5", "jp": "ここで降ります。", "kana": "ここでおります。", "romaji": "koko de orimasu.", "zh": "我在這裡下車。", "key_word_kana": "おりる"},
+        {"id": "s_t_004", "level": "n5", "jp": "右に曲がってください。", "kana": "みぎにまがってください。", "romaji": "migi ni magatte kudasai.", "zh": "請右轉。", "key_word_kana": "みぎ"},
+        {"id": "s_t_005", "level": "n5", "jp": "まっすぐ行ってください。", "kana": "まっすぐいってください。", "romaji": "massugu itte kudasai.", "zh": "請直走。", "key_word_kana": "まっすぐ"},
+        {"id": "s_t_006", "level": "n5", "jp": "タクシーを呼んでください。", "kana": "タクシーをよんでください。", "romaji": "takushii wo yonde kudasai.", "zh": "請幫我叫計程車。", "key_word_kana": "タクシー"},
+        {"id": "s_t_007", "level": "n5", "jp": "次の駅で乗り換えます。", "kana": "つぎのえきでのりかえます。", "romaji": "tsugi no eki de norikaemasu.", "zh": "在下一站轉車。", "key_word_kana": "のりかえる"}
+      ]
+    },
+    "daily": {
+      "name_zh": "日常生活",
+      "sentences": [
+        {"id": "s_d_001", "level": "beginner", "jp": "今日は寒いですね。", "kana": "きょうはさむいですね。", "romaji": "kyou wa samui desu ne.", "zh": "今天好冷啊。", "key_word_kana": "さむい"},
+        {"id": "s_d_002", "level": "beginner", "jp": "明日は雨です。", "kana": "あしたはあめです。", "romaji": "ashita wa ame desu.", "zh": "明天會下雨。", "key_word_kana": "あめ"},
+        {"id": "s_d_003", "level": "n5", "jp": "毎日勉強します。", "kana": "まいにちべんきょうします。", "romaji": "mainichi benkyou shimasu.", "zh": "每天唸書。", "key_word_kana": "べんきょう"},
+        {"id": "s_d_004", "level": "n5", "jp": "週末は何をしますか。", "kana": "しゅうまつはなにをしますか。", "romaji": "shuumatsu wa nani wo shimasu ka.", "zh": "週末做什麼？", "key_word_kana": "しゅうまつ"},
+        {"id": "s_d_005", "level": "n5", "jp": "友達と映画を見ました。", "kana": "ともだちとえいがをみました。", "romaji": "tomodachi to eiga wo mimashita.", "zh": "和朋友看電影了。", "key_word_kana": "ともだち"},
+        {"id": "s_d_006", "level": "n4", "jp": "ちょっと疲れました。", "kana": "ちょっとつかれました。", "romaji": "chotto tsukaremashita.", "zh": "有點累了。", "key_word_kana": "つかれる"},
+        {"id": "s_d_007", "level": "n4", "jp": "また会いましょう。", "kana": "またあいましょう。", "romaji": "mata aimashou.", "zh": "下次再見。", "key_word_kana": "あう"},
+        {"id": "s_d_008", "level": "n4", "jp": "ゆっくり話してください。", "kana": "ゆっくりはなしてください。", "romaji": "yukkuri hanashite kudasai.", "zh": "請說慢一點。", "key_word_kana": "ゆっくり"}
+      ]
+    },
+    "travel": {
+      "name_zh": "旅遊・住宿",
+      "sentences": [
+        {"id": "s_tr_001", "level": "n4", "jp": "予約をお願いします。", "kana": "よやくをおねがいします。", "romaji": "yoyaku wo onegaishimasu.", "zh": "我要預約。", "key_word_kana": "よやく"},
+        {"id": "s_tr_002", "level": "n4", "jp": "チェックインをお願いします。", "kana": "チェックインをおねがいします。", "romaji": "chekkuin wo onegaishimasu.", "zh": "我要 Check-in。", "key_word_kana": "チェックイン"},
+        {"id": "s_tr_003", "level": "n4", "jp": "Wi-Fi のパスワードを教えてください。", "kana": "ワイファイのパスワードをおしえてください。", "romaji": "waifai no pasuwaado wo oshiete kudasai.", "zh": "請告訴我 Wi-Fi 密碼。", "key_word_kana": "パスワード"},
+        {"id": "s_tr_004", "level": "n4", "jp": "おすすめの観光地はどこですか。", "kana": "おすすめのかんこうちはどこですか。", "romaji": "osusume no kankouchi wa doko desu ka.", "zh": "推薦的觀光地是哪裡？", "key_word_kana": "かんこう"},
+        {"id": "s_tr_005", "level": "n4", "jp": "写真を撮ってもいいですか。", "kana": "しゃしんをとってもいいですか。", "romaji": "shashin wo totte mo ii desu ka.", "zh": "可以拍照嗎？", "key_word_kana": "しゃしん"},
+        {"id": "s_tr_006", "level": "n4", "jp": "空港へのバスはありますか。", "kana": "くうこうへのバスはありますか。", "romaji": "kuukou e no basu wa arimasu ka.", "zh": "有去機場的巴士嗎？", "key_word_kana": "くうこう"},
+        {"id": "s_tr_007", "level": "n4", "jp": "ホテルまで遠いですか。", "kana": "ホテルまでとおいですか。", "romaji": "hoteru made tooi desu ka.", "zh": "到飯店遠嗎？", "key_word_kana": "ホテル"},
+        {"id": "s_tr_008", "level": "n4", "jp": "地図をください。", "kana": "ちずをください。", "romaji": "chizu wo kudasai.", "zh": "請給我地圖。", "key_word_kana": "ちず"},
+        {"id": "s_tr_009", "level": "n4", "jp": "荷物を預けたいです。", "kana": "にもつをあずけたいです。", "romaji": "nimotsu wo azuketai desu.", "zh": "我想寄放行李。", "key_word_kana": "にもつ"},
+        {"id": "s_tr_010", "level": "n4", "jp": "お土産を買いたいです。", "kana": "おみやげをかいたいです。", "romaji": "omiyage wo kaitai desu.", "zh": "我想買伴手禮。", "key_word_kana": "みやげ"},
+        {"id": "s_tr_011", "level": "n4", "jp": "観光案内所はどこですか。", "kana": "かんこうあんないじょはどこですか。", "romaji": "kankou annaijo wa doko desu ka.", "zh": "觀光詢問處在哪裡？", "key_word_kana": "あんない"},
+        {"id": "s_tr_012", "level": "n4", "jp": "飛行機は何時出発ですか。", "kana": "ひこうきはなんじしゅっぱつですか。", "romaji": "hikouki wa nanji shuppatsu desu ka.", "zh": "飛機幾點出發？", "key_word_kana": "ひこうき"}
+      ]
+    },
+    "food": {
+      "name_zh": "食物・飲料",
+      "sentences": [
+        {"id": "s_f_001", "level": "n5", "jp": "肉が好きですか。", "kana": "にくがすきですか。", "romaji": "niku ga suki desu ka.", "zh": "你喜歡吃肉嗎？", "key_word_kana": "にく"},
+        {"id": "s_f_002", "level": "n5", "jp": "ビールを一本ください。", "kana": "ビールをいっぽんください。", "romaji": "biiru wo ippon kudasai.", "zh": "請給我一瓶啤酒。", "key_word_kana": "ビール"},
+        {"id": "s_f_003", "level": "n5", "jp": "ラーメンを食べたいです。", "kana": "ラーメンをたべたいです。", "romaji": "raamen wo tabetai desu.", "zh": "我想吃拉麵。", "key_word_kana": "ラーメン"},
+        {"id": "s_f_004", "level": "n5", "jp": "パンと牛乳をください。", "kana": "パンとぎゅうにゅうをください。", "romaji": "pan to gyuunyuu wo kudasai.", "zh": "請給我麵包和牛奶。", "key_word_kana": "パン"},
+        {"id": "s_f_005", "level": "n5", "jp": "寿司は美味しいです。", "kana": "すしはおいしいです。", "romaji": "sushi wa oishii desu.", "zh": "壽司很好吃。", "key_word_kana": "すし"},
+        {"id": "s_f_006", "level": "n5", "jp": "これは辛いですか。", "kana": "これはからいですか。", "romaji": "kore wa karai desu ka.", "zh": "這個會辣嗎？", "key_word_kana": "からい"},
+        {"id": "s_f_007", "level": "n5", "jp": "コーヒーをお願いします。", "kana": "コーヒーをおねがいします。", "romaji": "koohii wo onegaishimasu.", "zh": "請給我咖啡。", "key_word_kana": "コーヒー"}
+      ]
+    },
+    "family": {
+      "name_zh": "家人・人物",
+      "sentences": [
+        {"id": "s_fa_001", "level": "n5", "jp": "私の家族は四人です。", "kana": "わたしのかぞくはよにんです。", "romaji": "watashi no kazoku wa yonin desu.", "zh": "我家有四個人。", "key_word_kana": "かぞく"},
+        {"id": "s_fa_002", "level": "n5", "jp": "友達と日本へ来ました。", "kana": "ともだちとにほんへきました。", "romaji": "tomodachi to nihon e kimashita.", "zh": "和朋友來日本。", "key_word_kana": "ともだち"},
+        {"id": "s_fa_003", "level": "n5", "jp": "子供と一緒に来ました。", "kana": "こどもといっしょにきました。", "romaji": "kodomo to issho ni kimashita.", "zh": "和小孩一起來。", "key_word_kana": "こども"},
+        {"id": "s_fa_004", "level": "n5", "jp": "先生に聞いてみます。", "kana": "せんせいにきいてみます。", "romaji": "sensei ni kiite mimasu.", "zh": "我問問老師。", "key_word_kana": "せんせい"},
+        {"id": "s_fa_005", "level": "n5", "jp": "お父さんは元気ですか。", "kana": "おとうさんはげんきですか。", "romaji": "otousan wa genki desu ka.", "zh": "你父親好嗎？", "key_word_kana": "おとうさん"},
+        {"id": "s_fa_006", "level": "n5", "jp": "妹は学生です。", "kana": "いもうとはがくせいです。", "romaji": "imouto wa gakusei desu.", "zh": "妹妹是學生。", "key_word_kana": "いもうと"}
+      ]
+    },
+    "time": {
+      "name_zh": "時間・日期",
+      "sentences": [
+        {"id": "s_ti_001", "level": "n5", "jp": "今は何時ですか。", "kana": "いまはなんじですか。", "romaji": "ima wa nanji desu ka.", "zh": "現在幾點？", "key_word_kana": "いま"},
+        {"id": "s_ti_002", "level": "n5", "jp": "朝10時に出発します。", "kana": "あさじゅうじにしゅっぱつします。", "romaji": "asa juuji ni shuppatsu shimasu.", "zh": "早上 10 點出發。", "key_word_kana": "あさ"},
+        {"id": "s_ti_003", "level": "n5", "jp": "月曜日に行きます。", "kana": "げつようびにいきます。", "romaji": "getsuyoubi ni ikimasu.", "zh": "星期一去。", "key_word_kana": "げつようび"},
+        {"id": "s_ti_004", "level": "n5", "jp": "今日は日曜日です。", "kana": "きょうはにちようびです。", "romaji": "kyou wa nichiyoubi desu.", "zh": "今天是星期日。", "key_word_kana": "にちようび"},
+        {"id": "s_ti_005", "level": "n5", "jp": "午後3時に会いましょう。", "kana": "ごごさんじにあいましょう。", "romaji": "gogo sanji ni aimashou.", "zh": "下午 3 點見面吧。", "key_word_kana": "ごご"},
+        {"id": "s_ti_006", "level": "n5", "jp": "明日も来ますか。", "kana": "あしたもきますか。", "romaji": "ashita mo kimasu ka.", "zh": "明天也會來嗎？", "key_word_kana": "あした"}
+      ]
+    },
+    "weather": {
+      "name_zh": "天氣・季節",
+      "sentences": [
+        {"id": "s_we_001", "level": "n4", "jp": "明日の天気はどうですか。", "kana": "あしたのてんきはどうですか。", "romaji": "ashita no tenki wa dou desu ka.", "zh": "明天天氣怎樣？", "key_word_kana": "てんき"},
+        {"id": "s_we_002", "level": "n4", "jp": "今日は雨です。", "kana": "きょうはあめです。", "romaji": "kyou wa ame desu.", "zh": "今天下雨。", "key_word_kana": "あめ"},
+        {"id": "s_we_003", "level": "n4", "jp": "暑いですね。", "kana": "あついですね。", "romaji": "atsui desu ne.", "zh": "好熱啊。", "key_word_kana": "あつい"},
+        {"id": "s_we_004", "level": "n4", "jp": "寒いですね。", "kana": "さむいですね。", "romaji": "samui desu ne.", "zh": "好冷啊。", "key_word_kana": "さむい"},
+        {"id": "s_we_005", "level": "n4", "jp": "雪が見たいです。", "kana": "ゆきがみたいです。", "romaji": "yuki ga mitai desu.", "zh": "我想看雪。", "key_word_kana": "ゆき"},
+        {"id": "s_we_006", "level": "n4", "jp": "風が強いですね。", "kana": "かぜがつよいですね。", "romaji": "kaze ga tsuyoi desu ne.", "zh": "風好大喔。", "key_word_kana": "かぜ"}
+      ]
+    },
+    "school_work": {
+      "name_zh": "學校・工作",
+      "sentences": [
+        {"id": "s_sw_001", "level": "n5", "jp": "仕事で日本へ来ました。", "kana": "しごとでにほんへきました。", "romaji": "shigoto de nihon e kimashita.", "zh": "因為工作來日本。", "key_word_kana": "しごと"},
+        {"id": "s_sw_002", "level": "n5", "jp": "電話番号を教えてください。", "kana": "でんわばんごうをおしえてください。", "romaji": "denwa bangou wo oshiete kudasai.", "zh": "請告訴我電話號碼。", "key_word_kana": "でんわ"},
+        {"id": "s_sw_003", "level": "n5", "jp": "日本語を勉強しています。", "kana": "にほんごをべんきょうしています。", "romaji": "nihongo wo benkyou shite imasu.", "zh": "我在學日文。", "key_word_kana": "べんきょう"},
+        {"id": "s_sw_004", "level": "n5", "jp": "新聞を読んでいます。", "kana": "しんぶんをよんでいます。", "romaji": "shinbun wo yonde imasu.", "zh": "我在看報紙。", "key_word_kana": "しんぶん"},
+        {"id": "s_sw_005", "level": "n5", "jp": "鉛筆を貸してください。", "kana": "えんぴつをかしてください。", "romaji": "enpitsu wo kashite kudasai.", "zh": "請借我鉛筆。", "key_word_kana": "えんぴつ"}
+      ]
+    },
+    "emergency": {
+      "name_zh": "緊急・求助",
+      "sentences": [
+        {"id": "s_em_001", "level": "n5", "jp": "道に迷いました。", "kana": "みちにまよいました。", "romaji": "michi ni mayoimashita.", "zh": "我迷路了。", "key_word_kana": "みち"},
+        {"id": "s_em_002", "level": "n5", "jp": "病院はどこですか。", "kana": "びょういんはどこですか。", "romaji": "byouin wa doko desu ka.", "zh": "醫院在哪裡？", "key_word_kana": "びょういん"},
+        {"id": "s_em_003", "level": "n5", "jp": "薬局はどこですか。", "kana": "やっきょくはどこですか。", "romaji": "yakkyoku wa doko desu ka.", "zh": "藥局在哪裡？", "key_word_kana": "やっきょく"},
+        {"id": "s_em_004", "level": "n5", "jp": "警察を呼んでください。", "kana": "けいさつをよんでください。", "romaji": "keisatsu wo yonde kudasai.", "zh": "請叫警察。", "key_word_kana": "けいさつ"},
+        {"id": "s_em_005", "level": "n5", "jp": "頭が痛いです。", "kana": "あたまがいたいです。", "romaji": "atama ga itai desu.", "zh": "我頭痛。", "key_word_kana": "あたま"},
+        {"id": "s_em_006", "level": "n5", "jp": "お腹が痛いです。", "kana": "おなかがいたいです。", "romaji": "onaka ga itai desu.", "zh": "我肚子痛。", "key_word_kana": "いたい"},
+        {"id": "s_em_007", "level": "n5", "jp": "パスポートをなくしました。", "kana": "パスポートをなくしました。", "romaji": "pasupooto wo nakushimashita.", "zh": "我護照不見了。", "key_word_kana": "パスポート"},
+        {"id": "s_em_008", "level": "n5", "jp": "英語が話せますか。", "kana": "えいごがはなせますか。", "romaji": "eigo ga hanasemasu ka.", "zh": "你會說英文嗎？", "key_word_kana": "えいご"},
+        {"id": "s_em_009", "level": "n5", "jp": "大丈夫ですか。", "kana": "だいじょうぶですか。", "romaji": "daijoubu desu ka.", "zh": "你還好嗎？", "key_word_kana": "だいじょうぶ"},
+        {"id": "s_em_010", "level": "n5", "jp": "危ないですよ。", "kana": "あぶないですよ。", "romaji": "abunai desu yo.", "zh": "很危險喔。", "key_word_kana": "あぶない"}
+      ]
+    }
+  }
+}

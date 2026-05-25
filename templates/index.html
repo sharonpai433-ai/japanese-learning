@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+{% block title %}日文互動學習 — 首頁{% endblock %}
+{% block content %}
+<h1>歡迎開始學日文 ✨</h1>
+<p style="color: var(--text-mute); margin-top: -8px;">三步驟：選難度 → 選情境 → 選練習模式</p>
+
+<div class="section">
+  <h2>① 選擇難度（可複選）</h2>
+  <div id="level-chips" class="chip-group"></div>
+</div>
+
+<div class="section">
+  <h2>② 選擇情境</h2>
+  <div id="cat-controls" class="row" style="margin-bottom: 8px;">
+    <button class="btn secondary" id="cat-all">全選</button>
+    <button class="btn secondary" id="cat-none">全不選</button>
+    <span id="cat-count" style="color: var(--text-mute); align-self: center; margin-left: 8px;"></span>
+  </div>
+  <div id="cat-chips" class="chip-group"></div>
+</div>
+
+<div class="section">
+  <h2>③ 開始學習</h2>
+  <a class="mode-btn" data-mode="journey" href="/journey" style="border-color: var(--primary); background: linear-gradient(135deg, rgba(233,69,96,0.05), rgba(44,120,115,0.05));">
+    <span class="emoji">🎯</span>
+    <span class="title" style="color: var(--primary);">完整學習路徑（推薦）</span>
+    <div class="desc">字卡認識 → 單字小考 → 情境句子 → 句子驗收，一氣呵成的完整 session</div>
+  </a>
+
+  <h2 style="margin-top: 24px;">或單獨練習</h2>
+  <div class="mode-grid">
+    <a class="mode-btn" data-mode="flashcard" href="/flashcard">
+      <span class="emoji">🃏</span>
+      <span class="title">字卡翻面</span>
+      <div class="desc">假名 ↔ 漢字 練發音</div>
+    </a>
+    <a class="mode-btn" data-mode="quiz" href="/quiz">
+      <span class="emoji">📖</span>
+      <span class="title">看字選意思</span>
+      <div class="desc">4 選 1 中文意思</div>
+    </a>
+    <a class="mode-btn" data-mode="listening" href="/listening">
+      <span class="emoji">🎧</span>
+      <span class="title">聽音選字</span>
+      <div class="desc">聽發音選日文寫法</div>
+    </a>
+    <a class="mode-btn" data-mode="exam" href="/exam">
+      <span class="emoji">📝</span>
+      <span class="title">考試模式</span>
+      <div class="desc">混合題型考自己</div>
+    </a>
+    <a class="mode-btn" data-mode="sentence" href="/sentence">
+      <span class="emoji">💬</span>
+      <span class="title">句子練習</span>
+      <div class="desc">生活情境例句</div>
+    </a>
+    <a class="mode-btn" href="/stats">
+      <span class="emoji">📊</span>
+      <span class="title">學習統計</span>
+      <div class="desc">看進度與複習清單</div>
+    </a>
+  </div>
+</div>
+
+<div class="section" style="text-align:center;">
+  <a class="btn ghost" href="/connect" style="font-size:15px; padding: 10px 24px;">📱 手機掃 QR Code 連線</a>
+</div>
+
+<div class="section">
+  <h2>💡 使用建議</h2>
+  <ul style="margin: 0; padding-left: 20px; color: var(--text-mute); line-height: 1.9;">
+    <li><strong>第一次學？</strong>直接點「完整學習路徑」，系統會帶你走過 字卡 → 小考 → 情境句子 → 句子驗收 的完整流程。</li>
+    <li><strong>字卡正面預設顯示假名</strong>，方便你練習發音，唸完再翻面確認漢字和中文意思。</li>
+    <li><strong>會唸但認不出字</strong>的弱點，可在「聽音選字」單獨加強。</li>
+    <li>所有發音都用瀏覽器內建日文 TTS，第一次點發音如果沒聲音，請點一下頁面後再試。</li>
+  </ul>
+</div>
+
+<script>
+const LEVELS = [
+  { key: "beginner", name: "入門" },
+  { key: "n5", name: "N5 基礎" },
+  { key: "n4", name: "N4 中初級" },
+];
+
+const STORAGE_PREFS = "jp_learn_prefs_v1";
+
+function loadPrefs() {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_PREFS)) || { levels: ["beginner"], categories: [] };
+  } catch { return { levels: ["beginner"], categories: [] }; }
+}
+function savePrefs(p) {
+  localStorage.setItem(STORAGE_PREFS, JSON.stringify(p));
+}
+
+let prefs = loadPrefs();
+let vocabData = {};
+let categoryMap = {}; // "level:catKey" -> {name_zh, levelKey, count}
+
+function renderLevels() {
+  const wrap = document.getElementById("level-chips");
+  wrap.innerHTML = "";
+  for (const lv of LEVELS) {
+    const btn = document.createElement("button");
+    btn.className = "chip accent" + (prefs.levels.includes(lv.key) ? " active" : "");
+    btn.textContent = lv.name;
+    btn.onclick = () => {
+      if (prefs.levels.includes(lv.key)) {
+        prefs.levels = prefs.levels.filter((x) => x !== lv.key);
+      } else {
+        prefs.levels.push(lv.key);
+      }
+      if (prefs.levels.length === 0) prefs.levels = [lv.key];
+      savePrefs(prefs);
+      renderLevels();
+      renderCategories();
+    };
+    wrap.appendChild(btn);
+  }
+}
+
+function renderCategories() {
+  const wrap = document.getElementById("cat-chips");
+  wrap.innerHTML = "";
+  categoryMap = {};
+  let total = 0;
+  for (const lv of prefs.levels) {
+    const data = vocabData[lv];
+    if (!data) continue;
+    for (const catKey in data.categories) {
+      const cat = data.categories[catKey];
+      const compKey = `${lv}:${catKey}`;
+      categoryMap[compKey] = { ...cat, levelKey: lv, key: catKey, count: cat.words.length };
+      total += cat.words.length;
+      const btn = document.createElement("button");
+      btn.className = "chip" + (prefs.categories.includes(compKey) ? " active" : "");
+      btn.textContent = `${cat.name_zh} (${cat.words.length})`;
+      btn.onclick = () => {
+        if (prefs.categories.includes(compKey)) {
+          prefs.categories = prefs.categories.filter((x) => x !== compKey);
+        } else {
+          prefs.categories.push(compKey);
+        }
+        savePrefs(prefs);
+        renderCategories();
+      };
+      wrap.appendChild(btn);
+    }
+  }
+  // Filter out stale categories not in current level set.
+  prefs.categories = prefs.categories.filter((k) => categoryMap[k]);
+  savePrefs(prefs);
+
+  const selectedCount = prefs.categories.length === 0
+    ? total
+    : prefs.categories.reduce((s, k) => s + (categoryMap[k]?.count || 0), 0);
+
+  const label = prefs.categories.length === 0
+    ? `全部情境 · 共 ${selectedCount} 字`
+    : `已選 ${prefs.categories.length} 個情境 · 共 ${selectedCount} 字`;
+  document.getElementById("cat-count").textContent = label;
+}
+
+document.getElementById("cat-all").onclick = () => {
+  prefs.categories = Object.keys(categoryMap);
+  savePrefs(prefs);
+  renderCategories();
+};
+document.getElementById("cat-none").onclick = () => {
+  prefs.categories = [];
+  savePrefs(prefs);
+  renderCategories();
+};
+
+// When clicking a mode, append current selection as query params.
+document.querySelectorAll(".mode-btn[data-mode]").forEach((a) => {
+  a.addEventListener("click", (ev) => {
+    ev.preventDefault();
+    const params = new URLSearchParams();
+    params.set("levels", prefs.levels.join(","));
+    if (prefs.categories.length > 0) {
+      params.set("categories", prefs.categories.join(","));
+    }
+    window.location = a.getAttribute("href") + "?" + params.toString();
+  });
+});
+
+(async () => {
+  vocabData = await fetchAllVocab();
+  renderLevels();
+  renderCategories();
+})();
+</script>
+{% endblock %}

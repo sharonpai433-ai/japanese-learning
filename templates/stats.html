@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% block title %}學習統計 — 日文學習{% endblock %}
+{% block content %}
+<h1>📊 學習統計</h1>
+
+<div class="section">
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-label">已練習單字數</div>
+      <div class="stat-num" id="s-words">0</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">總答題數</div>
+      <div class="stat-num" id="s-total">0</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">整體正確率</div>
+      <div class="stat-num" id="s-acc">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">連續學習天數</div>
+      <div class="stat-num" id="s-streak">0</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>📈 各模式正確率</h2>
+  <div id="mode-stats"></div>
+</div>
+
+<div class="section">
+  <h2>📌 需要複習（錯誤率高的單字）</h2>
+  <ul class="review-list" id="review-list"></ul>
+  <p class="empty-state" id="review-empty" style="display: none;">還沒有要複習的單字 — 多練習幾題後就會出現。</p>
+</div>
+
+<div class="section">
+  <h2>🏁 最近考試紀錄</h2>
+  <ul class="review-list" id="exam-history"></ul>
+  <p class="empty-state" id="exam-empty" style="display: none;">還沒有考試紀錄。</p>
+</div>
+
+<div class="section">
+  <div class="row">
+    <a class="btn" href="/">回首頁</a>
+    <button class="btn secondary" id="reset-btn">清除所有紀錄</button>
+  </div>
+</div>
+
+<script>
+const MODE_LABEL = {
+  quiz: "看字選意思",
+  listening: "聽音選字",
+  exam: "考試模式",
+  sentence_fill: "句子填空",
+};
+
+function render() {
+  const s = getOverallStats();
+  document.getElementById("s-words").textContent = s.wordsLearned;
+  document.getElementById("s-total").textContent = s.total;
+  document.getElementById("s-acc").textContent = s.total === 0 ? "—" : s.accuracy + "%";
+  document.getElementById("s-streak").textContent = s.streak;
+
+  // Mode stats
+  const modeWrap = document.getElementById("mode-stats");
+  modeWrap.innerHTML = "";
+  const modes = Object.keys(s.modeStats);
+  if (modes.length === 0) {
+    modeWrap.innerHTML = `<p class="empty-state" style="margin: 0;">尚未開始任何模式的練習。</p>`;
+  } else {
+    for (const m of modes) {
+      const stat = s.modeStats[m];
+      const total = stat.correct + stat.wrong;
+      const acc = total === 0 ? 0 : Math.round((stat.correct / total) * 100);
+      const row = document.createElement("div");
+      row.className = "review-item";
+      row.innerHTML = `
+        <div class="review-info">
+          <span class="review-jp">${MODE_LABEL[m] || m}</span>
+          <span class="review-zh">答對 ${stat.correct} · 答錯 ${stat.wrong} · 共 ${total} 題</span>
+        </div>
+        <span class="stat-num" style="font-size: 20px; color: ${acc >= 80 ? 'var(--success)' : acc >= 60 ? 'var(--primary)' : 'var(--danger)'}">${acc}%</span>
+      `;
+      modeWrap.appendChild(row);
+    }
+  }
+
+  // Review list
+  const reviews = getReviewList(20);
+  const rlist = document.getElementById("review-list");
+  rlist.innerHTML = "";
+  if (reviews.length === 0) {
+    document.getElementById("review-empty").style.display = "block";
+  } else {
+    document.getElementById("review-empty").style.display = "none";
+    reviews.forEach(w => {
+      const li = document.createElement("li");
+      li.className = "review-item";
+      li.innerHTML = `
+        <div class="review-info">
+          <span class="review-jp">${w.kanji}（${w.kana}）</span>
+          <span class="review-zh">${w.meaning_zh} · 答對 ${w.correct} / 共 ${w.correct + w.wrong}</span>
+        </div>
+        <div class="row" style="gap: 8px;">
+          <span class="review-rate">${w.accuracy}%</span>
+          <button class="speak-btn">🔊</button>
+        </div>
+      `;
+      li.querySelector(".speak-btn").onclick = () => speakJapanese(w.kana);
+      rlist.appendChild(li);
+    });
+  }
+
+  // Exam history
+  const elist = document.getElementById("exam-history");
+  elist.innerHTML = "";
+  if (s.examHistory.length === 0) {
+    document.getElementById("exam-empty").style.display = "block";
+  } else {
+    document.getElementById("exam-empty").style.display = "none";
+    [...s.examHistory].reverse().slice(0, 10).forEach(e => {
+      const d = new Date(e.date);
+      const dateStr = `${d.getMonth() + 1}/${d.getDate()} ${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`;
+      const li = document.createElement("li");
+      li.className = "review-item";
+      li.innerHTML = `
+        <div class="review-info">
+          <span class="review-jp">${dateStr}</span>
+          <span class="review-zh">${Math.round(e.score * e.total / 100)} / ${e.total} 題 · 用時 ${e.durationSec} 秒</span>
+        </div>
+        <span class="stat-num" style="font-size: 20px; color: ${e.score >= 70 ? 'var(--success)' : 'var(--danger)'}">${e.score}%</span>
+      `;
+      elist.appendChild(li);
+    });
+  }
+}
+
+document.getElementById("reset-btn").onclick = () => {
+  if (confirm("確定要清除所有學習紀錄嗎？此動作無法復原。")) {
+    resetStats();
+    render();
+  }
+};
+
+render();
+</script>
+{% endblock %}

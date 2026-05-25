@@ -1,0 +1,284 @@
+{% extends "base.html" %}
+{% block title %}句子練習 — 日文學習{% endblock %}
+{% block content %}
+<h1>💬 句子練習</h1>
+<p style="color: var(--text-mute);">在情境中認識單字的用法</p>
+
+<div class="section">
+  <div class="toggle-row">
+    <span>模式：</span>
+    <label><input type="radio" name="mode" value="read" checked /> 閱讀模式</label>
+    <label><input type="radio" name="mode" value="fill" /> 填空模式（進階）</label>
+    <select id="scene-select" class="select" style="margin-left: auto;"></select>
+    <a class="btn ghost" href="/">← 回首頁</a>
+  </div>
+</div>
+
+<div id="reading-area">
+  <div class="flashcard-wrap">
+    <div class="progress">
+      <span id="progress-label">0 / 0</span>
+      <span id="scene-label" style="font-size: 13px;"></span>
+    </div>
+    <div class="flashcard" id="sent-card">
+      <div class="flashcard-inner">
+        <div class="flashcard-face flashcard-front">
+          <div class="sent-jp-card" id="sent-front-jp">—</div>
+          <button class="speak-btn" id="sent-front-speak" style="margin-top: 16px;">🔊 聽日文</button>
+          <div class="tip-text">先試著理解，再點卡片翻面看翻譯</div>
+        </div>
+        <div class="flashcard-face flashcard-back">
+          <div class="sent-jp-card" id="sent-back-jp" style="font-size: 20px;">—</div>
+          <div class="kana-medium" id="sent-back-kana" style="font-size: 16px; margin-top: 8px;">—</div>
+          <div class="romaji-text" id="sent-back-romaji">—</div>
+          <div class="meaning-text" id="sent-back-zh" style="font-size: 18px;">—</div>
+          <button class="speak-btn" id="sent-back-speak">🔊 再聽一次</button>
+        </div>
+      </div>
+    </div>
+    <div class="controls">
+      <button class="btn secondary" id="prev-btn">← 上一句</button>
+      <button class="btn secondary" id="next-btn">下一句 →</button>
+    </div>
+  </div>
+</div>
+
+<div id="fill-area" style="display: none;">
+  <div class="sentence-card">
+    <div class="progress" style="max-width: none;">
+      <span id="fill-progress">0 / 0</span>
+      <span style="color: var(--text-mute); font-size: 13px;">填入正確的日文單字</span>
+    </div>
+    <div class="sent-jp" id="fill-sent">—</div>
+    <div class="sent-zh show" id="fill-zh">—</div>
+    <div class="options" id="fill-options"></div>
+    <div class="feedback" id="fill-feedback"></div>
+    <div class="controls">
+      <button class="speak-btn" id="fill-speak">🔊 聽整句</button>
+      <button class="btn" id="fill-next" disabled>下一句 →</button>
+    </div>
+  </div>
+</div>
+
+<div id="empty" class="empty-state" style="display: none;">
+  <p>沒有句子可練習。</p>
+  <a class="btn" href="/">回首頁</a>
+</div>
+
+<script>
+let allSentences = [];        // [{ ...sent, scene, scene_name_zh }]
+let allWords = [];            // all vocab words for distractor pool
+let filtered = [];
+let readIndex = 0;
+
+let fillPool = [];
+let fillCurrent = null;
+let fillOptions = [];
+let fillLocked = false;
+let fillAnswered = 0;
+
+const { levels: queryLevels } = getQueryParams();
+
+function levelAllowed(level) {
+  if (!queryLevels || queryLevels.length === 0) return true;
+  return queryLevels.includes(level);
+}
+
+function renderRead() {
+  if (filtered.length === 0) {
+    document.getElementById("empty").style.display = "block";
+    document.getElementById("reading-area").style.display = "none";
+    document.getElementById("fill-area").style.display = "none";
+    return;
+  }
+  const s = filtered[readIndex];
+  document.getElementById("sent-front-jp").textContent = s.jp;
+  document.getElementById("sent-back-jp").textContent = s.jp;
+  document.getElementById("sent-back-kana").textContent = s.kana;
+  document.getElementById("sent-back-romaji").textContent = s.romaji;
+  document.getElementById("sent-back-zh").textContent = s.zh;
+  document.getElementById("progress-label").textContent = `${readIndex + 1} / ${filtered.length}`;
+  document.getElementById("scene-label").textContent = s.scene_name_zh + " · " + s.level.toUpperCase();
+  document.getElementById("sent-card").classList.remove("flipped");
+}
+
+function findKeyWord(sent) {
+  if (!sent.key_word_kana) return null;
+  return allWords.find(w => w.kana === sent.key_word_kana || w.kanji === sent.key_word_kana);
+}
+
+// Build a list of sentences that have a workable key word for fill mode.
+function buildFillPool() {
+  fillPool = filtered.filter(s => {
+    if (!s.key_word_kana) return false;
+    // The key word must literally appear in the sentence (kanji or kana form).
+    return s.jp.includes(s.key_word_kana) || s.kana.includes(s.key_word_kana);
+  });
+  shuffleInPlace(fillPool);
+}
+
+function renderFill() {
+  fillLocked = false;
+  document.getElementById("fill-feedback").className = "feedback";
+  document.getElementById("fill-feedback").textContent = "";
+  document.getElementById("fill-next").disabled = true;
+
+  if (fillPool.length === 0) {
+    document.getElementById("fill-sent").textContent = "找不到可填空的句子，請改用閱讀模式或回首頁選更多情境。";
+    document.getElementById("fill-zh").textContent = "";
+    document.getElementById("fill-options").innerHTML = "";
+    return;
+  }
+  fillCurrent = fillPool.pop();
+  const key = fillCurrent.key_word_kana;
+  const correctWord = findKeyWord(fillCurrent) || {
+    id: "ad-hoc-" + key,
+    kanji: key, kana: key, meaning_zh: fillCurrent.zh,
+    part_of_speech: "",
+  };
+  const blanked = fillCurrent.jp.replace(key, `<span class="blank-box">？</span>`);
+  document.getElementById("fill-sent").innerHTML = blanked;
+  document.getElementById("fill-zh").textContent = fillCurrent.zh;
+
+  // Distractor candidates from same category preferred.
+  const pool = allWords.length > 0
+    ? allWords.filter(w => w.kana !== key)
+    : [];
+  const distractors = shuffleInPlace([...pool]).slice(0, 3);
+  // If we couldn't find distractors, fall back to a stub.
+  while (distractors.length < 3) {
+    distractors.push({ id: "stub_" + distractors.length, kanji: "?", kana: "?", meaning_zh: "" });
+  }
+  fillOptions = shuffleInPlace([correctWord, ...distractors]);
+
+  document.getElementById("fill-progress").textContent =
+    `已答 ${fillAnswered} 句 · 剩 ${fillPool.length} 句`;
+
+  const opts = document.getElementById("fill-options");
+  opts.innerHTML = "";
+  fillOptions.forEach((opt, i) => {
+    const btn = document.createElement("button");
+    btn.className = "option";
+    btn.innerHTML = `<span class="option-num">${i + 1}</span><div><span class="option-jp-kanji">${opt.kanji}</span><div class="option-jp-kana">${opt.kana}</div></div>`;
+    btn.onclick = () => chooseFill(i);
+    opts.appendChild(btn);
+  });
+}
+
+function chooseFill(i) {
+  if (fillLocked) return;
+  fillLocked = true;
+  const correctKana = fillCurrent.key_word_kana;
+  const opt = fillOptions[i];
+  const isCorrect = opt.kana === correctKana || opt.kanji === correctKana;
+  document.querySelectorAll("#fill-options .option").forEach((b, idx) => {
+    b.disabled = true;
+    const o = fillOptions[idx];
+    if (o.kana === correctKana || o.kanji === correctKana) b.classList.add("correct");
+    else if (idx === i) b.classList.add("wrong");
+  });
+
+  const fb = document.getElementById("fill-feedback");
+  fb.className = "feedback show " + (isCorrect ? "correct" : "wrong");
+  fb.textContent = isCorrect
+    ? `✓ 答對！整句：${fillCurrent.jp}`
+    : `✗ 正解：${correctKana}（整句：${fillCurrent.jp}）`;
+
+  fillAnswered += 1;
+  const cw = findKeyWord(fillCurrent);
+  if (cw) recordAnswer(cw, isCorrect, "sentence_fill");
+
+  document.getElementById("fill-next").disabled = false;
+  speakJapanese(fillCurrent.kana);
+}
+
+// Scene selector
+function populateScenes(sceneData) {
+  const sel = document.getElementById("scene-select");
+  sel.innerHTML = `<option value="">全部情境</option>`;
+  for (const key in sceneData.scenes) {
+    const s = sceneData.scenes[key];
+    const opt = document.createElement("option");
+    opt.value = key;
+    opt.textContent = `${s.name_zh} (${s.sentences.length})`;
+    sel.appendChild(opt);
+  }
+  sel.onchange = () => applyFilter(sceneData);
+}
+
+function applyFilter(sceneData) {
+  const sceneKey = document.getElementById("scene-select").value;
+  filtered = [];
+  for (const key in sceneData.scenes) {
+    if (sceneKey && key !== sceneKey) continue;
+    const s = sceneData.scenes[key];
+    for (const sent of s.sentences) {
+      if (!levelAllowed(sent.level)) continue;
+      filtered.push({ ...sent, scene: key, scene_name_zh: s.name_zh });
+    }
+  }
+  shuffleInPlace(filtered);
+  readIndex = 0;
+  buildFillPool();
+  fillAnswered = 0;
+  renderRead();
+  if (document.querySelector('input[name="mode"]:checked').value === "fill") renderFill();
+}
+
+document.getElementById("sent-card").addEventListener("click", () => {
+  document.getElementById("sent-card").classList.toggle("flipped");
+});
+attachSwipe(document.getElementById("sent-card"), {
+  onLeft:  () => document.getElementById("next-btn").click(),
+  onRight: () => document.getElementById("prev-btn").click(),
+  onUp:    () => document.getElementById("sent-card").classList.toggle("flipped"),
+  onDown:  () => document.getElementById("sent-card").classList.toggle("flipped"),
+});
+document.getElementById("sent-front-speak").onclick = (ev) => {
+  ev.stopPropagation();
+  speakJapanese(filtered[readIndex]?.kana);
+};
+document.getElementById("sent-back-speak").onclick = (ev) => {
+  ev.stopPropagation();
+  speakJapanese(filtered[readIndex]?.kana);
+};
+document.getElementById("next-btn").onclick = () => {
+  if (filtered.length === 0) return;
+  readIndex = (readIndex + 1) % filtered.length;
+  renderRead();
+};
+document.getElementById("prev-btn").onclick = () => {
+  if (filtered.length === 0) return;
+  readIndex = (readIndex - 1 + filtered.length) % filtered.length;
+  renderRead();
+};
+document.getElementById("fill-next").onclick = renderFill;
+document.getElementById("fill-speak").onclick = () => speakJapanese(fillCurrent?.kana);
+
+document.querySelectorAll('input[name="mode"]').forEach(r => {
+  r.onchange = () => {
+    const mode = r.value;
+    document.getElementById("reading-area").style.display = mode === "read" ? "block" : "none";
+    document.getElementById("fill-area").style.display = mode === "fill" ? "block" : "none";
+    if (mode === "fill") {
+      buildFillPool();
+      fillAnswered = 0;
+      renderFill();
+    }
+  };
+});
+
+(async () => {
+  const [sceneData, vocabData] = await Promise.all([fetchSentences(), fetchAllVocab()]);
+  // Flatten all vocab words (for fill distractors).
+  const { levels, categories } = getQueryParams();
+  allWords = flattenWords(vocabData, levels, categories.length > 0 ? categories : []);
+  if (allWords.length < 5) {
+    // fallback: load all
+    allWords = flattenWords(vocabData, ["beginner", "n5", "n4"], []);
+  }
+  populateScenes(sceneData);
+  applyFilter(sceneData);
+})();
+</script>
+{% endblock %}

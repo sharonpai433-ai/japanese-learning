@@ -1,0 +1,290 @@
+{% extends "base.html" %}
+{% block title %}考試模式 — 日文學習{% endblock %}
+{% block content %}
+<h1>📝 考試模式</h1>
+
+<!-- Setup screen -->
+<div id="setup-screen">
+  <div class="section">
+    <h2>選擇題數</h2>
+    <div class="chip-group" id="count-chips">
+      <button class="chip active" data-count="10">10 題</button>
+      <button class="chip" data-count="20">20 題</button>
+      <button class="chip" data-count="30">30 題</button>
+    </div>
+  </div>
+  <div class="section">
+    <h2>題型組合</h2>
+    <div class="toggle-row">
+      <label><input type="checkbox" id="t-quiz" checked /> 看字選意思</label>
+      <label><input type="checkbox" id="t-listening" checked /> 聽音選字</label>
+    </div>
+    <p style="color: var(--text-mute); font-size: 13px; margin-top: 12px;">
+      考試會從你目前選擇的難度與情境中抽題。考完會看到分數與錯題清單。
+    </p>
+    <div class="row" style="margin-top: 16px;">
+      <button class="btn" id="start-btn">開始考試</button>
+      <a class="btn secondary" href="/">回首頁</a>
+    </div>
+  </div>
+  <div id="empty" class="empty-state" style="display: none;">
+    <p>沒有單字可考試，請回首頁選擇情境。</p>
+    <a class="btn" href="/">回首頁</a>
+  </div>
+</div>
+
+<!-- Question screen -->
+<div id="exam-screen" style="display: none;">
+  <div class="section">
+    <div class="toggle-row">
+      <span>第 <strong id="q-index">1</strong> / <span id="q-total">10</span> 題 · 用時 <strong id="timer">0</strong> 秒</span>
+      <span style="margin-left: auto;">類型：<strong id="q-type-label">—</strong></span>
+    </div>
+  </div>
+  <div class="question-card">
+    <div class="q-prompt" id="q-prompt">—</div>
+    <div id="q-visual">
+      <div class="q-target" id="q-kanji">—</div>
+      <div class="q-target-kana" id="q-kana"></div>
+    </div>
+    <div id="q-audio" style="display: none; margin: 20px 0;">
+      <button class="play-big" id="play-btn">▶</button>
+    </div>
+    <div class="options" id="options"></div>
+    <div class="feedback" id="feedback"></div>
+    <div class="controls">
+      <button class="btn" id="next-btn" disabled>下一題 →</button>
+    </div>
+  </div>
+</div>
+
+<!-- Result screen -->
+<div id="result-screen" style="display: none;">
+  <div class="section">
+    <h2 style="text-align: center;">考試結果</h2>
+    <div class="score-big" id="score-big">0%</div>
+    <div style="text-align: center; color: var(--text-mute);">
+      答對 <strong id="r-correct">0</strong> / <span id="r-total">0</span> 題 · 用時 <strong id="r-duration">0</strong> 秒
+    </div>
+    <div class="row" style="justify-content: center; margin-top: 20px;">
+      <button class="btn" id="retry-btn">再考一次</button>
+      <a class="btn secondary" href="/">回首頁</a>
+    </div>
+  </div>
+  <div class="section" id="wrong-section" style="display: none;">
+    <h2>📌 錯題回顧</h2>
+    <ul class="review-list" id="wrong-list"></ul>
+  </div>
+</div>
+
+<script>
+let allWords = [];
+let examQuestions = [];
+let examTypes = [];
+let qIndex = 0;
+let correctCount = 0;
+let locked = false;
+let currentOptions = [];
+let currentWord = null;
+let currentType = "quiz";
+let startTime = null;
+let timerInterval = null;
+let wrongAnswers = [];
+
+// Setup chips
+document.querySelectorAll("#count-chips .chip").forEach(c => {
+  c.onclick = () => {
+    document.querySelectorAll("#count-chips .chip").forEach(x => x.classList.remove("active"));
+    c.classList.add("active");
+  };
+});
+
+function getSelectedCount() {
+  return parseInt(document.querySelector("#count-chips .chip.active").dataset.count);
+}
+
+function getSelectedTypes() {
+  const types = [];
+  if (document.getElementById("t-quiz").checked) types.push("quiz");
+  if (document.getElementById("t-listening").checked) types.push("listening");
+  return types;
+}
+
+function startExam() {
+  const count = getSelectedCount();
+  examTypes = getSelectedTypes();
+  if (examTypes.length === 0) {
+    alert("請至少選一種題型");
+    return;
+  }
+  const pool = shuffleInPlace([...allWords]);
+  examQuestions = [];
+  for (let i = 0; i < count; i++) {
+    examQuestions.push(pool[i % pool.length]);
+  }
+  qIndex = 0;
+  correctCount = 0;
+  wrongAnswers = [];
+  startTime = Date.now();
+  timerInterval = setInterval(() => {
+    document.getElementById("timer").textContent = Math.floor((Date.now() - startTime) / 1000);
+  }, 1000);
+  document.getElementById("setup-screen").style.display = "none";
+  document.getElementById("exam-screen").style.display = "block";
+  document.getElementById("q-total").textContent = count;
+  loadQuestion();
+}
+
+function loadQuestion() {
+  locked = false;
+  document.getElementById("feedback").className = "feedback";
+  document.getElementById("feedback").textContent = "";
+  document.getElementById("next-btn").disabled = true;
+  document.getElementById("next-btn").textContent = qIndex === examQuestions.length - 1 ? "完成 →" : "下一題 →";
+
+  currentWord = examQuestions[qIndex];
+  currentType = examTypes[Math.floor(Math.random() * examTypes.length)];
+  document.getElementById("q-index").textContent = qIndex + 1;
+
+  if (currentType === "quiz") {
+    document.getElementById("q-type-label").textContent = "看字選意思";
+    document.getElementById("q-prompt").textContent = "這個日文是什麼意思？";
+    document.getElementById("q-visual").style.display = "block";
+    document.getElementById("q-audio").style.display = "none";
+    document.getElementById("q-kanji").textContent = currentWord.kanji;
+    document.getElementById("q-kana").textContent =
+      currentWord.kanji !== currentWord.kana ? currentWord.kana : "";
+
+    const distractors = sampleDistractors(allWords, currentWord, 3);
+    currentOptions = shuffleInPlace([currentWord, ...distractors]);
+    renderOptions("zh");
+  } else {
+    document.getElementById("q-type-label").textContent = "聽音選字";
+    document.getElementById("q-prompt").textContent = "聽到的日文是哪一個？";
+    document.getElementById("q-visual").style.display = "none";
+    document.getElementById("q-audio").style.display = "block";
+
+    const distractorPool = allWords.filter(w => w.id !== currentWord.id && w.kana !== currentWord.kana);
+    const distractors = shuffleInPlace([...distractorPool]).slice(0, 3);
+    currentOptions = shuffleInPlace([currentWord, ...distractors]);
+    renderOptions("jp");
+    setTimeout(() => speakJapanese(currentWord.kana, 0.85), 250);
+  }
+}
+
+function renderOptions(kind) {
+  const opts = document.getElementById("options");
+  opts.innerHTML = "";
+  currentOptions.forEach((opt, i) => {
+    const btn = document.createElement("button");
+    btn.className = "option";
+    if (kind === "zh") {
+      btn.innerHTML = `<span class="option-num">${i + 1}</span><span>${opt.meaning_zh}</span>`;
+    } else {
+      const kanaPart = opt.kanji !== opt.kana ? `<div class="option-jp-kana">${opt.kana}</div>` : "";
+      btn.innerHTML = `<span class="option-num">${i + 1}</span><div><span class="option-jp-kanji">${opt.kanji}</span>${kanaPart}</div>`;
+    }
+    btn.onclick = () => choose(i);
+    opts.appendChild(btn);
+  });
+}
+
+function choose(i) {
+  if (locked) return;
+  locked = true;
+  const opt = currentOptions[i];
+  const isCorrect = opt.id === currentWord.id;
+  const buttons = document.querySelectorAll(".option");
+  buttons.forEach((b, idx) => {
+    b.disabled = true;
+    if (currentOptions[idx].id === currentWord.id) b.classList.add("correct");
+    else if (idx === i) b.classList.add("wrong");
+  });
+
+  const fb = document.getElementById("feedback");
+  fb.className = "feedback show " + (isCorrect ? "correct" : "wrong");
+  fb.textContent = isCorrect
+    ? `✓ ${currentWord.kanji}（${currentWord.kana}）= ${currentWord.meaning_zh}`
+    : `✗ 正解：${currentWord.kanji}（${currentWord.kana}）= ${currentWord.meaning_zh}`;
+
+  if (isCorrect) correctCount += 1;
+  else wrongAnswers.push({ ...currentWord, qType: currentType });
+  recordAnswer(currentWord, isCorrect, "exam");
+  document.getElementById("next-btn").disabled = false;
+
+  if (currentType === "quiz") speakJapanese(currentWord.kana);
+}
+
+function nextOrFinish() {
+  qIndex += 1;
+  if (qIndex >= examQuestions.length) finishExam();
+  else loadQuestion();
+}
+
+function finishExam() {
+  clearInterval(timerInterval);
+  const total = examQuestions.length;
+  const score = Math.round((correctCount / total) * 100);
+  const duration = Math.floor((Date.now() - startTime) / 1000);
+  recordExam(score, total, duration);
+
+  document.getElementById("exam-screen").style.display = "none";
+  document.getElementById("result-screen").style.display = "block";
+  const sb = document.getElementById("score-big");
+  sb.textContent = score + "%";
+  sb.classList.toggle("passed", score >= 70);
+  sb.classList.toggle("failed", score < 70);
+  document.getElementById("r-correct").textContent = correctCount;
+  document.getElementById("r-total").textContent = total;
+  document.getElementById("r-duration").textContent = duration;
+
+  if (wrongAnswers.length > 0) {
+    document.getElementById("wrong-section").style.display = "block";
+    const list = document.getElementById("wrong-list");
+    list.innerHTML = "";
+    // dedupe by id
+    const seen = new Set();
+    wrongAnswers.forEach(w => {
+      if (seen.has(w.id)) return;
+      seen.add(w.id);
+      const li = document.createElement("li");
+      li.className = "review-item";
+      li.innerHTML = `
+        <div class="review-info">
+          <span class="review-jp">${w.kanji}（${w.kana}）</span>
+          <span class="review-zh">${w.meaning_zh}</span>
+        </div>
+        <button class="speak-btn">🔊</button>
+      `;
+      li.querySelector(".speak-btn").onclick = () => speakJapanese(w.kana);
+      list.appendChild(li);
+    });
+  }
+}
+
+document.getElementById("start-btn").onclick = startExam;
+document.getElementById("next-btn").onclick = nextOrFinish;
+document.getElementById("retry-btn").onclick = () => {
+  document.getElementById("result-screen").style.display = "none";
+  document.getElementById("setup-screen").style.display = "block";
+};
+document.getElementById("play-btn").onclick = () => speakJapanese(currentWord?.kana, 0.85);
+
+document.addEventListener("keydown", (ev) => {
+  if (document.getElementById("exam-screen").style.display === "none") return;
+  if (["1", "2", "3", "4"].includes(ev.key) && !locked) choose(parseInt(ev.key) - 1);
+  else if (ev.key === "Enter" && locked) nextOrFinish();
+  else if (ev.key.toLowerCase() === "p" && currentType === "listening") speakJapanese(currentWord?.kana, 0.85);
+});
+
+(async () => {
+  const vocab = await fetchAllVocab();
+  const { levels, categories } = getQueryParams();
+  allWords = flattenWords(vocab, levels, categories);
+  if (allWords.length < 4) {
+    document.getElementById("empty").style.display = "block";
+    document.querySelectorAll("#setup-screen .section").forEach(s => s.style.display = "none");
+  }
+})();
+</script>
+{% endblock %}

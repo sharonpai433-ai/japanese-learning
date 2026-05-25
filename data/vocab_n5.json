@@ -1,0 +1,167 @@
+{
+  "level": "n5",
+  "level_name_zh": "N5 基礎",
+  "categories": {
+    "food": {
+      "name_zh": "食物・飲料",
+      "words": [
+        {"id": "n5_f_001", "kanji": "肉", "kana": "にく", "romaji": "niku", "meaning_zh": "肉", "part_of_speech": "名詞"},
+        {"id": "n5_f_002", "kanji": "魚", "kana": "さかな", "romaji": "sakana", "meaning_zh": "魚", "part_of_speech": "名詞"},
+        {"id": "n5_f_003", "kanji": "野菜", "kana": "やさい", "romaji": "yasai", "meaning_zh": "蔬菜", "part_of_speech": "名詞"},
+        {"id": "n5_f_004", "kanji": "果物", "kana": "くだもの", "romaji": "kudamono", "meaning_zh": "水果", "part_of_speech": "名詞"},
+        {"id": "n5_f_005", "kanji": "卵", "kana": "たまご", "romaji": "tamago", "meaning_zh": "蛋", "part_of_speech": "名詞"},
+        {"id": "n5_f_006", "kanji": "牛乳", "kana": "ぎゅうにゅう", "romaji": "gyuunyuu", "meaning_zh": "牛奶", "part_of_speech": "名詞"},
+        {"id": "n5_f_007", "kanji": "コーヒー", "kana": "コーヒー", "romaji": "koohii", "meaning_zh": "咖啡", "part_of_speech": "名詞"},
+        {"id": "n5_f_008", "kanji": "ビール", "kana": "ビール", "romaji": "biiru", "meaning_zh": "啤酒", "part_of_speech": "名詞"},
+        {"id": "n5_f_009", "kanji": "パン", "kana": "パン", "romaji": "pan", "meaning_zh": "麵包", "part_of_speech": "名詞"},
+        {"id": "n5_f_010", "kanji": "ラーメン", "kana": "ラーメン", "romaji": "raamen", "meaning_zh": "拉麵", "part_of_speech": "名詞"},
+        {"id": "n5_f_011", "kanji": "寿司", "kana": "すし", "romaji": "sushi", "meaning_zh": "壽司", "part_of_speech": "名詞"},
+        {"id": "n5_f_012", "kanji": "弁当", "kana": "べんとう", "romaji": "bentou", "meaning_zh": "便當", "part_of_speech": "名詞"},
+        {"id": "n5_f_013", "kanji": "塩", "kana": "しお", "romaji": "shio", "meaning_zh": "鹽", "part_of_speech": "名詞"},
+        {"id": "n5_f_014", "kanji": "砂糖", "kana": "さとう", "romaji": "satou", "meaning_zh": "糖", "part_of_speech": "名詞"},
+        {"id": "n5_f_015", "kanji": "辛い", "kana": "からい", "romaji": "karai", "meaning_zh": "辣的", "part_of_speech": "形容詞"}
+      ]
+    },
+    "restaurant": {
+      "name_zh": "餐廳・點餐",
+      "words": [
+        {"id": "n5_r_001", "kanji": "店", "kana": "みせ", "romaji": "mise", "meaning_zh": "店", "part_of_speech": "名詞"},
+        {"id": "n5_r_002", "kanji": "レストラン", "kana": "レストラン", "romaji": "resutoran", "meaning_zh": "餐廳", "part_of_speech": "名詞"},
+        {"id": "n5_r_003", "kanji": "メニュー", "kana": "メニュー", "romaji": "menyuu", "meaning_zh": "菜單", "part_of_speech": "名詞"},
+        {"id": "n5_r_004", "kanji": "お会計", "kana": "おかいけい", "romaji": "okaikei", "meaning_zh": "結帳", "part_of_speech": "名詞"},
+        {"id": "n5_r_005", "kanji": "注文", "kana": "ちゅうもん", "romaji": "chuumon", "meaning_zh": "點餐", "part_of_speech": "名詞"},
+        {"id": "n5_r_006", "kanji": "おすすめ", "kana": "おすすめ", "romaji": "osusume", "meaning_zh": "推薦", "part_of_speech": "名詞"},
+        {"id": "n5_r_007", "kanji": "席", "kana": "せき", "romaji": "seki", "meaning_zh": "座位", "part_of_speech": "名詞"},
+        {"id": "n5_r_008", "kanji": "予約", "kana": "よやく", "romaji": "yoyaku", "meaning_zh": "預約", "part_of_speech": "名詞"},
+        {"id": "n5_r_009", "kanji": "持ち帰り", "kana": "もちかえり", "romaji": "mochikaeri", "meaning_zh": "外帶", "part_of_speech": "名詞"},
+        {"id": "n5_r_010", "kanji": "食べる", "kana": "たべる", "romaji": "taberu", "meaning_zh": "吃", "part_of_speech": "動詞"},
+        {"id": "n5_r_011", "kanji": "飲む", "kana": "のむ", "romaji": "nomu", "meaning_zh": "喝", "part_of_speech": "動詞"},
+        {"id": "n5_r_012", "kanji": "下さい", "kana": "ください", "romaji": "kudasai", "meaning_zh": "請給我", "part_of_speech": "句型"},
+        {"id": "n5_r_013", "kanji": "美味しい", "kana": "おいしい", "romaji": "oishii", "meaning_zh": "好吃", "part_of_speech": "形容詞"},
+        {"id": "n5_r_014", "kanji": "御馳走様", "kana": "ごちそうさま", "romaji": "gochisousama", "meaning_zh": "我吃飽了・謝謝招待", "part_of_speech": "招呼"},
+        {"id": "n5_r_015", "kanji": "頂きます", "kana": "いただきます", "romaji": "itadakimasu", "meaning_zh": "我開動了", "part_of_speech": "招呼"}
+      ]
+    },
+    "shopping": {
+      "name_zh": "購物・金額",
+      "words": [
+        {"id": "n5_s_001", "kanji": "買う", "kana": "かう", "romaji": "kau", "meaning_zh": "買", "part_of_speech": "動詞"},
+        {"id": "n5_s_002", "kanji": "売る", "kana": "うる", "romaji": "uru", "meaning_zh": "賣", "part_of_speech": "動詞"},
+        {"id": "n5_s_003", "kanji": "値段", "kana": "ねだん", "romaji": "nedan", "meaning_zh": "價格", "part_of_speech": "名詞"},
+        {"id": "n5_s_004", "kanji": "高い", "kana": "たかい", "romaji": "takai", "meaning_zh": "貴的・高的", "part_of_speech": "形容詞"},
+        {"id": "n5_s_005", "kanji": "安い", "kana": "やすい", "romaji": "yasui", "meaning_zh": "便宜的", "part_of_speech": "形容詞"},
+        {"id": "n5_s_006", "kanji": "円", "kana": "えん", "romaji": "en", "meaning_zh": "日圓", "part_of_speech": "名詞"},
+        {"id": "n5_s_007", "kanji": "百", "kana": "ひゃく", "romaji": "hyaku", "meaning_zh": "百", "part_of_speech": "數字"},
+        {"id": "n5_s_008", "kanji": "千", "kana": "せん", "romaji": "sen", "meaning_zh": "千", "part_of_speech": "數字"},
+        {"id": "n5_s_009", "kanji": "万", "kana": "まん", "romaji": "man", "meaning_zh": "萬", "part_of_speech": "數字"},
+        {"id": "n5_s_010", "kanji": "店員", "kana": "てんいん", "romaji": "ten'in", "meaning_zh": "店員", "part_of_speech": "名詞"},
+        {"id": "n5_s_011", "kanji": "袋", "kana": "ふくろ", "romaji": "fukuro", "meaning_zh": "袋子", "part_of_speech": "名詞"},
+        {"id": "n5_s_012", "kanji": "コンビニ", "kana": "コンビニ", "romaji": "konbini", "meaning_zh": "便利商店", "part_of_speech": "名詞"},
+        {"id": "n5_s_013", "kanji": "スーパー", "kana": "スーパー", "romaji": "suupaa", "meaning_zh": "超市", "part_of_speech": "名詞"},
+        {"id": "n5_s_014", "kanji": "現金", "kana": "げんきん", "romaji": "genkin", "meaning_zh": "現金", "part_of_speech": "名詞"},
+        {"id": "n5_s_015", "kanji": "カード", "kana": "カード", "romaji": "kaado", "meaning_zh": "卡片・信用卡", "part_of_speech": "名詞"}
+      ]
+    },
+    "transportation": {
+      "name_zh": "交通・方向",
+      "words": [
+        {"id": "n5_t_001", "kanji": "電車", "kana": "でんしゃ", "romaji": "densha", "meaning_zh": "電車", "part_of_speech": "名詞"},
+        {"id": "n5_t_002", "kanji": "バス", "kana": "バス", "romaji": "basu", "meaning_zh": "公車", "part_of_speech": "名詞"},
+        {"id": "n5_t_003", "kanji": "タクシー", "kana": "タクシー", "romaji": "takushii", "meaning_zh": "計程車", "part_of_speech": "名詞"},
+        {"id": "n5_t_004", "kanji": "飛行機", "kana": "ひこうき", "romaji": "hikouki", "meaning_zh": "飛機", "part_of_speech": "名詞"},
+        {"id": "n5_t_005", "kanji": "自転車", "kana": "じてんしゃ", "romaji": "jitensha", "meaning_zh": "腳踏車", "part_of_speech": "名詞"},
+        {"id": "n5_t_006", "kanji": "駅", "kana": "えき", "romaji": "eki", "meaning_zh": "車站", "part_of_speech": "名詞"},
+        {"id": "n5_t_007", "kanji": "切符", "kana": "きっぷ", "romaji": "kippu", "meaning_zh": "車票", "part_of_speech": "名詞"},
+        {"id": "n5_t_008", "kanji": "右", "kana": "みぎ", "romaji": "migi", "meaning_zh": "右", "part_of_speech": "名詞"},
+        {"id": "n5_t_009", "kanji": "左", "kana": "ひだり", "romaji": "hidari", "meaning_zh": "左", "part_of_speech": "名詞"},
+        {"id": "n5_t_010", "kanji": "前", "kana": "まえ", "romaji": "mae", "meaning_zh": "前", "part_of_speech": "名詞"},
+        {"id": "n5_t_011", "kanji": "後ろ", "kana": "うしろ", "romaji": "ushiro", "meaning_zh": "後", "part_of_speech": "名詞"},
+        {"id": "n5_t_012", "kanji": "近い", "kana": "ちかい", "romaji": "chikai", "meaning_zh": "近的", "part_of_speech": "形容詞"},
+        {"id": "n5_t_013", "kanji": "遠い", "kana": "とおい", "romaji": "tooi", "meaning_zh": "遠的", "part_of_speech": "形容詞"},
+        {"id": "n5_t_014", "kanji": "乗る", "kana": "のる", "romaji": "noru", "meaning_zh": "搭乘", "part_of_speech": "動詞"},
+        {"id": "n5_t_015", "kanji": "降りる", "kana": "おりる", "romaji": "oriru", "meaning_zh": "下車", "part_of_speech": "動詞"}
+      ]
+    },
+    "family": {
+      "name_zh": "家人・人物",
+      "words": [
+        {"id": "n5_p_001", "kanji": "家族", "kana": "かぞく", "romaji": "kazoku", "meaning_zh": "家人", "part_of_speech": "名詞"},
+        {"id": "n5_p_002", "kanji": "父", "kana": "ちち", "romaji": "chichi", "meaning_zh": "（自己的）父親", "part_of_speech": "名詞"},
+        {"id": "n5_p_003", "kanji": "母", "kana": "はは", "romaji": "haha", "meaning_zh": "（自己的）母親", "part_of_speech": "名詞"},
+        {"id": "n5_p_004", "kanji": "お父さん", "kana": "おとうさん", "romaji": "otousan", "meaning_zh": "（別人的）父親", "part_of_speech": "名詞"},
+        {"id": "n5_p_005", "kanji": "お母さん", "kana": "おかあさん", "romaji": "okaasan", "meaning_zh": "（別人的）母親", "part_of_speech": "名詞"},
+        {"id": "n5_p_006", "kanji": "兄", "kana": "あに", "romaji": "ani", "meaning_zh": "哥哥", "part_of_speech": "名詞"},
+        {"id": "n5_p_007", "kanji": "姉", "kana": "あね", "romaji": "ane", "meaning_zh": "姊姊", "part_of_speech": "名詞"},
+        {"id": "n5_p_008", "kanji": "弟", "kana": "おとうと", "romaji": "otouto", "meaning_zh": "弟弟", "part_of_speech": "名詞"},
+        {"id": "n5_p_009", "kanji": "妹", "kana": "いもうと", "romaji": "imouto", "meaning_zh": "妹妹", "part_of_speech": "名詞"},
+        {"id": "n5_p_010", "kanji": "友達", "kana": "ともだち", "romaji": "tomodachi", "meaning_zh": "朋友", "part_of_speech": "名詞"},
+        {"id": "n5_p_011", "kanji": "先生", "kana": "せんせい", "romaji": "sensei", "meaning_zh": "老師", "part_of_speech": "名詞"},
+        {"id": "n5_p_012", "kanji": "学生", "kana": "がくせい", "romaji": "gakusei", "meaning_zh": "學生", "part_of_speech": "名詞"},
+        {"id": "n5_p_013", "kanji": "子供", "kana": "こども", "romaji": "kodomo", "meaning_zh": "小孩", "part_of_speech": "名詞"},
+        {"id": "n5_p_014", "kanji": "男", "kana": "おとこ", "romaji": "otoko", "meaning_zh": "男生", "part_of_speech": "名詞"},
+        {"id": "n5_p_015", "kanji": "女", "kana": "おんな", "romaji": "onna", "meaning_zh": "女生", "part_of_speech": "名詞"}
+      ]
+    },
+    "time": {
+      "name_zh": "時間・日期",
+      "words": [
+        {"id": "n5_ti_001", "kanji": "時間", "kana": "じかん", "romaji": "jikan", "meaning_zh": "時間", "part_of_speech": "名詞"},
+        {"id": "n5_ti_002", "kanji": "今", "kana": "いま", "romaji": "ima", "meaning_zh": "現在", "part_of_speech": "名詞"},
+        {"id": "n5_ti_003", "kanji": "午前", "kana": "ごぜん", "romaji": "gozen", "meaning_zh": "上午", "part_of_speech": "名詞"},
+        {"id": "n5_ti_004", "kanji": "午後", "kana": "ごご", "romaji": "gogo", "meaning_zh": "下午", "part_of_speech": "名詞"},
+        {"id": "n5_ti_005", "kanji": "分", "kana": "ふん", "romaji": "fun", "meaning_zh": "分鐘", "part_of_speech": "名詞"},
+        {"id": "n5_ti_006", "kanji": "時", "kana": "じ", "romaji": "ji", "meaning_zh": "點（時間）", "part_of_speech": "名詞"},
+        {"id": "n5_ti_007", "kanji": "週", "kana": "しゅう", "romaji": "shuu", "meaning_zh": "週", "part_of_speech": "名詞"},
+        {"id": "n5_ti_008", "kanji": "月", "kana": "つき", "romaji": "tsuki", "meaning_zh": "月", "part_of_speech": "名詞"},
+        {"id": "n5_ti_009", "kanji": "年", "kana": "とし", "romaji": "toshi", "meaning_zh": "年", "part_of_speech": "名詞"},
+        {"id": "n5_ti_010", "kanji": "月曜日", "kana": "げつようび", "romaji": "getsuyoubi", "meaning_zh": "星期一", "part_of_speech": "名詞"},
+        {"id": "n5_ti_011", "kanji": "火曜日", "kana": "かようび", "romaji": "kayoubi", "meaning_zh": "星期二", "part_of_speech": "名詞"},
+        {"id": "n5_ti_012", "kanji": "水曜日", "kana": "すいようび", "romaji": "suiyoubi", "meaning_zh": "星期三", "part_of_speech": "名詞"},
+        {"id": "n5_ti_013", "kanji": "木曜日", "kana": "もくようび", "romaji": "mokuyoubi", "meaning_zh": "星期四", "part_of_speech": "名詞"},
+        {"id": "n5_ti_014", "kanji": "金曜日", "kana": "きんようび", "romaji": "kinyoubi", "meaning_zh": "星期五", "part_of_speech": "名詞"},
+        {"id": "n5_ti_015", "kanji": "土曜日", "kana": "どようび", "romaji": "doyoubi", "meaning_zh": "星期六", "part_of_speech": "名詞"},
+        {"id": "n5_ti_016", "kanji": "日曜日", "kana": "にちようび", "romaji": "nichiyoubi", "meaning_zh": "星期日", "part_of_speech": "名詞"}
+      ]
+    },
+    "school_work": {
+      "name_zh": "學校・工作",
+      "words": [
+        {"id": "n5_w_001", "kanji": "会社", "kana": "かいしゃ", "romaji": "kaisha", "meaning_zh": "公司", "part_of_speech": "名詞"},
+        {"id": "n5_w_002", "kanji": "仕事", "kana": "しごと", "romaji": "shigoto", "meaning_zh": "工作", "part_of_speech": "名詞"},
+        {"id": "n5_w_003", "kanji": "勉強", "kana": "べんきょう", "romaji": "benkyou", "meaning_zh": "唸書・學習", "part_of_speech": "名詞"},
+        {"id": "n5_w_004", "kanji": "宿題", "kana": "しゅくだい", "romaji": "shukudai", "meaning_zh": "作業", "part_of_speech": "名詞"},
+        {"id": "n5_w_005", "kanji": "教室", "kana": "きょうしつ", "romaji": "kyoushitsu", "meaning_zh": "教室", "part_of_speech": "名詞"},
+        {"id": "n5_w_006", "kanji": "図書館", "kana": "としょかん", "romaji": "toshokan", "meaning_zh": "圖書館", "part_of_speech": "名詞"},
+        {"id": "n5_w_007", "kanji": "鉛筆", "kana": "えんぴつ", "romaji": "enpitsu", "meaning_zh": "鉛筆", "part_of_speech": "名詞"},
+        {"id": "n5_w_008", "kanji": "辞書", "kana": "じしょ", "romaji": "jisho", "meaning_zh": "字典", "part_of_speech": "名詞"},
+        {"id": "n5_w_009", "kanji": "新聞", "kana": "しんぶん", "romaji": "shinbun", "meaning_zh": "報紙", "part_of_speech": "名詞"},
+        {"id": "n5_w_010", "kanji": "電話", "kana": "でんわ", "romaji": "denwa", "meaning_zh": "電話", "part_of_speech": "名詞"},
+        {"id": "n5_w_011", "kanji": "書く", "kana": "かく", "romaji": "kaku", "meaning_zh": "寫", "part_of_speech": "動詞"},
+        {"id": "n5_w_012", "kanji": "読む", "kana": "よむ", "romaji": "yomu", "meaning_zh": "讀", "part_of_speech": "動詞"},
+        {"id": "n5_w_013", "kanji": "話す", "kana": "はなす", "romaji": "hanasu", "meaning_zh": "說", "part_of_speech": "動詞"},
+        {"id": "n5_w_014", "kanji": "聞く", "kana": "きく", "romaji": "kiku", "meaning_zh": "聽・問", "part_of_speech": "動詞"},
+        {"id": "n5_w_015", "kanji": "働く", "kana": "はたらく", "romaji": "hataraku", "meaning_zh": "工作", "part_of_speech": "動詞"}
+      ]
+    },
+    "emergency": {
+      "name_zh": "緊急・求助",
+      "words": [
+        {"id": "n5_e_001", "kanji": "道", "kana": "みち", "romaji": "michi", "meaning_zh": "路", "part_of_speech": "名詞"},
+        {"id": "n5_e_002", "kanji": "病院", "kana": "びょういん", "romaji": "byouin", "meaning_zh": "醫院", "part_of_speech": "名詞"},
+        {"id": "n5_e_003", "kanji": "警察", "kana": "けいさつ", "romaji": "keisatsu", "meaning_zh": "警察", "part_of_speech": "名詞"},
+        {"id": "n5_e_004", "kanji": "薬局", "kana": "やっきょく", "romaji": "yakkyoku", "meaning_zh": "藥局", "part_of_speech": "名詞"},
+        {"id": "n5_e_005", "kanji": "頭", "kana": "あたま", "romaji": "atama", "meaning_zh": "頭", "part_of_speech": "名詞"},
+        {"id": "n5_e_006", "kanji": "痛い", "kana": "いたい", "romaji": "itai", "meaning_zh": "痛的", "part_of_speech": "形容詞"},
+        {"id": "n5_e_007", "kanji": "助ける", "kana": "たすける", "romaji": "tasukeru", "meaning_zh": "幫助・救", "part_of_speech": "動詞"},
+        {"id": "n5_e_008", "kanji": "迷う", "kana": "まよう", "romaji": "mayou", "meaning_zh": "迷路・困惑", "part_of_speech": "動詞"},
+        {"id": "n5_e_009", "kanji": "分かる", "kana": "わかる", "romaji": "wakaru", "meaning_zh": "明白・知道", "part_of_speech": "動詞"},
+        {"id": "n5_e_010", "kanji": "パスポート", "kana": "パスポート", "romaji": "pasupooto", "meaning_zh": "護照", "part_of_speech": "名詞"},
+        {"id": "n5_e_011", "kanji": "英語", "kana": "えいご", "romaji": "eigo", "meaning_zh": "英語", "part_of_speech": "名詞"},
+        {"id": "n5_e_012", "kanji": "言う", "kana": "いう", "romaji": "iu", "meaning_zh": "說", "part_of_speech": "動詞"},
+        {"id": "n5_e_013", "kanji": "探す", "kana": "さがす", "romaji": "sagasu", "meaning_zh": "尋找", "part_of_speech": "動詞"},
+        {"id": "n5_e_014", "kanji": "大丈夫", "kana": "だいじょうぶ", "romaji": "daijoubu", "meaning_zh": "沒事・OK", "part_of_speech": "形容詞"},
+        {"id": "n5_e_015", "kanji": "危ない", "kana": "あぶない", "romaji": "abunai", "meaning_zh": "危險的", "part_of_speech": "形容詞"}
+      ]
+    }
+  }
+}

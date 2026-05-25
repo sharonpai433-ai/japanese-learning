@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+{% block title %}字卡翻面 — 日文學習{% endblock %}
+{% block content %}
+<h1>🃏 字卡翻面</h1>
+<p style="color: var(--text-mute);">先看假名練發音 → 翻面看漢字、意思（點卡片或按空白鍵翻面，左右鍵切換）</p>
+
+<div class="section">
+  <div class="toggle-row">
+    <span>正面顯示：</span>
+    <label><input type="radio" name="front" value="kana" checked /> 假名（練發音）</label>
+    <label><input type="radio" name="front" value="kanji" /> 漢字（練認字）</label>
+    <label style="margin-left: 8px;"><input type="checkbox" id="shuffle-toggle" checked /> 亂序</label>
+    <label><input type="checkbox" id="autospeak-toggle" /> 自動播放發音</label>
+    <a class="btn ghost" href="/" style="margin-left: auto;">← 回首頁</a>
+  </div>
+</div>
+
+<div class="flashcard-wrap">
+  <div class="progress">
+    <span id="progress-label">0 / 0</span>
+    <span id="category-label" style="font-size: 13px;"></span>
+  </div>
+
+  <div class="flashcard" id="flashcard">
+    <div class="flashcard-inner">
+      <div class="flashcard-face flashcard-front">
+        <div class="kanji-big" id="front-main">—</div>
+        <div class="kana-medium" id="front-sub" style="margin-top: 4px;"></div>
+        <button class="speak-btn" id="front-speak" style="margin-top: 16px;">🔊 聽發音</button>
+        <div class="tip-text" id="front-tip">先試著唸出來，再點卡片翻面看答案</div>
+      </div>
+      <div class="flashcard-face flashcard-back">
+        <div class="kanji-big" id="back-kanji" style="font-size: 36px;">—</div>
+        <div class="kana-medium" id="back-kana">—</div>
+        <div class="romaji-text" id="back-romaji">—</div>
+        <div class="meaning-text" id="back-meaning">—</div>
+        <span class="pos-tag" id="back-pos"></span>
+        <button class="speak-btn" id="speak-btn">🔊 再聽一次</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button class="btn secondary" id="prev-btn">← 上一張</button>
+    <button class="btn" id="next-btn">下一張 →</button>
+  </div>
+</div>
+
+<div id="empty" class="empty-state" style="display: none;">
+  <p>沒有單字可以學習，請回到首頁選擇難度與情境。</p>
+  <a class="btn" href="/">回首頁</a>
+</div>
+
+<script>
+let words = [];
+let index = 0;
+let flipped = false;
+let frontType = localStorage.getItem("jp_flashcard_front") || "kana";
+
+const cardEl = document.getElementById("flashcard");
+const shuffleToggle = document.getElementById("shuffle-toggle");
+const autoSpeakToggle = document.getElementById("autospeak-toggle");
+
+document.querySelectorAll('input[name="front"]').forEach(r => {
+  r.checked = (r.value === frontType);
+  r.addEventListener("change", () => {
+    frontType = r.value;
+    localStorage.setItem("jp_flashcard_front", frontType);
+    render();
+  });
+});
+
+function render() {
+  if (words.length === 0) {
+    document.getElementById("empty").style.display = "block";
+    cardEl.style.display = "none";
+    document.querySelector(".controls").style.display = "none";
+    return;
+  }
+  const w = words[index];
+  const frontMain = document.getElementById("front-main");
+  const frontSub = document.getElementById("front-sub");
+  const frontTip = document.getElementById("front-tip");
+  if (frontType === "kana") {
+    frontMain.textContent = w.kana;
+    frontMain.style.fontSize = w.kana.length > 6 ? "36px" : "56px";
+    frontSub.textContent = "";
+    frontTip.textContent = "先試著唸出來，再點卡片翻面看漢字、意思";
+  } else {
+    frontMain.textContent = w.kanji;
+    frontMain.style.fontSize = w.kanji.length > 6 ? "36px" : "56px";
+    frontSub.textContent = (w.kana !== w.kanji) ? "" : "";
+    frontTip.textContent = "看著漢字試著唸出來，再翻面看假名、意思";
+  }
+  document.getElementById("back-kanji").textContent = w.kanji;
+  document.getElementById("back-kana").textContent = w.kana;
+  document.getElementById("back-romaji").textContent = w.romaji;
+  document.getElementById("back-meaning").textContent = w.meaning_zh;
+  document.getElementById("back-pos").textContent = w.part_of_speech || "";
+  document.getElementById("progress-label").textContent = `${index + 1} / ${words.length}`;
+  document.getElementById("category-label").textContent = w.category_name_zh || "";
+  flipped = false;
+  cardEl.classList.remove("flipped");
+  if (autoSpeakToggle.checked) speakJapanese(w.kana);
+}
+
+function flip() {
+  if (words.length === 0) return;
+  flipped = !flipped;
+  cardEl.classList.toggle("flipped", flipped);
+  if (flipped && autoSpeakToggle.checked) {
+    speakJapanese(words[index].kana);
+  }
+}
+
+function next() {
+  if (words.length === 0) return;
+  index = (index + 1) % words.length;
+  render();
+}
+
+function prev() {
+  if (words.length === 0) return;
+  index = (index - 1 + words.length) % words.length;
+  render();
+}
+
+cardEl.addEventListener("click", flip);
+attachSwipe(cardEl, {
+  onLeft:  next,
+  onRight: prev,
+  onUp:    flip,
+  onDown:  flip,
+});
+document.getElementById("next-btn").onclick = next;
+document.getElementById("prev-btn").onclick = prev;
+document.getElementById("speak-btn").onclick = (ev) => {
+  ev.stopPropagation();
+  speakJapanese(words[index].kana);
+};
+document.getElementById("front-speak").onclick = (ev) => {
+  ev.stopPropagation();
+  speakJapanese(words[index].kana);
+};
+
+shuffleToggle.addEventListener("change", () => {
+  if (shuffleToggle.checked) shuffleInPlace(words);
+  index = 0;
+  render();
+});
+
+document.addEventListener("keydown", (ev) => {
+  if (ev.code === "Space") { ev.preventDefault(); flip(); }
+  else if (ev.code === "ArrowRight") next();
+  else if (ev.code === "ArrowLeft") prev();
+  else if (ev.code === "KeyS") speakJapanese(words[index]?.kana);
+});
+
+(async () => {
+  const vocab = await fetchAllVocab();
+  const { levels, categories } = getQueryParams();
+  words = flattenWords(vocab, levels, categories);
+  if (shuffleToggle.checked) shuffleInPlace(words);
+  render();
+})();
+</script>
+{% endblock %}

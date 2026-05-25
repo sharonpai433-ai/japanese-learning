@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% block title %}聽音選字 — 日文學習{% endblock %}
+{% block content %}
+<h1>🎧 聽音選字</h1>
+<p style="color: var(--text-mute);">點播放鈕聽日文，選出正確的寫法。鍵盤 1-4 選答、P 重播、Enter 下一題</p>
+
+<div class="section">
+  <div class="toggle-row">
+    <span>已答 <strong id="answered-count">0</strong> 題 · 正確率 <strong id="accuracy">—</strong></span>
+    <label style="margin-left: 8px;"><input type="checkbox" id="show-kana-toggle" checked /> 選項顯示假名</label>
+    <a class="btn ghost" href="/" style="margin-left: auto;">← 回首頁</a>
+  </div>
+</div>
+
+<div id="quiz-area">
+  <div class="question-card">
+    <div class="q-prompt">聽到的日文是哪一個？</div>
+    <div style="margin: 20px 0;">
+      <button class="play-big" id="play-btn" title="重播">▶</button>
+    </div>
+    <div class="options" id="options"></div>
+    <div class="feedback" id="feedback"></div>
+    <div class="controls">
+      <button class="btn" id="next-btn" disabled>下一題 →</button>
+    </div>
+  </div>
+</div>
+
+<div id="empty" class="empty-state" style="display: none;">
+  <p>沒有單字可練習，請回首頁選擇情境。</p>
+  <a class="btn" href="/">回首頁</a>
+</div>
+
+<script>
+let allWords = [];
+let pool = [];
+let currentWord = null;
+let currentOptions = [];
+let answered = 0;
+let correctCount = 0;
+let locked = false;
+
+const showKanaToggle = document.getElementById("show-kana-toggle");
+
+function play() {
+  if (currentWord) speakJapanese(currentWord.kana, 0.85);
+}
+
+function nextQuestion() {
+  locked = false;
+  document.getElementById("feedback").className = "feedback";
+  document.getElementById("feedback").textContent = "";
+  document.getElementById("next-btn").disabled = true;
+
+  if (pool.length === 0) pool = shuffleInPlace([...allWords]);
+  currentWord = pool.pop();
+
+  const distractorPool = allWords.filter(w => w.id !== currentWord.id && w.kana !== currentWord.kana);
+  const distractors = shuffleInPlace([...distractorPool]).slice(0, 3);
+  currentOptions = shuffleInPlace([currentWord, ...distractors]);
+
+  const opts = document.getElementById("options");
+  opts.innerHTML = "";
+  currentOptions.forEach((opt, i) => {
+    const btn = document.createElement("button");
+    btn.className = "option";
+    const kanaPart = showKanaToggle.checked && opt.kanji !== opt.kana
+      ? `<div class="option-jp-kana">${opt.kana}</div>` : "";
+    btn.innerHTML = `<span class="option-num">${i + 1}</span><div><span class="option-jp-kanji">${opt.kanji}</span>${kanaPart}</div>`;
+    btn.onclick = () => choose(i);
+    opts.appendChild(btn);
+  });
+
+  setTimeout(play, 200); // small delay so the user is ready
+}
+
+function choose(i) {
+  if (locked) return;
+  locked = true;
+  const opt = currentOptions[i];
+  const isCorrect = opt.id === currentWord.id;
+  const buttons = document.querySelectorAll(".option");
+  buttons.forEach((b, idx) => {
+    b.disabled = true;
+    if (currentOptions[idx].id === currentWord.id) b.classList.add("correct");
+    else if (idx === i) b.classList.add("wrong");
+  });
+
+  const fb = document.getElementById("feedback");
+  fb.className = "feedback show " + (isCorrect ? "correct" : "wrong");
+  fb.textContent = isCorrect
+    ? `✓ 答對！${currentWord.kanji}（${currentWord.kana}）= ${currentWord.meaning_zh}`
+    : `✗ 正解：${currentWord.kanji}（${currentWord.kana}）= ${currentWord.meaning_zh}`;
+
+  answered += 1;
+  if (isCorrect) correctCount += 1;
+  document.getElementById("answered-count").textContent = answered;
+  document.getElementById("accuracy").textContent = Math.round((correctCount / answered) * 100) + "%";
+
+  recordAnswer(currentWord, isCorrect, "listening");
+  document.getElementById("next-btn").disabled = false;
+}
+
+document.getElementById("play-btn").onclick = play;
+document.getElementById("next-btn").onclick = nextQuestion;
+
+document.addEventListener("keydown", (ev) => {
+  if (["1", "2", "3", "4"].includes(ev.key) && !locked) choose(parseInt(ev.key) - 1);
+  else if (ev.key === "Enter" && locked) nextQuestion();
+  else if (ev.key.toLowerCase() === "p") play();
+});
+
+(async () => {
+  const vocab = await fetchAllVocab();
+  const { levels, categories } = getQueryParams();
+  allWords = flattenWords(vocab, levels, categories);
+  if (allWords.length < 4) {
+    document.getElementById("empty").style.display = "block";
+    document.getElementById("quiz-area").style.display = "none";
+    if (allWords.length > 0) {
+      document.querySelector("#empty p").textContent = "目前可選單字少於 4 個，請選擇更多情境。";
+    }
+    return;
+  }
+  pool = shuffleInPlace([...allWords]);
+  nextQuestion();
+})();
+</script>
+{% endblock %}

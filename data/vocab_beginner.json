@@ -1,0 +1,76 @@
+{
+  "level": "beginner",
+  "level_name_zh": "入門",
+  "categories": {
+    "greetings": {
+      "name_zh": "問候・基本",
+      "words": [
+        {"id": "b_g_001", "kanji": "こんにちは", "kana": "こんにちは", "romaji": "konnichiwa", "meaning_zh": "你好（白天）", "part_of_speech": "招呼"},
+        {"id": "b_g_002", "kanji": "おはよう", "kana": "おはよう", "romaji": "ohayou", "meaning_zh": "早安", "part_of_speech": "招呼"},
+        {"id": "b_g_003", "kanji": "こんばんは", "kana": "こんばんは", "romaji": "konbanwa", "meaning_zh": "晚上好", "part_of_speech": "招呼"},
+        {"id": "b_g_004", "kanji": "おやすみ", "kana": "おやすみ", "romaji": "oyasumi", "meaning_zh": "晚安", "part_of_speech": "招呼"},
+        {"id": "b_g_005", "kanji": "さようなら", "kana": "さようなら", "romaji": "sayounara", "meaning_zh": "再見", "part_of_speech": "招呼"},
+        {"id": "b_g_006", "kanji": "ありがとう", "kana": "ありがとう", "romaji": "arigatou", "meaning_zh": "謝謝", "part_of_speech": "招呼"},
+        {"id": "b_g_007", "kanji": "すみません", "kana": "すみません", "romaji": "sumimasen", "meaning_zh": "不好意思・對不起", "part_of_speech": "招呼"},
+        {"id": "b_g_008", "kanji": "ごめんなさい", "kana": "ごめんなさい", "romaji": "gomennasai", "meaning_zh": "對不起", "part_of_speech": "招呼"},
+        {"id": "b_g_009", "kanji": "はい", "kana": "はい", "romaji": "hai", "meaning_zh": "是・好", "part_of_speech": "感嘆詞"},
+        {"id": "b_g_010", "kanji": "いいえ", "kana": "いいえ", "romaji": "iie", "meaning_zh": "不是", "part_of_speech": "感嘆詞"}
+      ]
+    },
+    "numbers": {
+      "name_zh": "數字 1-10",
+      "words": [
+        {"id": "b_n_001", "kanji": "一", "kana": "いち", "romaji": "ichi", "meaning_zh": "一", "part_of_speech": "數字"},
+        {"id": "b_n_002", "kanji": "二", "kana": "に", "romaji": "ni", "meaning_zh": "二", "part_of_speech": "數字"},
+        {"id": "b_n_003", "kanji": "三", "kana": "さん", "romaji": "san", "meaning_zh": "三", "part_of_speech": "數字"},
+        {"id": "b_n_004", "kanji": "四", "kana": "よん", "romaji": "yon", "meaning_zh": "四", "part_of_speech": "數字"},
+        {"id": "b_n_005", "kanji": "五", "kana": "ご", "romaji": "go", "meaning_zh": "五", "part_of_speech": "數字"},
+        {"id": "b_n_006", "kanji": "六", "kana": "ろく", "romaji": "roku", "meaning_zh": "六", "part_of_speech": "數字"},
+        {"id": "b_n_007", "kanji": "七", "kana": "なな", "romaji": "nana", "meaning_zh": "七", "part_of_speech": "數字"},
+        {"id": "b_n_008", "kanji": "八", "kana": "はち", "romaji": "hachi", "meaning_zh": "八", "part_of_speech": "數字"},
+        {"id": "b_n_009", "kanji": "九", "kana": "きゅう", "romaji": "kyuu", "meaning_zh": "九", "part_of_speech": "數字"},
+        {"id": "b_n_010", "kanji": "十", "kana": "じゅう", "romaji": "juu", "meaning_zh": "十", "part_of_speech": "數字"}
+      ]
+    },
+    "pronouns": {
+      "name_zh": "人稱・指示",
+      "words": [
+        {"id": "b_p_001", "kanji": "私", "kana": "わたし", "romaji": "watashi", "meaning_zh": "我", "part_of_speech": "代名詞"},
+        {"id": "b_p_002", "kanji": "貴方", "kana": "あなた", "romaji": "anata", "meaning_zh": "你", "part_of_speech": "代名詞"},
+        {"id": "b_p_003", "kanji": "彼", "kana": "かれ", "romaji": "kare", "meaning_zh": "他", "part_of_speech": "代名詞"},
+        {"id": "b_p_004", "kanji": "彼女", "kana": "かのじょ", "romaji": "kanojo", "meaning_zh": "她", "part_of_speech": "代名詞"},
+        {"id": "b_p_005", "kanji": "これ", "kana": "これ", "romaji": "kore", "meaning_zh": "這個", "part_of_speech": "代名詞"},
+        {"id": "b_p_006", "kanji": "それ", "kana": "それ", "romaji": "sore", "meaning_zh": "那個（近）", "part_of_speech": "代名詞"},
+        {"id": "b_p_007", "kanji": "あれ", "kana": "あれ", "romaji": "are", "meaning_zh": "那個（遠）", "part_of_speech": "代名詞"},
+        {"id": "b_p_008", "kanji": "ここ", "kana": "ここ", "romaji": "koko", "meaning_zh": "這裡", "part_of_speech": "代名詞"},
+        {"id": "b_p_009", "kanji": "そこ", "kana": "そこ", "romaji": "soko", "meaning_zh": "那裡", "part_of_speech": "代名詞"},
+        {"id": "b_p_010", "kanji": "どこ", "kana": "どこ", "romaji": "doko", "meaning_zh": "哪裡", "part_of_speech": "疑問詞"}
+      ]
+    },
+    "daily": {
+      "name_zh": "日常基本詞",
+      "words": [
+        {"id": "b_d_001", "kanji": "水", "kana": "みず", "romaji": "mizu", "meaning_zh": "水", "part_of_speech": "名詞"},
+        {"id": "b_d_002", "kanji": "お茶", "kana": "おちゃ", "romaji": "ocha", "meaning_zh": "茶", "part_of_speech": "名詞"},
+        {"id": "b_d_003", "kanji": "ご飯", "kana": "ごはん", "romaji": "gohan", "meaning_zh": "飯・餐", "part_of_speech": "名詞"},
+        {"id": "b_d_004", "kanji": "家", "kana": "いえ", "romaji": "ie", "meaning_zh": "家", "part_of_speech": "名詞"},
+        {"id": "b_d_005", "kanji": "学校", "kana": "がっこう", "romaji": "gakkou", "meaning_zh": "學校", "part_of_speech": "名詞"},
+        {"id": "b_d_006", "kanji": "本", "kana": "ほん", "romaji": "hon", "meaning_zh": "書", "part_of_speech": "名詞"},
+        {"id": "b_d_007", "kanji": "車", "kana": "くるま", "romaji": "kuruma", "meaning_zh": "車", "part_of_speech": "名詞"},
+        {"id": "b_d_008", "kanji": "猫", "kana": "ねこ", "romaji": "neko", "meaning_zh": "貓", "part_of_speech": "名詞"},
+        {"id": "b_d_009", "kanji": "犬", "kana": "いぬ", "romaji": "inu", "meaning_zh": "狗", "part_of_speech": "名詞"},
+        {"id": "b_d_010", "kanji": "人", "kana": "ひと", "romaji": "hito", "meaning_zh": "人", "part_of_speech": "名詞"},
+        {"id": "b_d_011", "kanji": "今日", "kana": "きょう", "romaji": "kyou", "meaning_zh": "今天", "part_of_speech": "名詞"},
+        {"id": "b_d_012", "kanji": "明日", "kana": "あした", "romaji": "ashita", "meaning_zh": "明天", "part_of_speech": "名詞"},
+        {"id": "b_d_013", "kanji": "昨日", "kana": "きのう", "romaji": "kinou", "meaning_zh": "昨天", "part_of_speech": "名詞"},
+        {"id": "b_d_014", "kanji": "朝", "kana": "あさ", "romaji": "asa", "meaning_zh": "早上", "part_of_speech": "名詞"},
+        {"id": "b_d_015", "kanji": "夜", "kana": "よる", "romaji": "yoru", "meaning_zh": "晚上", "part_of_speech": "名詞"},
+        {"id": "b_d_016", "kanji": "大きい", "kana": "おおきい", "romaji": "ookii", "meaning_zh": "大的", "part_of_speech": "形容詞"},
+        {"id": "b_d_017", "kanji": "小さい", "kana": "ちいさい", "romaji": "chiisai", "meaning_zh": "小的", "part_of_speech": "形容詞"},
+        {"id": "b_d_018", "kanji": "美味しい", "kana": "おいしい", "romaji": "oishii", "meaning_zh": "好吃的", "part_of_speech": "形容詞"},
+        {"id": "b_d_019", "kanji": "好き", "kana": "すき", "romaji": "suki", "meaning_zh": "喜歡", "part_of_speech": "形容詞"},
+        {"id": "b_d_020", "kanji": "行く", "kana": "いく", "romaji": "iku", "meaning_zh": "去", "part_of_speech": "動詞"}
+      ]
+    }
+  }
+}
