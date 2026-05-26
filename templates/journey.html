@@ -127,7 +127,10 @@
       <button class="btn secondary" id="sent-next">下一句 →</button>
     </div>
   </div>
-  <button class="primary-cta" id="sent-done" style="margin-top: 16px;">進入最後驗收 →</button>
+  <div style="text-align:center; margin-top: 16px;">
+    <span id="sent-seen-label" style="font-size: 13px; color: var(--text-mute);"></span>
+  </div>
+  <button class="primary-cta" id="sent-done" style="margin-top: 10px; display: none;">進入最後驗收 →</button>
 </div>
 
 <!-- ===== RESULT ===== -->
@@ -515,11 +518,15 @@ function startSentences() {
   setStep(3);
   document.getElementById("screen-sentence").style.display = "block";
   session.sentIndex = 0;
+  session.sentSeenSet = new Set();
+  document.getElementById("sent-done").style.display = "none";
+  document.getElementById("sent-seen-label").textContent = "";
   if (session.sentences.length === 0) {
     document.getElementById("sent-front-jp").textContent = "（沒有找到對應的情境句子，直接進入驗收）";
     document.getElementById("sent-card").style.pointerEvents = "none";
     document.getElementById("sent-prev").style.display = "none";
     document.getElementById("sent-next").style.display = "none";
+    document.getElementById("sent-done").style.display = "block";
     return;
   }
   renderSentence();
@@ -570,6 +577,17 @@ function renderSentence() {
   document.getElementById("sent-progress").textContent = `${session.sentIndex + 1} / ${session.sentences.length}`;
   document.getElementById("sent-scene").textContent = s.scene_name_zh;
   document.getElementById("sent-card").classList.remove("flipped");
+  // Track seen sentences
+  session.sentSeenSet.add(session.sentIndex);
+  const seen = session.sentSeenSet.size;
+  const total = session.sentences.length;
+  if (seen >= total) {
+    document.getElementById("sent-seen-label").textContent = "✅ 全部看完！可以進入驗收";
+    document.getElementById("sent-done").style.display = "block";
+  } else {
+    document.getElementById("sent-seen-label").textContent = `已看 ${seen} / ${total} 句，繼續翻閱所有句子後可進入驗收`;
+    document.getElementById("sent-done").style.display = "none";
+  }
 }
 
 document.getElementById("sent-card").addEventListener("click", () => {
