@@ -1127,6 +1127,124 @@
           "key_word_kana": "きんえん"
         }
       ]
+    },
+    "numbers": {
+      "name_zh": "數字・數量",
+      "sentences": [
+        {
+          "id": "s_nu_001",
+          "level": "beginner",
+          "jp": "一番出口はどこですか。",
+          "kana": "いちばんでぐちはどこですか。",
+          "romaji": "ichiban deguchi wa doko desu ka.",
+          "zh": "一號出口在哪裡？",
+          "key_word_kana": "いち"
+        },
+        {
+          "id": "s_nu_002",
+          "level": "beginner",
+          "jp": "二階です。",
+          "kana": "にかいです。",
+          "romaji": "nikai desu.",
+          "zh": "在二樓。",
+          "key_word_kana": "に"
+        },
+        {
+          "id": "s_nu_003",
+          "level": "beginner",
+          "jp": "三百円です。",
+          "kana": "さんびゃくえんです。",
+          "romaji": "sanbyaku en desu.",
+          "zh": "三百圓。",
+          "key_word_kana": "さん"
+        },
+        {
+          "id": "s_nu_004",
+          "level": "beginner",
+          "jp": "四本ください。",
+          "kana": "よんほんください。",
+          "romaji": "yonhon kudasai.",
+          "zh": "請給我四瓶（條）。",
+          "key_word_kana": "よん"
+        },
+        {
+          "id": "s_nu_005",
+          "level": "beginner",
+          "jp": "五千円です。",
+          "kana": "ごせんえんです。",
+          "romaji": "gosen en desu.",
+          "zh": "五千圓。",
+          "key_word_kana": "ご"
+        },
+        {
+          "id": "s_nu_006",
+          "level": "beginner",
+          "jp": "十時に来てください。",
+          "kana": "じゅうじにきてください。",
+          "romaji": "juu ji ni kite kudasai.",
+          "zh": "請在十點來。",
+          "key_word_kana": "じゅう"
+        }
+      ]
+    },
+    "pronouns": {
+      "name_zh": "人稱・指示",
+      "sentences": [
+        {
+          "id": "s_pr_001",
+          "level": "beginner",
+          "jp": "私はシャロンです。",
+          "kana": "わたしはシャロンです。",
+          "romaji": "watashi wa Sharon desu.",
+          "zh": "我是 Sharon。",
+          "key_word_kana": "わたし"
+        },
+        {
+          "id": "s_pr_002",
+          "level": "beginner",
+          "jp": "あなたの名前は何ですか。",
+          "kana": "あなたのなまえはなんですか。",
+          "romaji": "anata no namae wa nan desu ka.",
+          "zh": "你叫什麼名字？",
+          "key_word_kana": "あなた"
+        },
+        {
+          "id": "s_pr_003",
+          "level": "beginner",
+          "jp": "これはいくらですか。",
+          "kana": "これはいくらですか。",
+          "romaji": "kore wa ikura desu ka.",
+          "zh": "這個多少錢？",
+          "key_word_kana": "これ"
+        },
+        {
+          "id": "s_pr_004",
+          "level": "beginner",
+          "jp": "それは何ですか。",
+          "kana": "それはなんですか。",
+          "romaji": "sore wa nan desu ka.",
+          "zh": "那是什麼？",
+          "key_word_kana": "それ"
+        },
+        {
+          "id": "s_pr_005",
+          "level": "beginner",
+          "jp": "駅はどこですか。",
+          "kana": "えきはどこですか。",
+          "romaji": "eki wa doko desu ka.",
+          "zh": "車站在哪裡？",
+          "key_word_kana": "どこ"
+        },
+        {
+          "id": "s_pr_006",
+          "level": "beginner",
+          "jp": "ここに座ってもいいですか。",
+          "kana": "ここにすわってもいいですか。",
+          "romaji": "koko ni suwatte mo ii desu ka.",
+          "zh": "我可以坐這裡嗎？",
+          "key_word_kana": "ここ"
+        }
+      ]
     }
   }
 }

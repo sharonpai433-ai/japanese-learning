@@ -19,6 +19,14 @@
   <div id="cat-chips" class="chip-group"></div>
 </div>
 
+<div id="stats-bar" class="section" style="display:none; background: var(--card-bg); border-radius: 14px; padding: 14px 20px; margin-bottom: 8px;">
+  <div style="display:flex; gap: 24px; flex-wrap: wrap; align-items: center; font-size: 15px;">
+    <span id="stat-streak" style="color: var(--primary); font-weight: 600;"></span>
+    <span id="stat-words" style="color: var(--text-mute);"></span>
+    <span id="stat-accuracy" style="color: var(--text-mute);"></span>
+  </div>
+</div>
+
 <div class="section">
   <h2>③ 開始學習</h2>
   <a class="mode-btn" data-mode="journey" href="/journey" style="border-color: var(--primary); background: linear-gradient(135deg, rgba(233,69,96,0.05), rgba(44,120,115,0.05));">
@@ -186,10 +194,22 @@ document.querySelectorAll(".mode-btn[data-mode]").forEach((a) => {
   });
 });
 
+function renderStatsBar() {
+  const s = getOverallStats();
+  if (s.wordsLearned === 0) return;
+  const bar = document.getElementById("stats-bar");
+  bar.style.display = "block";
+  const streakEl = document.getElementById("stat-streak");
+  streakEl.textContent = s.streak > 0 ? `🔥 連續 ${s.streak} 天` : "📚 今日開始練習";
+  document.getElementById("stat-words").textContent = `已練 ${s.wordsLearned} 個單字`;
+  document.getElementById("stat-accuracy").textContent = s.total > 0 ? `正確率 ${s.accuracy}%` : "";
+}
+
 (async () => {
   vocabData = await fetchAllVocab();
   renderLevels();
   renderCategories();
+  renderStatsBar();
 })();
 </script>
 {% endblock %}

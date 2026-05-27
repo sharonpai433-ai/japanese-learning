@@ -757,6 +757,10 @@ document.addEventListener("keydown", (ev) => {
     if (ev.code === "Space") { ev.preventDefault(); document.getElementById("fc-card").click(); }
     else if (ev.code === "ArrowRight") document.getElementById("fc-next").click();
     else if (ev.code === "ArrowLeft") document.getElementById("fc-prev").click();
+  } else if (screen === "sentence") {
+    if (ev.code === "Space") { ev.preventDefault(); document.getElementById("sent-card").click(); }
+    else if (ev.code === "ArrowRight") document.getElementById("sent-next").click();
+    else if (ev.code === "ArrowLeft") document.getElementById("sent-prev").click();
   }
 });
 
