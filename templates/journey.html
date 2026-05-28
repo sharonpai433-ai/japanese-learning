@@ -22,6 +22,7 @@
         <button class="chip active" data-count="8">8 字（推薦）</button>
         <button class="chip" data-count="12">12 字（紮實）</button>
       </div>
+      <span id="srs-hint" style="font-size: 13px; color: var(--primary); margin-left: 10px;"></span>
     </div>
     <button class="primary-cta" id="start-btn">🚀 開始學習</button>
     <a class="btn secondary" href="/" style="margin-top: 12px; display: inline-block;">← 回首頁</a>
@@ -175,10 +176,18 @@ const session = {
 let allWords = [];   // full vocab pool used for distractors
 let sceneData = null;
 
+// Restore saved word count preference
+const savedJourneyCount = localStorage.getItem("jp_journey_count");
+if (savedJourneyCount) {
+  document.querySelectorAll("#count-chips .chip").forEach(c => {
+    c.classList.toggle("active", c.dataset.count === savedJourneyCount);
+  });
+}
 document.querySelectorAll("#count-chips .chip").forEach(c => {
   c.onclick = () => {
     document.querySelectorAll("#count-chips .chip").forEach(x => x.classList.remove("active"));
     c.classList.add("active");
+    localStorage.setItem("jp_journey_count", c.dataset.count);
   };
 });
 
@@ -201,9 +210,17 @@ function setStep(n) {
 
 // ---------------- Build session ----------------
 function buildSession(pool) {
-  shuffleInPlace(pool);
+  // SRS: pull weak words (accuracy < 70%, at most 3) and pin them to the front
+  const reviewList = getReviewList(3);
+  const reviewKanas = new Set(reviewList.map(r => r.kana));
+  const weakInPool = pool.filter(w => reviewKanas.has(w.kana));
+  const normalPool = pool.filter(w => !reviewKanas.has(w.kana));
+
+  shuffleInPlace(normalPool);
   const N = Math.min(pickedCount(), pool.length);
-  session.words = pool.slice(0, N);
+  const weakTake = Math.min(weakInPool.length, N);
+  session.reviewCount = weakTake;
+  session.words = [...weakInPool.slice(0, weakTake), ...normalPool.slice(0, N - weakTake)];
 
   // Sentences: round-robin by user-selected scene, prefer key_word matches first
   // within each scene. Guarantees each selected scene gets at least 1 sentence
@@ -764,6 +781,15 @@ document.addEventListener("keydown", (ev) => {
   }
 });
 
+function updateSrsHint() {
+  const hint = document.getElementById("srs-hint");
+  if (!hint) return;
+  const reviewList = getReviewList(3);
+  const reviewKanas = new Set(reviewList.map(r => r.kana));
+  const weakInPool = allWords.filter(w => reviewKanas.has(w.kana));
+  hint.textContent = weakInPool.length > 0 ? `🔁 含 ${weakInPool.length} 個需複習的字` : "";
+}
+
 (async () => {
   const [vocab, sents] = await Promise.all([fetchAllVocab(), fetchSentences()]);
   sceneData = sents;
@@ -776,6 +802,7 @@ document.addEventListener("keydown", (ev) => {
   if (allWords.length < 4) {
     document.getElementById("empty").style.display = "block";
   }
+  updateSrsHint();
 })();
 </script>
 {% endblock %}
