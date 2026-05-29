@@ -163,6 +163,26 @@
         {"id": "n5_e_015", "kanji": "危ない", "kana": "あぶない", "romaji": "abunai", "meaning_zh": "危險的", "part_of_speech": "形容詞"}
       ]
     },
+    "body_health": {
+      "name_zh": "身體・健康",
+      "words": [
+        {"id": "n5_bh_001", "kanji": "体", "kana": "からだ", "romaji": "karada", "meaning_zh": "身體", "part_of_speech": "名詞"},
+        {"id": "n5_bh_002", "kanji": "目", "kana": "め", "romaji": "me", "meaning_zh": "眼睛", "part_of_speech": "名詞"},
+        {"id": "n5_bh_003", "kanji": "耳", "kana": "みみ", "romaji": "mimi", "meaning_zh": "耳朵", "part_of_speech": "名詞"},
+        {"id": "n5_bh_004", "kanji": "鼻", "kana": "はな", "romaji": "hana", "meaning_zh": "鼻子", "part_of_speech": "名詞"},
+        {"id": "n5_bh_005", "kanji": "口", "kana": "くち", "romaji": "kuchi", "meaning_zh": "嘴巴", "part_of_speech": "名詞"},
+        {"id": "n5_bh_006", "kanji": "手", "kana": "て", "romaji": "te", "meaning_zh": "手", "part_of_speech": "名詞"},
+        {"id": "n5_bh_007", "kanji": "足", "kana": "あし", "romaji": "ashi", "meaning_zh": "腳・腿", "part_of_speech": "名詞"},
+        {"id": "n5_bh_008", "kanji": "お腹", "kana": "おなか", "romaji": "onaka", "meaning_zh": "肚子", "part_of_speech": "名詞"},
+        {"id": "n5_bh_009", "kanji": "病気", "kana": "びょうき", "romaji": "byouki", "meaning_zh": "生病", "part_of_speech": "名詞"},
+        {"id": "n5_bh_010", "kanji": "元気", "kana": "げんき", "romaji": "genki", "meaning_zh": "健康・有精神", "part_of_speech": "形容詞"},
+        {"id": "n5_bh_011", "kanji": "薬", "kana": "くすり", "romaji": "kusuri", "meaning_zh": "藥", "part_of_speech": "名詞"},
+        {"id": "n5_bh_012", "kanji": "医者", "kana": "いしゃ", "romaji": "isha", "meaning_zh": "醫生", "part_of_speech": "名詞"},
+        {"id": "n5_bh_013", "kanji": "熱", "kana": "ねつ", "romaji": "netsu", "meaning_zh": "發燒・熱", "part_of_speech": "名詞"},
+        {"id": "n5_bh_014", "kanji": "疲れる", "kana": "つかれる", "romaji": "tsukareru", "meaning_zh": "疲倦", "part_of_speech": "動詞"},
+        {"id": "n5_bh_015", "kanji": "休む", "kana": "やすむ", "romaji": "yasumu", "meaning_zh": "休息", "part_of_speech": "動詞"}
+      ]
+    },
     "airport": {
       "name_zh": "機場・入境",
       "words": [

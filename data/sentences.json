@@ -1246,6 +1246,59 @@
         }
       ]
     },
+    "body_health": {
+      "name_zh": "身體・健康",
+      "sentences": [
+        {
+          "id": "sent_bh_001", "level": "N5",
+          "jp": "体が少し痛いです。",
+          "kana": "からだがすこしいたいです。",
+          "romaji": "karada ga sukoshi itai desu.",
+          "zh": "身體有點痛。",
+          "key_word_kana": "からだ"
+        },
+        {
+          "id": "sent_bh_002", "level": "N5",
+          "jp": "熱があります。",
+          "kana": "ねつがあります。",
+          "romaji": "netsu ga arimasu.",
+          "zh": "我發燒了。",
+          "key_word_kana": "ねつ"
+        },
+        {
+          "id": "sent_bh_003", "level": "N5",
+          "jp": "近くに医者はいますか。",
+          "kana": "ちかくにいしゃはいますか。",
+          "romaji": "chikaku ni isha wa imasu ka.",
+          "zh": "附近有醫生嗎？",
+          "key_word_kana": "いしゃ"
+        },
+        {
+          "id": "sent_bh_004", "level": "N5",
+          "jp": "疲れるとき、休んでください。",
+          "kana": "つかれるとき、やすんでください。",
+          "romaji": "tsukareru toki, yasunde kudasai.",
+          "zh": "累的時候請休息。",
+          "key_word_kana": "つかれる"
+        },
+        {
+          "id": "sent_bh_005", "level": "N5",
+          "jp": "お腹が痛いです。",
+          "kana": "おなかがいたいです。",
+          "romaji": "onaka ga itai desu.",
+          "zh": "肚子痛。",
+          "key_word_kana": "おなか"
+        },
+        {
+          "id": "sent_bh_006", "level": "N5",
+          "jp": "薬を飲んでください。",
+          "kana": "くすりをのんでください。",
+          "romaji": "kusuri wo nonde kudasai.",
+          "zh": "請吃藥。",
+          "key_word_kana": "くすり"
+        }
+      ]
+    },
     "airport": {
       "name_zh": "機場・入境",
       "sentences": [
