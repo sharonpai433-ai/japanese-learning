@@ -223,7 +223,17 @@ function buildSession(pool) {
   const weakInPool = pool.filter(w => reviewKanas.has(w.kana));
   const normalPool = pool.filter(w => !reviewKanas.has(w.kana));
 
-  shuffleInPlace(normalPool);
+  // Anti-repeat: sort by lastSeen ascending so words not practiced recently
+  // (or never seen) always come first. Ties are broken randomly so new words
+  // don't always appear in the same order.
+  const state = loadState();
+  normalPool.sort((a, b) => {
+    const aT = state.wordStats[a.id]?.lastSeen || "0";
+    const bT = state.wordStats[b.id]?.lastSeen || "0";
+    if (aT !== bT) return aT < bT ? -1 : 1;
+    return Math.random() - 0.5;
+  });
+
   const N = Math.min(pickedCount(), pool.length);
   const weakTake = Math.min(weakInPool.length, N);
   session.reviewCount = weakTake;
