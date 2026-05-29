@@ -1245,6 +1245,65 @@
           "key_word_kana": "ここ"
         }
       ]
+    },
+    "airport": {
+      "name_zh": "機場・入境",
+      "sentences": [
+        {
+          "id": "sent_air_001",
+          "level": "N5",
+          "jp": "搭乗口はどこですか。",
+          "kana": "とうじょうぐちはどこですか。",
+          "romaji": "toujouguchi wa doko desu ka.",
+          "zh": "登機門在哪裡？",
+          "key_word_kana": "とうじょうぐち"
+        },
+        {
+          "id": "sent_air_002",
+          "level": "N5",
+          "jp": "荷物はいくつありますか。",
+          "kana": "にもつはいくつありますか。",
+          "romaji": "nimotsu wa ikutsu arimasu ka.",
+          "zh": "您有幾件行李？",
+          "key_word_kana": "にもつ"
+        },
+        {
+          "id": "sent_air_003",
+          "level": "N5",
+          "jp": "税関で申告するものはありません。",
+          "kana": "ぜいかんでしんこくするものはありません。",
+          "romaji": "zeikan de shinkoku suru mono wa arimasen.",
+          "zh": "沒有需要向海關申報的物品。",
+          "key_word_kana": "ぜいかん"
+        },
+        {
+          "id": "sent_air_004",
+          "level": "N5",
+          "jp": "乗り継ぎの方はこちらにどうぞ。",
+          "kana": "のりつぎのかたはこちらにどうぞ。",
+          "romaji": "noritsugi no kata wa kochira ni douzo.",
+          "zh": "轉機的旅客請往這邊。",
+          "key_word_kana": "のりつぎ"
+        },
+        {
+          "id": "sent_air_005",
+          "level": "N5",
+          "jp": "両替はどこでできますか。",
+          "kana": "りょうがえはどこでできますか。",
+          "romaji": "ryougae wa doko de dekimasu ka.",
+          "zh": "哪裡可以換錢？",
+          "key_word_kana": "りょうがえ"
+        },
+        {
+          "id": "sent_air_006",
+          "level": "N5",
+          "jp": "搭乗券を見せてください。",
+          "kana": "とうじょうけんをみせてください。",
+          "romaji": "toujouken wo misete kudasai.",
+          "zh": "請出示登機證。",
+          "key_word_kana": "とうじょうけん"
+        }
+      ]
     }
   }
 }

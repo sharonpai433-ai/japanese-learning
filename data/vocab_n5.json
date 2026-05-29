@@ -162,6 +162,23 @@
         {"id": "n5_e_014", "kanji": "大丈夫", "kana": "だいじょうぶ", "romaji": "daijoubu", "meaning_zh": "沒事・OK", "part_of_speech": "形容詞"},
         {"id": "n5_e_015", "kanji": "危ない", "kana": "あぶない", "romaji": "abunai", "meaning_zh": "危險的", "part_of_speech": "形容詞"}
       ]
+    },
+    "airport": {
+      "name_zh": "機場・入境",
+      "words": [
+        {"id": "n5_air_001", "kanji": "搭乗券", "kana": "とうじょうけん", "romaji": "toujouken", "meaning_zh": "登機證", "part_of_speech": "名詞"},
+        {"id": "n5_air_002", "kanji": "搭乗口", "kana": "とうじょうぐち", "romaji": "toujouguchi", "meaning_zh": "登機門", "part_of_speech": "名詞"},
+        {"id": "n5_air_003", "kanji": "手荷物", "kana": "てにもつ", "romaji": "tenimotsu", "meaning_zh": "手提行李", "part_of_speech": "名詞"},
+        {"id": "n5_air_004", "kanji": "荷物", "kana": "にもつ", "romaji": "nimotsu", "meaning_zh": "行李", "part_of_speech": "名詞"},
+        {"id": "n5_air_005", "kanji": "税関", "kana": "ぜいかん", "romaji": "zeikan", "meaning_zh": "海關", "part_of_speech": "名詞"},
+        {"id": "n5_air_006", "kanji": "入国審査", "kana": "にゅうこくしんさ", "romaji": "nyuukoku shinsa", "meaning_zh": "入境審查", "part_of_speech": "名詞"},
+        {"id": "n5_air_007", "kanji": "乗り継ぎ", "kana": "のりつぎ", "romaji": "noritsugi", "meaning_zh": "轉機", "part_of_speech": "名詞"},
+        {"id": "n5_air_008", "kanji": "免税店", "kana": "めんぜいてん", "romaji": "menzei ten", "meaning_zh": "免稅店", "part_of_speech": "名詞"},
+        {"id": "n5_air_009", "kanji": "案内所", "kana": "あんないじょ", "romaji": "annaijo", "meaning_zh": "詢問處", "part_of_speech": "名詞"},
+        {"id": "n5_air_010", "kanji": "遅延", "kana": "ちえん", "romaji": "chien", "meaning_zh": "延誤", "part_of_speech": "名詞"},
+        {"id": "n5_air_011", "kanji": "保安検査", "kana": "ほあんけんさ", "romaji": "hoan kensa", "meaning_zh": "安全檢查", "part_of_speech": "名詞"},
+        {"id": "n5_air_012", "kanji": "両替", "kana": "りょうがえ", "romaji": "ryougae", "meaning_zh": "換錢", "part_of_speech": "名詞"}
+      ]
     }
   }
 }

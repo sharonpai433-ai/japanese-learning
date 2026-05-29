@@ -152,6 +152,13 @@
     <h2>📌 錯題回顧</h2>
     <ul class="review-list" id="r-wrong-list"></ul>
   </div>
+  <div class="section" id="r-words-section" style="display: none;">
+    <h2 id="r-words-toggle" style="cursor: pointer; user-select: none;">
+      📚 本次練習的 <span id="r-words-count">0</span> 個字
+      <span id="r-words-arrow" style="font-size: 13px; color: var(--text-mute);">▶ 點開複習</span>
+    </h2>
+    <ul class="review-list" id="r-words-list" style="display: none;"></ul>
+  </div>
 </div>
 
 <script>
@@ -363,10 +370,14 @@ function buildQuestionsForRound(round) {
       list.push({ word: w, type: "listening" });
     }
   } else {
-    // Step 4: sentence-fill only.
+    // Step 4: sentence-fill only. Deduplicate by key_word_kana so the same
+    // answer word never appears twice.
     const fillable = session.sentences.filter(s => s.key_word_kana && isKeyInSentence(s));
     shuffleInPlace(fillable);
+    const seenKeys = new Set();
     for (const s of fillable) {
+      if (seenKeys.has(s.key_word_kana)) continue;
+      seenKeys.add(s.key_word_kana);
       list.push({ sentence: s, type: "fill" });
     }
   }
@@ -444,7 +455,7 @@ function loadQuestion() {
     document.getElementById("q-kana").textContent = s.zh;
     const correctWord = allWords.find(w => w.kana === key) || { id: "ad_"+key, kanji: key, kana: key, meaning_zh: "" };
     q.correctWord = correctWord;
-    const distractors = shuffleInPlace(allWords.filter(w => w.kana !== key)).slice(0, 3);
+    const distractors = sampleDistractors(allWords, correctWord, 3);
     q.options = shuffleInPlace([correctWord, ...distractors]);
     renderQOptions("jp", q);
   } else {
@@ -708,6 +719,34 @@ function finish() {
     reviewBtn.style.display = "none";
     document.getElementById("r-wrong-section").style.display = "none";
   }
+
+  // Build collapsible word list for the full session
+  const wordsSection = document.getElementById("r-words-section");
+  const wordsList = document.getElementById("r-words-list");
+  const wordsToggle = document.getElementById("r-words-toggle");
+  document.getElementById("r-words-count").textContent = session.words.length;
+  wordsSection.style.display = "block";
+  wordsList.style.display = "none";
+  document.getElementById("r-words-arrow").textContent = "▶ 點開複習";
+  wordsList.innerHTML = "";
+  session.words.forEach(w => {
+    const li = document.createElement("li");
+    li.className = "review-item";
+    li.innerHTML = `
+      <div class="review-info">
+        <span class="review-jp">${w.kanji}（${w.kana}）</span>
+        <span class="review-zh">${w.meaning_zh}</span>
+      </div>
+      <button class="speak-btn" data-kana="${w.kana}">🔊</button>
+    `;
+    li.querySelector(".speak-btn").onclick = ev => speakJapanese(ev.currentTarget.dataset.kana);
+    wordsList.appendChild(li);
+  });
+  wordsToggle.onclick = () => {
+    const shown = wordsList.style.display !== "none";
+    wordsList.style.display = shown ? "none" : "block";
+    document.getElementById("r-words-arrow").textContent = shown ? "▶ 點開複習" : "▼ 收起";
+  };
 }
 
 // Run a "review only the wrong" round.
@@ -742,6 +781,8 @@ function startReviewWrong() {
 document.getElementById("r-review").onclick = startReviewWrong;
 document.getElementById("r-retry").onclick = () => {
   document.getElementById("screen-result").style.display = "none";
+  document.getElementById("r-words-section").style.display = "none";
+  document.getElementById("r-words-list").style.display = "none";
   setStep(0);
   document.getElementById("screen-setup").style.display = "block";
   // restore steps bar to fresh state
