@@ -1246,6 +1246,59 @@
         }
       ]
     },
+    "clothing": {
+      "name_zh": "服・色・外表",
+      "sentences": [
+        {
+          "id": "sent_cl_001", "level": "N5",
+          "jp": "この服はいくらですか。",
+          "kana": "このふくはいくらですか。",
+          "romaji": "kono fuku wa ikura desu ka.",
+          "zh": "這件衣服多少錢？",
+          "key_word_kana": "ふく"
+        },
+        {
+          "id": "sent_cl_002", "level": "N5",
+          "jp": "赤いシャツを買いました。",
+          "kana": "あかいシャツをかいました。",
+          "romaji": "akai shatsu wo kaimashita.",
+          "zh": "我買了紅色的襯衫。",
+          "key_word_kana": "あか"
+        },
+        {
+          "id": "sent_cl_003", "level": "N5",
+          "jp": "この靴は小さいです。",
+          "kana": "このくつはちいさいです。",
+          "romaji": "kono kutsu wa chiisai desu.",
+          "zh": "這雙鞋太小了。",
+          "key_word_kana": "くつ"
+        },
+        {
+          "id": "sent_cl_004", "level": "N5",
+          "jp": "白い帽子をかぶっています。",
+          "kana": "しろいぼうしをかぶっています。",
+          "romaji": "shiroi boushi wo kabutte imasu.",
+          "zh": "我戴著白色帽子。",
+          "key_word_kana": "しろ"
+        },
+        {
+          "id": "sent_cl_005", "level": "N5",
+          "jp": "大きいズボンを履いています。",
+          "kana": "おおきいズボンをはいています。",
+          "romaji": "ookii zubon wo haite imasu.",
+          "zh": "我穿著大尺碼的褲子。",
+          "key_word_kana": "おおきい"
+        },
+        {
+          "id": "sent_cl_006", "level": "N5",
+          "jp": "新しい服を着たいです。",
+          "kana": "あたらしいふくをきたいです。",
+          "romaji": "atarashii fuku wo kitai desu.",
+          "zh": "我想穿新衣服。",
+          "key_word_kana": "あたらしい"
+        }
+      ]
+    },
     "body_health": {
       "name_zh": "身體・健康",
       "sentences": [

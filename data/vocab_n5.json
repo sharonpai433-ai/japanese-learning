@@ -163,6 +163,26 @@
         {"id": "n5_e_015", "kanji": "危ない", "kana": "あぶない", "romaji": "abunai", "meaning_zh": "危險的", "part_of_speech": "形容詞"}
       ]
     },
+    "clothing": {
+      "name_zh": "服・色・外表",
+      "words": [
+        {"id": "n5_cl_001", "kanji": "服", "kana": "ふく", "romaji": "fuku", "meaning_zh": "衣服", "part_of_speech": "名詞"},
+        {"id": "n5_cl_002", "kanji": "シャツ", "kana": "シャツ", "romaji": "shatsu", "meaning_zh": "襯衫", "part_of_speech": "名詞"},
+        {"id": "n5_cl_003", "kanji": "ズボン", "kana": "ズボン", "romaji": "zubon", "meaning_zh": "褲子", "part_of_speech": "名詞"},
+        {"id": "n5_cl_004", "kanji": "靴", "kana": "くつ", "romaji": "kutsu", "meaning_zh": "鞋子", "part_of_speech": "名詞"},
+        {"id": "n5_cl_005", "kanji": "帽子", "kana": "ぼうし", "romaji": "boushi", "meaning_zh": "帽子", "part_of_speech": "名詞"},
+        {"id": "n5_cl_006", "kanji": "赤", "kana": "あか", "romaji": "aka", "meaning_zh": "紅色", "part_of_speech": "名詞"},
+        {"id": "n5_cl_007", "kanji": "青", "kana": "あお", "romaji": "ao", "meaning_zh": "藍色・青色", "part_of_speech": "名詞"},
+        {"id": "n5_cl_008", "kanji": "白", "kana": "しろ", "romaji": "shiro", "meaning_zh": "白色", "part_of_speech": "名詞"},
+        {"id": "n5_cl_009", "kanji": "黒", "kana": "くろ", "romaji": "kuro", "meaning_zh": "黑色", "part_of_speech": "名詞"},
+        {"id": "n5_cl_010", "kanji": "大きい", "kana": "おおきい", "romaji": "ookii", "meaning_zh": "大的", "part_of_speech": "形容詞"},
+        {"id": "n5_cl_011", "kanji": "小さい", "kana": "ちいさい", "romaji": "chiisai", "meaning_zh": "小的", "part_of_speech": "形容詞"},
+        {"id": "n5_cl_012", "kanji": "新しい", "kana": "あたらしい", "romaji": "atarashii", "meaning_zh": "新的", "part_of_speech": "形容詞"},
+        {"id": "n5_cl_013", "kanji": "着る", "kana": "きる", "romaji": "kiru", "meaning_zh": "穿（上衣）", "part_of_speech": "動詞"},
+        {"id": "n5_cl_014", "kanji": "履く", "kana": "はく", "romaji": "haku", "meaning_zh": "穿（褲・鞋）", "part_of_speech": "動詞"},
+        {"id": "n5_cl_015", "kanji": "かぶる", "kana": "かぶる", "romaji": "kaburu", "meaning_zh": "戴（帽子）", "part_of_speech": "動詞"}
+      ]
+    },
     "body_health": {
       "name_zh": "身體・健康",
       "words": [
