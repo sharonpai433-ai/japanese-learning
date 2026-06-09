@@ -575,6 +575,24 @@
         }
       ]
     },
+    "food_expanded": {
+      "name_zh": "食物・飲料（進階）",
+      "sentences": [
+        {"id": "sent_fe_001", "level": "N5", "jp": "豚肉と野菜を炒めてください。", "kana": "ぶたにくとやさいをいためてください。", "romaji": "butaniku to yasai wo itamete kudasai.", "zh": "請炒豬肉和蔬菜。", "key_word_kana": "ぶたにく"},
+        {"id": "sent_fe_002", "level": "N5", "jp": "ご飯は大盛りにしてください。", "kana": "ごはんはおおもりにしてください。", "romaji": "gohan wa oomori ni shite kudasai.", "zh": "請給我大碗飯。", "key_word_kana": "ごはん"},
+        {"id": "sent_fe_003", "level": "N5", "jp": "飲み物は何がありますか。", "kana": "のみものはなにがありますか。", "romaji": "nomimono wa nani ga arimasu ka.", "zh": "有什麼飲料？", "key_word_kana": "のみもの"},
+        {"id": "sent_fe_004", "level": "N5", "jp": "食べ物のアレルギーがあります。", "kana": "たべもののアレルギーがあります。", "romaji": "tabemono no arerugii ga arimasu.", "zh": "我對某些食物過敏。", "key_word_kana": "たべもの"}
+      ]
+    },
+    "transportation_expanded": {
+      "name_zh": "交通・方向（進階）",
+      "sentences": [
+        {"id": "sent_te_001", "level": "N5", "jp": "地下鉄の駅はどこですか。", "kana": "ちかてつのえきはどこですか。", "romaji": "chikatetsu no eki wa doko desu ka.", "zh": "地鐵站在哪裡？", "key_word_kana": "ちかてつ"},
+        {"id": "sent_te_002", "level": "N5", "jp": "新幹線で行きたいです。", "kana": "しんかんせんでいきたいです。", "romaji": "shinkansen de ikitai desu.", "zh": "我想搭新幹線去。", "key_word_kana": "しんかんせん"},
+        {"id": "sent_te_003", "level": "N5", "jp": "まっすぐ行ってください。", "kana": "まっすぐいってください。", "romaji": "massugu itte kudasai.", "zh": "請直走。", "key_word_kana": "まっすぐ"},
+        {"id": "sent_te_004", "level": "N5", "jp": "信号を渡ってください。", "kana": "しんごうをわたってください。", "romaji": "shingou wo watatte kudasai.", "zh": "請過紅綠燈。", "key_word_kana": "しんごう"}
+      ]
+    },
     "family": {
       "name_zh": "家人・人物",
       "sentences": [
@@ -1244,6 +1262,39 @@
           "zh": "我可以坐這裡嗎？",
           "key_word_kana": "ここ"
         }
+      ]
+    },
+    "nature": {
+      "name_zh": "自然・天氣",
+      "sentences": [
+        {"id": "sent_na_001", "level": "N5", "jp": "空が青くてきれいです。", "kana": "そらがあおくてきれいです。", "romaji": "sora ga aokute kirei desu.", "zh": "天空又藍又美。", "key_word_kana": "そら"},
+        {"id": "sent_na_002", "level": "N5", "jp": "海で泳ぎたいです。", "kana": "うみでおよぎたいです。", "romaji": "umi de oyogitai desu.", "zh": "我想在海裡游泳。", "key_word_kana": "うみ"},
+        {"id": "sent_na_003", "level": "N5", "jp": "山に登りたいです。", "kana": "やまにのぼりたいです。", "romaji": "yama ni noboritai desu.", "zh": "我想爬山。", "key_word_kana": "やま"},
+        {"id": "sent_na_004", "level": "N5", "jp": "雪が降っています。", "kana": "ゆきがふっています。", "romaji": "yuki ga futte imasu.", "zh": "正在下雪。", "key_word_kana": "ゆき"},
+        {"id": "sent_na_005", "level": "N5", "jp": "晴れの日が一番好きです。", "kana": "はれのひがいちばんすきです。", "romaji": "hare no hi ga ichiban suki desu.", "zh": "我最喜歡晴天。", "key_word_kana": "はれ"},
+        {"id": "sent_na_006", "level": "N5", "jp": "星がとてもきれいです。", "kana": "ほしがとてもきれいです。", "romaji": "hoshi ga totemo kirei desu.", "zh": "星星非常美。", "key_word_kana": "ほし"}
+      ]
+    },
+    "health_advanced": {
+      "name_zh": "健康・醫療（進階）",
+      "sentences": [
+        {"id": "sent_ha_001", "level": "N4", "jp": "診察を予約したいです。", "kana": "しんさつをよやくしたいです。", "romaji": "shinsatsu wo yoyaku shitai desu.", "zh": "我想預約看診。", "key_word_kana": "しんさつ"},
+        {"id": "sent_ha_002", "level": "N4", "jp": "アレルギーがあります。", "kana": "アレルギーがあります。", "romaji": "arerugii ga arimasu.", "zh": "我有過敏。", "key_word_kana": "アレルギー"},
+        {"id": "sent_ha_003", "level": "N4", "jp": "体温を測ってください。", "kana": "たいおんをはかってください。", "romaji": "taion wo hakatte kudasai.", "zh": "請量體溫。", "key_word_kana": "たいおん"},
+        {"id": "sent_ha_004", "level": "N4", "jp": "風邪を引いてしまいました。", "kana": "かぜをひいてしまいました。", "romaji": "kaze wo hiite shimaimashita.", "zh": "我感冒了。", "key_word_kana": "かぜ"},
+        {"id": "sent_ha_005", "level": "N4", "jp": "保険証を持っていますか。", "kana": "ほけんしょうをもっていますか。", "romaji": "hokenshou wo motte imasu ka.", "zh": "您有帶保險證嗎？", "key_word_kana": "ほけん"},
+        {"id": "sent_ha_006", "level": "N4", "jp": "症状を教えてください。", "kana": "しょうじょうをおしえてください。", "romaji": "shoujou wo oshiete kudasai.", "zh": "請告訴我您的症狀。", "key_word_kana": "しょうじょう"}
+      ]
+    },
+    "hobbies": {
+      "name_zh": "趣味・休閒",
+      "sentences": [
+        {"id": "sent_hb_001", "level": "N4", "jp": "映画を見るのが好きです。", "kana": "えいがをみるのがすきです。", "romaji": "eiga wo miru no ga suki desu.", "zh": "我喜歡看電影。", "key_word_kana": "えいが"},
+        {"id": "sent_hb_002", "level": "N4", "jp": "音楽を聴きながら勉強します。", "kana": "おんがくをききながらべんきょうします。", "romaji": "ongaku wo kikinagara benkyou shimasu.", "zh": "我一邊聽音樂一邊讀書。", "key_word_kana": "おんがく"},
+        {"id": "sent_hb_003", "level": "N4", "jp": "料理が得意ですか。", "kana": "りょうりがとくいですか。", "romaji": "ryouri ga tokui desu ka.", "zh": "您擅長做料理嗎？", "key_word_kana": "りょうり"},
+        {"id": "sent_hb_004", "level": "N4", "jp": "スポーツは何が好きですか。", "kana": "スポーツはなにがすきですか。", "romaji": "supootsu wa nani ga suki desu ka.", "zh": "您喜歡什麼運動？", "key_word_kana": "スポーツ"},
+        {"id": "sent_hb_005", "level": "N4", "jp": "歌うのが大好きです。", "kana": "うたうのがだいすきです。", "romaji": "utau no ga daisuki desu.", "zh": "我超愛唱歌。", "key_word_kana": "うたう"},
+        {"id": "sent_hb_006", "level": "N4", "jp": "趣味は読書と音楽です。", "kana": "しゅみはどくしょとおんがくです。", "romaji": "shumi wa dokusho to ongaku desu.", "zh": "我的興趣是讀書和聽音樂。", "key_word_kana": "しゅみ"}
       ]
     },
     "housing": {

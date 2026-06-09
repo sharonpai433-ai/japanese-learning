@@ -19,7 +19,17 @@
         {"id": "n5_f_012", "kanji": "弁当", "kana": "べんとう", "romaji": "bentou", "meaning_zh": "便當", "part_of_speech": "名詞"},
         {"id": "n5_f_013", "kanji": "塩", "kana": "しお", "romaji": "shio", "meaning_zh": "鹽", "part_of_speech": "名詞"},
         {"id": "n5_f_014", "kanji": "砂糖", "kana": "さとう", "romaji": "satou", "meaning_zh": "糖", "part_of_speech": "名詞"},
-        {"id": "n5_f_015", "kanji": "辛い", "kana": "からい", "romaji": "karai", "meaning_zh": "辣的", "part_of_speech": "形容詞"}
+        {"id": "n5_f_015", "kanji": "辛い", "kana": "からい", "romaji": "karai", "meaning_zh": "辣的", "part_of_speech": "形容詞"},
+        {"id": "n5_f_016", "kanji": "豚肉", "kana": "ぶたにく", "romaji": "butaniku", "meaning_zh": "豬肉", "part_of_speech": "名詞"},
+        {"id": "n5_f_017", "kanji": "鶏肉", "kana": "とりにく", "romaji": "toriniku", "meaning_zh": "雞肉", "part_of_speech": "名詞"},
+        {"id": "n5_f_018", "kanji": "豆腐", "kana": "とうふ", "romaji": "toufu", "meaning_zh": "豆腐", "part_of_speech": "名詞"},
+        {"id": "n5_f_019", "kanji": "醤油", "kana": "しょうゆ", "romaji": "shouyu", "meaning_zh": "醬油", "part_of_speech": "名詞"},
+        {"id": "n5_f_020", "kanji": "ご飯", "kana": "ごはん", "romaji": "gohan", "meaning_zh": "白飯・餐", "part_of_speech": "名詞"},
+        {"id": "n5_f_021", "kanji": "うどん", "kana": "うどん", "romaji": "udon", "meaning_zh": "烏冬麵", "part_of_speech": "名詞"},
+        {"id": "n5_f_022", "kanji": "そば", "kana": "そば", "romaji": "soba", "meaning_zh": "蕎麥麵", "part_of_speech": "名詞"},
+        {"id": "n5_f_023", "kanji": "お酒", "kana": "おさけ", "romaji": "osake", "meaning_zh": "酒", "part_of_speech": "名詞"},
+        {"id": "n5_f_024", "kanji": "食べ物", "kana": "たべもの", "romaji": "tabemono", "meaning_zh": "食物", "part_of_speech": "名詞"},
+        {"id": "n5_f_025", "kanji": "飲み物", "kana": "のみもの", "romaji": "nomimono", "meaning_zh": "飲料", "part_of_speech": "名詞"}
       ]
     },
     "restaurant": {
@@ -79,7 +89,17 @@
         {"id": "n5_t_012", "kanji": "近い", "kana": "ちかい", "romaji": "chikai", "meaning_zh": "近的", "part_of_speech": "形容詞"},
         {"id": "n5_t_013", "kanji": "遠い", "kana": "とおい", "romaji": "tooi", "meaning_zh": "遠的", "part_of_speech": "形容詞"},
         {"id": "n5_t_014", "kanji": "乗る", "kana": "のる", "romaji": "noru", "meaning_zh": "搭乘", "part_of_speech": "動詞"},
-        {"id": "n5_t_015", "kanji": "降りる", "kana": "おりる", "romaji": "oriru", "meaning_zh": "下車", "part_of_speech": "動詞"}
+        {"id": "n5_t_015", "kanji": "降りる", "kana": "おりる", "romaji": "oriru", "meaning_zh": "下車", "part_of_speech": "動詞"},
+        {"id": "n5_t_016", "kanji": "地下鉄", "kana": "ちかてつ", "romaji": "chikatetsu", "meaning_zh": "地鐵", "part_of_speech": "名詞"},
+        {"id": "n5_t_017", "kanji": "新幹線", "kana": "しんかんせん", "romaji": "shinkansen", "meaning_zh": "新幹線", "part_of_speech": "名詞"},
+        {"id": "n5_t_018", "kanji": "地図", "kana": "ちず", "romaji": "chizu", "meaning_zh": "地圖", "part_of_speech": "名詞"},
+        {"id": "n5_t_019", "kanji": "まっすぐ", "kana": "まっすぐ", "romaji": "massugu", "meaning_zh": "直走", "part_of_speech": "副詞"},
+        {"id": "n5_t_020", "kanji": "渡る", "kana": "わたる", "romaji": "wataru", "meaning_zh": "穿越・過馬路", "part_of_speech": "動詞"},
+        {"id": "n5_t_021", "kanji": "信号", "kana": "しんごう", "romaji": "shingou", "meaning_zh": "紅綠燈", "part_of_speech": "名詞"},
+        {"id": "n5_t_022", "kanji": "バス停", "kana": "バスてい", "romaji": "basu tei", "meaning_zh": "公車站", "part_of_speech": "名詞"},
+        {"id": "n5_t_023", "kanji": "歩く", "kana": "あるく", "romaji": "aruku", "meaning_zh": "步行", "part_of_speech": "動詞"},
+        {"id": "n5_t_024", "kanji": "曲がる", "kana": "まがる", "romaji": "magaru", "meaning_zh": "轉彎", "part_of_speech": "動詞"},
+        {"id": "n5_t_025", "kanji": "止まる", "kana": "とまる", "romaji": "tomaru", "meaning_zh": "停止", "part_of_speech": "動詞"}
       ]
     },
     "family": {
@@ -161,6 +181,23 @@
         {"id": "n5_e_013", "kanji": "探す", "kana": "さがす", "romaji": "sagasu", "meaning_zh": "尋找", "part_of_speech": "動詞"},
         {"id": "n5_e_014", "kanji": "大丈夫", "kana": "だいじょうぶ", "romaji": "daijoubu", "meaning_zh": "沒事・OK", "part_of_speech": "形容詞"},
         {"id": "n5_e_015", "kanji": "危ない", "kana": "あぶない", "romaji": "abunai", "meaning_zh": "危險的", "part_of_speech": "形容詞"}
+      ]
+    },
+    "nature": {
+      "name_zh": "自然・天氣",
+      "words": [
+        {"id": "n5_na_001", "kanji": "空", "kana": "そら", "romaji": "sora", "meaning_zh": "天空", "part_of_speech": "名詞"},
+        {"id": "n5_na_002", "kanji": "海", "kana": "うみ", "romaji": "umi", "meaning_zh": "海", "part_of_speech": "名詞"},
+        {"id": "n5_na_003", "kanji": "山", "kana": "やま", "romaji": "yama", "meaning_zh": "山", "part_of_speech": "名詞"},
+        {"id": "n5_na_004", "kanji": "川", "kana": "かわ", "romaji": "kawa", "meaning_zh": "河川", "part_of_speech": "名詞"},
+        {"id": "n5_na_005", "kanji": "木", "kana": "き", "romaji": "ki", "meaning_zh": "樹木", "part_of_speech": "名詞"},
+        {"id": "n5_na_006", "kanji": "花", "kana": "はな", "romaji": "hana", "meaning_zh": "花", "part_of_speech": "名詞"},
+        {"id": "n5_na_007", "kanji": "雪", "kana": "ゆき", "romaji": "yuki", "meaning_zh": "雪", "part_of_speech": "名詞"},
+        {"id": "n5_na_008", "kanji": "星", "kana": "ほし", "romaji": "hoshi", "meaning_zh": "星星", "part_of_speech": "名詞"},
+        {"id": "n5_na_009", "kanji": "月", "kana": "つき", "romaji": "tsuki", "meaning_zh": "月亮", "part_of_speech": "名詞"},
+        {"id": "n5_na_010", "kanji": "晴れ", "kana": "はれ", "romaji": "hare", "meaning_zh": "晴天", "part_of_speech": "名詞"},
+        {"id": "n5_na_011", "kanji": "曇り", "kana": "くもり", "romaji": "kumori", "meaning_zh": "陰天", "part_of_speech": "名詞"},
+        {"id": "n5_na_012", "kanji": "暑い", "kana": "あつい", "romaji": "atsui", "meaning_zh": "熱的", "part_of_speech": "形容詞"}
       ]
     },
     "housing": {

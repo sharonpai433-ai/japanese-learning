@@ -327,7 +327,8 @@ function renderFlashcard() {
   const main = document.getElementById("fc-front-main");
   main.textContent = w.kana;
   main.style.fontSize = w.kana.length > 6 ? "36px" : "56px";
-  const tagText = w.category_name_zh || "";
+  const isReview = session.reviewCount > 0 && session.fcIndex < session.reviewCount;
+  const tagText = (isReview ? "🔁 複習 · " : "") + (w.category_name_zh || "");
   document.getElementById("fc-front-tag").textContent = tagText;
   document.getElementById("fc-back-tag").textContent = tagText;
   document.getElementById("fc-back-kanji").textContent = w.kanji;

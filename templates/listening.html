@@ -122,7 +122,15 @@ document.addEventListener("keydown", (ev) => {
     }
     return;
   }
-  pool = shuffleInPlace([...allWords]);
+  // Anti-repeat: sort by lastSeen so least-recently-practiced words come first
+  const _ls = loadState();
+  allWords.sort((a, b) => {
+    const aT = _ls.wordStats[a.id]?.lastSeen || "0";
+    const bT = _ls.wordStats[b.id]?.lastSeen || "0";
+    if (aT !== bT) return aT < bT ? -1 : 1;
+    return Math.random() - 0.5;
+  });
+  pool = [...allWords];
   nextQuestion();
 })();
 </script>

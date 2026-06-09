@@ -119,6 +119,40 @@
         {"id": "n4_ra_011", "kanji": "飲み放題", "kana": "のみほうだい", "romaji": "nomihoudai", "meaning_zh": "無限暢飲", "part_of_speech": "名詞"},
         {"id": "n4_ra_012", "kanji": "食べ放題", "kana": "たべほうだい", "romaji": "tabehoudai", "meaning_zh": "吃到飽", "part_of_speech": "名詞"}
       ]
+    },
+    "health_advanced": {
+      "name_zh": "健康・醫療（進階）",
+      "words": [
+        {"id": "n4_ha_001", "kanji": "診察", "kana": "しんさつ", "romaji": "shinsatsu", "meaning_zh": "看診・診察", "part_of_speech": "名詞"},
+        {"id": "n4_ha_002", "kanji": "処方箋", "kana": "しょほうせん", "romaji": "shohosen", "meaning_zh": "處方箋", "part_of_speech": "名詞"},
+        {"id": "n4_ha_003", "kanji": "注射", "kana": "ちゅうしゃ", "romaji": "chuusha", "meaning_zh": "注射・打針", "part_of_speech": "名詞"},
+        {"id": "n4_ha_004", "kanji": "アレルギー", "kana": "アレルギー", "romaji": "arerugii", "meaning_zh": "過敏", "part_of_speech": "名詞"},
+        {"id": "n4_ha_005", "kanji": "血圧", "kana": "けつあつ", "romaji": "ketsuatsu", "meaning_zh": "血壓", "part_of_speech": "名詞"},
+        {"id": "n4_ha_006", "kanji": "体温", "kana": "たいおん", "romaji": "taion", "meaning_zh": "體溫", "part_of_speech": "名詞"},
+        {"id": "n4_ha_007", "kanji": "風邪", "kana": "かぜ", "romaji": "kaze", "meaning_zh": "感冒", "part_of_speech": "名詞"},
+        {"id": "n4_ha_008", "kanji": "骨折", "kana": "こっせつ", "romaji": "kossetsu", "meaning_zh": "骨折", "part_of_speech": "名詞"},
+        {"id": "n4_ha_009", "kanji": "消毒", "kana": "しょうどく", "romaji": "shoudoku", "meaning_zh": "消毒", "part_of_speech": "名詞"},
+        {"id": "n4_ha_010", "kanji": "保険", "kana": "ほけん", "romaji": "hoken", "meaning_zh": "保險", "part_of_speech": "名詞"},
+        {"id": "n4_ha_011", "kanji": "症状", "kana": "しょうじょう", "romaji": "shoujou", "meaning_zh": "症狀", "part_of_speech": "名詞"},
+        {"id": "n4_ha_012", "kanji": "手術", "kana": "しゅじゅつ", "romaji": "shujutsu", "meaning_zh": "手術", "part_of_speech": "名詞"}
+      ]
+    },
+    "hobbies": {
+      "name_zh": "趣味・休閒",
+      "words": [
+        {"id": "n4_hb_001", "kanji": "映画", "kana": "えいが", "romaji": "eiga", "meaning_zh": "電影", "part_of_speech": "名詞"},
+        {"id": "n4_hb_002", "kanji": "音楽", "kana": "おんがく", "romaji": "ongaku", "meaning_zh": "音樂", "part_of_speech": "名詞"},
+        {"id": "n4_hb_003", "kanji": "スポーツ", "kana": "スポーツ", "romaji": "supootsu", "meaning_zh": "運動・體育", "part_of_speech": "名詞"},
+        {"id": "n4_hb_004", "kanji": "読書", "kana": "どくしょ", "romaji": "dokusho", "meaning_zh": "讀書", "part_of_speech": "名詞"},
+        {"id": "n4_hb_005", "kanji": "料理", "kana": "りょうり", "romaji": "ryouri", "meaning_zh": "料理・烹飪", "part_of_speech": "名詞"},
+        {"id": "n4_hb_006", "kanji": "ゲーム", "kana": "ゲーム", "romaji": "geemu", "meaning_zh": "遊戲", "part_of_speech": "名詞"},
+        {"id": "n4_hb_007", "kanji": "歌う", "kana": "うたう", "romaji": "utau", "meaning_zh": "唱歌", "part_of_speech": "動詞"},
+        {"id": "n4_hb_008", "kanji": "踊る", "kana": "おどる", "romaji": "odoru", "meaning_zh": "跳舞", "part_of_speech": "動詞"},
+        {"id": "n4_hb_009", "kanji": "練習する", "kana": "れんしゅうする", "romaji": "renshuu suru", "meaning_zh": "練習", "part_of_speech": "動詞"},
+        {"id": "n4_hb_010", "kanji": "趣味", "kana": "しゅみ", "romaji": "shumi", "meaning_zh": "興趣・嗜好", "part_of_speech": "名詞"},
+        {"id": "n4_hb_011", "kanji": "上手", "kana": "じょうず", "romaji": "jouzu", "meaning_zh": "擅長的", "part_of_speech": "形容詞"},
+        {"id": "n4_hb_012", "kanji": "下手", "kana": "へた", "romaji": "heta", "meaning_zh": "不擅長的", "part_of_speech": "形容詞"}
+      ]
     }
   }
 }
