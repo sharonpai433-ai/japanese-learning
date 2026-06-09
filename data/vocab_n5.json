@@ -163,6 +163,26 @@
         {"id": "n5_e_015", "kanji": "危ない", "kana": "あぶない", "romaji": "abunai", "meaning_zh": "危險的", "part_of_speech": "形容詞"}
       ]
     },
+    "housing": {
+      "name_zh": "住まい・家",
+      "words": [
+        {"id": "n5_ho_001", "kanji": "家", "kana": "いえ", "romaji": "ie", "meaning_zh": "房子・家", "part_of_speech": "名詞"},
+        {"id": "n5_ho_002", "kanji": "部屋", "kana": "へや", "romaji": "heya", "meaning_zh": "房間", "part_of_speech": "名詞"},
+        {"id": "n5_ho_003", "kanji": "玄関", "kana": "げんかん", "romaji": "genkan", "meaning_zh": "玄關", "part_of_speech": "名詞"},
+        {"id": "n5_ho_004", "kanji": "台所", "kana": "だいどころ", "romaji": "daidokoro", "meaning_zh": "廚房", "part_of_speech": "名詞"},
+        {"id": "n5_ho_005", "kanji": "トイレ", "kana": "トイレ", "romaji": "toire", "meaning_zh": "廁所", "part_of_speech": "名詞"},
+        {"id": "n5_ho_006", "kanji": "お風呂", "kana": "おふろ", "romaji": "ofuro", "meaning_zh": "浴室・泡澡", "part_of_speech": "名詞"},
+        {"id": "n5_ho_007", "kanji": "窓", "kana": "まど", "romaji": "mado", "meaning_zh": "窗戶", "part_of_speech": "名詞"},
+        {"id": "n5_ho_008", "kanji": "電気", "kana": "でんき", "romaji": "denki", "meaning_zh": "電燈・電", "part_of_speech": "名詞"},
+        {"id": "n5_ho_009", "kanji": "鍵", "kana": "かぎ", "romaji": "kagi", "meaning_zh": "鑰匙", "part_of_speech": "名詞"},
+        {"id": "n5_ho_010", "kanji": "階段", "kana": "かいだん", "romaji": "kaidan", "meaning_zh": "樓梯", "part_of_speech": "名詞"},
+        {"id": "n5_ho_011", "kanji": "住む", "kana": "すむ", "romaji": "sumu", "meaning_zh": "居住", "part_of_speech": "動詞"},
+        {"id": "n5_ho_012", "kanji": "開ける", "kana": "あける", "romaji": "akeru", "meaning_zh": "打開", "part_of_speech": "動詞"},
+        {"id": "n5_ho_013", "kanji": "閉める", "kana": "しめる", "romaji": "shimeru", "meaning_zh": "關上", "part_of_speech": "動詞"},
+        {"id": "n5_ho_014", "kanji": "広い", "kana": "ひろい", "romaji": "hiroi", "meaning_zh": "寬廣的", "part_of_speech": "形容詞"},
+        {"id": "n5_ho_015", "kanji": "狭い", "kana": "せまい", "romaji": "semai", "meaning_zh": "狹窄的", "part_of_speech": "形容詞"}
+      ]
+    },
     "clothing": {
       "name_zh": "服・色・外表",
       "words": [

@@ -1246,6 +1246,59 @@
         }
       ]
     },
+    "housing": {
+      "name_zh": "住まい・家",
+      "sentences": [
+        {
+          "id": "sent_ho_001", "level": "N5",
+          "jp": "私の部屋はあまり広くありません。",
+          "kana": "わたしのへやはあまりひろくありません。",
+          "romaji": "watashi no heya wa amari hiroku arimasen.",
+          "zh": "我的房間不太寬敞。",
+          "key_word_kana": "へや"
+        },
+        {
+          "id": "sent_ho_002", "level": "N5",
+          "jp": "玄関で靴を脱いでください。",
+          "kana": "げんかんでくつをぬいでください。",
+          "romaji": "genkan de kutsu wo nuide kudasai.",
+          "zh": "請在玄關脫鞋。",
+          "key_word_kana": "げんかん"
+        },
+        {
+          "id": "sent_ho_003", "level": "N5",
+          "jp": "お風呂に入りたいです。",
+          "kana": "おふろにはいりたいです。",
+          "romaji": "ofuro ni hairitai desu.",
+          "zh": "我想泡澡。",
+          "key_word_kana": "おふろ"
+        },
+        {
+          "id": "sent_ho_004", "level": "N5",
+          "jp": "電気を消してください。",
+          "kana": "でんきをけしてください。",
+          "romaji": "denki wo keshite kudasai.",
+          "zh": "請關燈。",
+          "key_word_kana": "でんき"
+        },
+        {
+          "id": "sent_ho_005", "level": "N5",
+          "jp": "窓を開けてもいいですか。",
+          "kana": "まどをあけてもいいですか。",
+          "romaji": "mado wo akete mo ii desu ka.",
+          "zh": "可以開窗嗎？",
+          "key_word_kana": "まど"
+        },
+        {
+          "id": "sent_ho_006", "level": "N5",
+          "jp": "台所は広いですか。",
+          "kana": "だいどころはひろいですか。",
+          "romaji": "daidokoro wa hiroi desu ka.",
+          "zh": "廚房寬嗎？",
+          "key_word_kana": "だいどころ"
+        }
+      ]
+    },
     "clothing": {
       "name_zh": "服・色・外表",
       "sentences": [
