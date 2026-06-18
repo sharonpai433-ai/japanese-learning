@@ -1514,6 +1514,646 @@
           "key_word_kana": "とうじょうけん"
         }
       ]
+    },
+    "places_sightseeing": {
+      "name_zh": "觀光地・景點",
+      "sentences": [
+        {
+          "id": "sent_ps_001",
+          "level": "N4",
+          "jp": "明日、神社に参拝します。",
+          "kana": "あした、じんじゃにさんぱいします。",
+          "romaji": "ashita, jinja ni sanpai shimasu.",
+          "zh": "明天去神社參拜。",
+          "key_word_kana": "じんじゃ",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_ps_002",
+          "level": "N4",
+          "jp": "あのお城はとても大きいです。",
+          "kana": "あのおしろはとてもおおきいです。",
+          "romaji": "ano oshiro wa totemo ookii desu.",
+          "zh": "那座城堡非常大。",
+          "key_word_kana": "おしろ",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_ps_003",
+          "level": "N4",
+          "jp": "博物館は何時に開きますか。",
+          "kana": "はくぶつかんはなんじにあきますか。",
+          "romaji": "hakubutsukan wa nanji ni akimasu ka.",
+          "zh": "博物館幾點開門？",
+          "key_word_kana": "はくぶつかん",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_ps_004",
+          "level": "N4",
+          "jp": "温泉に入ってリラックスします。",
+          "kana": "おんせんにはいってリラックスします。",
+          "romaji": "onsen ni haitte rirakkusu shimasu.",
+          "zh": "泡溫泉放鬆一下。",
+          "key_word_kana": "おんせん",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_ps_005",
+          "level": "N4",
+          "jp": "公園で花見をします。",
+          "kana": "こうえんではなみをします。",
+          "romaji": "kouen de hanami wo shimasu.",
+          "zh": "在公園賞花。",
+          "key_word_kana": "こうえん",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_ps_006",
+          "level": "N4",
+          "jp": "入場料はいくらですか。",
+          "kana": "にゅうじょうりょうはいくらですか。",
+          "romaji": "nyuujouryou wa ikura desu ka.",
+          "zh": "入場費是多少？",
+          "key_word_kana": "にゅうじょうりょう",
+          "workable_fill": true
+        }
+      ]
+    },
+    "food_cooking_adv": {
+      "name_zh": "食物・料理（進階）",
+      "sentences": [
+        {
+          "id": "sent_fc_001",
+          "level": "N4",
+          "jp": "天ぷらを食べましょう。",
+          "kana": "てんぷらをたべましょう。",
+          "romaji": "tenpura wo tabemashou.",
+          "zh": "我們去吃天婦羅吧。",
+          "key_word_kana": "てんぷら",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_fc_002",
+          "level": "N4",
+          "jp": "朝食は味噌汁とご飯です。",
+          "kana": "ちょうしょくはみそしるとごはんです。",
+          "romaji": "choushoku wa miso shiru to gohan desu.",
+          "zh": "早餐是味噌湯和白飯。",
+          "key_word_kana": "みそしる",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_fc_003",
+          "level": "N4",
+          "jp": "たこ焼きは大阪の名物です。",
+          "kana": "たこやきはおおさかのめいぶつです。",
+          "romaji": "takoyaki wa oosaka no meibutsu desu.",
+          "zh": "章魚燒是大阪的名產。",
+          "key_word_kana": "たこやき",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_fc_004",
+          "level": "N4",
+          "jp": "今夜は焼肉を食べに行きます。",
+          "kana": "こんやはやきにくをたべにいきます。",
+          "romaji": "konya wa yakiniku wo tabe ni ikimasu.",
+          "zh": "今晚去吃烤肉。",
+          "key_word_kana": "やきにく",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_fc_005",
+          "level": "N4",
+          "jp": "昼食はカレーにしました。",
+          "kana": "ちゅうしょくはカレーにしました。",
+          "romaji": "chuushoku wa karee ni shimashita.",
+          "zh": "午餐決定吃咖哩。",
+          "key_word_kana": "ちゅうしょく",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_fc_006",
+          "level": "N4",
+          "jp": "デザートに何がありますか。",
+          "kana": "デザートになにがありますか。",
+          "romaji": "dezaato ni nani ga arimasu ka.",
+          "zh": "甜點有什麼？",
+          "key_word_kana": "デザート",
+          "workable_fill": true
+        }
+      ]
+    },
+    "entertainment": {
+      "name_zh": "娛樂・活動",
+      "sentences": [
+        {
+          "id": "sent_ent_001",
+          "level": "N4",
+          "jp": "夏祭りはとても楽しいです。",
+          "kana": "なつまつりはとてもたのしいです。",
+          "romaji": "natsu matsuri wa totemo tanoshii desu.",
+          "zh": "夏日祭典非常有趣。",
+          "key_word_kana": "まつり",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_ent_002",
+          "level": "N4",
+          "jp": "花火大会を見に行きます。",
+          "kana": "はなびたいかいをみにいきます。",
+          "romaji": "hanabi taikai wo mi ni ikimasu.",
+          "zh": "去看煙火大會。",
+          "key_word_kana": "はなび",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_ent_003",
+          "level": "N4",
+          "jp": "カラオケに行きませんか。",
+          "kana": "カラオケにいきませんか。",
+          "romaji": "karaoke ni ikimasen ka.",
+          "zh": "要不要去卡拉OK？",
+          "key_word_kana": "カラオケ",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_ent_004",
+          "level": "N4",
+          "jp": "遊園地でたくさん楽しみました。",
+          "kana": "ゆうえんちでたくさんたのしみました。",
+          "romaji": "yuuenchi de takusan tanoshimimashita.",
+          "zh": "在遊樂園玩得很開心。",
+          "key_word_kana": "ゆうえんち",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_ent_005",
+          "level": "N4",
+          "jp": "コンサートのチケットを買いました。",
+          "kana": "コンサートのチケットをかいました。",
+          "romaji": "konsaato no chiketto wo kaimashita.",
+          "zh": "買了演唱會的票。",
+          "key_word_kana": "コンサート",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_ent_006",
+          "level": "N4",
+          "jp": "花見の季節は春ですね。",
+          "kana": "はなみのきせつははるですね。",
+          "romaji": "hanami no kisetsu wa haru desu ne.",
+          "zh": "賞花的季節是春天呢。",
+          "key_word_kana": "はなみ",
+          "workable_fill": true
+        }
+      ]
+    },
+    "time_expressions": {
+      "name_zh": "時間表現",
+      "sentences": [
+        {
+          "id": "sent_te_001",
+          "level": "N4",
+          "jp": "来週、日本に行きます。",
+          "kana": "らいしゅう、にほんにいきます。",
+          "romaji": "raishuu, nihon ni ikimasu.",
+          "zh": "下週去日本。",
+          "key_word_kana": "らいしゅう",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_te_002",
+          "level": "N4",
+          "jp": "毎日、日本語を勉強します。",
+          "kana": "まいにち、にほんごをべんきょうします。",
+          "romaji": "mainichi, nihongo wo benkyou shimasu.",
+          "zh": "每天學日語。",
+          "key_word_kana": "まいにち",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_te_003",
+          "level": "N4",
+          "jp": "最近、日本語が上手になってきました。",
+          "kana": "さいきん、にほんごがじょうずになってきました。",
+          "romaji": "saikin, nihongo ga jouzu ni natte kimashita.",
+          "zh": "最近日語越來越好了。",
+          "key_word_kana": "さいきん",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_te_004",
+          "level": "N4",
+          "jp": "来年、日本を旅行する予定です。",
+          "kana": "らいねん、にほんをりょこうするよていです。",
+          "romaji": "rainen, nihon wo ryokou suru yotei desu.",
+          "zh": "明年計劃去日本旅行。",
+          "key_word_kana": "らいねん",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_te_005",
+          "level": "N4",
+          "jp": "去年の冬は雪が多かったです。",
+          "kana": "きょねんのふゆはゆきがおおかったです。",
+          "romaji": "kyonen no fuyu wa yuki ga ookatta desu.",
+          "zh": "去年冬天雪很多。",
+          "key_word_kana": "きょねん",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_te_006",
+          "level": "N4",
+          "jp": "昨日、友達と映画を見ました。",
+          "kana": "きのう、ともだちとえいがをみました。",
+          "romaji": "kinou, tomodachi to eiga wo mimashita.",
+          "zh": "昨天和朋友看了電影。",
+          "key_word_kana": "きのう",
+          "workable_fill": true
+        }
+      ]
+    },
+    "adjectives_adv": {
+      "name_zh": "形容詞（進階）",
+      "sentences": [
+        {
+          "id": "sent_adj_001",
+          "level": "N4",
+          "jp": "この問題はとても難しいです。",
+          "kana": "このもんだいはとてもむずかしいです。",
+          "romaji": "kono mondai wa totemo muzukashii desu.",
+          "zh": "這道題非常難。",
+          "key_word_kana": "むずかしい",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_adj_002",
+          "level": "N4",
+          "jp": "日本語の勉強は面白いです。",
+          "kana": "にほんごのべんきょうはおもしろいです。",
+          "romaji": "nihongo no benkyou wa omoshiroi desu.",
+          "zh": "學日語很有趣。",
+          "key_word_kana": "おもしろい",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_adj_003",
+          "level": "N4",
+          "jp": "彼女はとても優しい人です。",
+          "kana": "かのじょはとてもやさしいひとです。",
+          "romaji": "kanojo wa totemo yasashii hito desu.",
+          "zh": "她是個非常溫柔的人。",
+          "key_word_kana": "やさしい",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_adj_004",
+          "level": "N4",
+          "jp": "この荷物はとても重いです。",
+          "kana": "このにもつはとてもおもいです。",
+          "romaji": "kono nimotsu wa totemo omoi desu.",
+          "zh": "這個行李非常重。",
+          "key_word_kana": "おもい",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_adj_005",
+          "level": "N4",
+          "jp": "富士山はとても美しいです。",
+          "kana": "ふじさんはとてもうつくしいです。",
+          "romaji": "fujisan wa totemo utsukushii desu.",
+          "zh": "富士山非常美麗。",
+          "key_word_kana": "うつくしい",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_adj_006",
+          "level": "N4",
+          "jp": "その答えは正しいですか。",
+          "kana": "そのこたえはただしいですか。",
+          "romaji": "sono kotae wa tadashii desu ka.",
+          "zh": "那個答案正確嗎？",
+          "key_word_kana": "ただしい",
+          "workable_fill": true
+        }
+      ]
+    },
+    "verbs_action": {
+      "name_zh": "常用動詞",
+      "sentences": [
+        {
+          "id": "sent_va_001",
+          "level": "N4",
+          "jp": "旅行を始める前に準備します。",
+          "kana": "りょこうをはじめるまえにじゅんびします。",
+          "romaji": "ryokou wo hajimeru mae ni junbi shimasu.",
+          "zh": "開始旅行前要做準備。",
+          "key_word_kana": "はじめる",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_va_002",
+          "level": "N4",
+          "jp": "パスポートを忘れるな。",
+          "kana": "パスポートをわすれるな。",
+          "romaji": "pasupooto wo wasureru na.",
+          "zh": "不要忘記護照。",
+          "key_word_kana": "わすれる",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_va_003",
+          "level": "N4",
+          "jp": "どちらを選ぶか迷っています。",
+          "kana": "どちらをえらぶかまよっています。",
+          "romaji": "dochira wo erabu ka mayotte imasu.",
+          "zh": "在猶豫選哪一個。",
+          "key_word_kana": "えらぶ",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_va_004",
+          "level": "N4",
+          "jp": "友達にプレゼントをあげる予定です。",
+          "kana": "ともだちにプレゼントをあげるよていです。",
+          "romaji": "tomodachi ni purezento wo ageru yotei desu.",
+          "zh": "打算送朋友禮物。",
+          "key_word_kana": "あげる",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_va_005",
+          "level": "N4",
+          "jp": "旅行先を決めましょう。",
+          "kana": "りょこうさきをきめましょう。",
+          "romaji": "ryokousaki wo kimemashou.",
+          "zh": "來決定旅遊目的地吧。",
+          "key_word_kana": "きめ",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_va_006",
+          "level": "N4",
+          "jp": "新しい言葉を覚えるのは楽しいです。",
+          "kana": "あたらしいことばをおぼえるのはたのしいです。",
+          "romaji": "atarashii kotoba wo oboeru no wa tanoshii desu.",
+          "zh": "學新單字很有趣。",
+          "key_word_kana": "おぼえる",
+          "workable_fill": true
+        }
+      ]
+    },
+    "business_work": {
+      "name_zh": "職場・商務",
+      "sentences": [
+        {
+          "id": "sent_bw_001",
+          "level": "N4",
+          "jp": "明日、会議があります。",
+          "kana": "あした、かいぎがあります。",
+          "romaji": "ashita, kaigi ga arimasu.",
+          "zh": "明天有會議。",
+          "key_word_kana": "かいぎ",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_bw_002",
+          "level": "N4",
+          "jp": "この書類にサインしてください。",
+          "kana": "このしょるいにサインしてください。",
+          "romaji": "kono shorui ni sain shite kudasai.",
+          "zh": "請在這份文件上簽名。",
+          "key_word_kana": "しょるい",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_bw_003",
+          "level": "N4",
+          "jp": "締め切りはいつですか。",
+          "kana": "しめきりはいつですか。",
+          "romaji": "shimekiri wa itsu desu ka.",
+          "zh": "截止日是什麼時候？",
+          "key_word_kana": "しめきり",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_bw_004",
+          "level": "N4",
+          "jp": "上司に相談します。",
+          "kana": "じょうしにそうだんします。",
+          "romaji": "joushi ni soudan shimasu.",
+          "zh": "跟上司商量。",
+          "key_word_kana": "じょうし",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_bw_005",
+          "level": "N4",
+          "jp": "来週、出張に行きます。",
+          "kana": "らいしゅう、しゅっちょうにいきます。",
+          "romaji": "raishuu, shutchou ni ikimasu.",
+          "zh": "下週去出差。",
+          "key_word_kana": "しゅっちょう",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_bw_006",
+          "level": "N4",
+          "jp": "同僚と打ち合わせをします。",
+          "kana": "どうりょうとうちあわせをします。",
+          "romaji": "douryou to uchiawase wo shimasu.",
+          "zh": "和同事開會討論。",
+          "key_word_kana": "どうりょう",
+          "workable_fill": true
+        }
+      ]
+    },
+    "communication_adv": {
+      "name_zh": "聯絡・通訊",
+      "sentences": [
+        {
+          "id": "sent_cm_001",
+          "level": "N4",
+          "jp": "後で連絡します。",
+          "kana": "あとでれんらくします。",
+          "romaji": "ato de renraku shimasu.",
+          "zh": "待會再聯絡。",
+          "key_word_kana": "れんらく",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_cm_002",
+          "level": "N4",
+          "jp": "スマホで確認してください。",
+          "kana": "スマホでかくにんしてください。",
+          "romaji": "sumaho de kakunin shite kudasai.",
+          "zh": "請用手機確認一下。",
+          "key_word_kana": "かくにん",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_cm_003",
+          "level": "N4",
+          "jp": "メールを送りました。",
+          "kana": "メールをおくりました。",
+          "romaji": "meeru wo okurimashita.",
+          "zh": "已送出電子郵件。",
+          "key_word_kana": "メール",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_cm_004",
+          "level": "N4",
+          "jp": "Wi-Fiのパスワードを教えてください。",
+          "kana": "ワイファイのパスワードをおしえてください。",
+          "romaji": "waifai no pasuwaado wo oshiete kudasai.",
+          "zh": "請告訴我Wi-Fi密碼。",
+          "key_word_kana": "ワイファイ",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_cm_005",
+          "level": "N4",
+          "jp": "バッテリーが少ないから充電します。",
+          "kana": "バッテリーがすくないからじゅうでんします。",
+          "romaji": "batterii ga sukunai kara juuden shimasu.",
+          "zh": "電量不多了去充電。",
+          "key_word_kana": "じゅうでん",
+          "workable_fill": true
+        }
+      ]
+    },
+    "adverbs": {
+      "name_zh": "副詞・程度",
+      "sentences": [
+        {
+          "id": "sent_adv_001",
+          "level": "N4",
+          "jp": "日本語はとても面白いです。",
+          "kana": "にほんごはとてもおもしろいです。",
+          "romaji": "nihongo wa totemo omoshiroi desu.",
+          "zh": "日語非常有趣。",
+          "key_word_kana": "とても",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_adv_002",
+          "level": "N4",
+          "jp": "もう少しゆっくり話してください。",
+          "kana": "もうすこしゆっくりはなしてください。",
+          "romaji": "mou sukoshi yukkuri hanashite kudasai.",
+          "zh": "請說慢一點。",
+          "key_word_kana": "ゆっくり",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_adv_003",
+          "level": "N4",
+          "jp": "もっと練習が必要です。",
+          "kana": "もっとれんしゅうがひつようです。",
+          "romaji": "motto renshuu ga hitsuyou desu.",
+          "zh": "需要更多練習。",
+          "key_word_kana": "もっと",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_adv_004",
+          "level": "N4",
+          "jp": "たぶん明日は雨です。",
+          "kana": "たぶんあしたはあめです。",
+          "romaji": "tabun ashita wa ame desu.",
+          "zh": "明天大概會下雨。",
+          "key_word_kana": "たぶん",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_adv_005",
+          "level": "N4",
+          "jp": "もちろん行きます。",
+          "kana": "もちろんいきます。",
+          "romaji": "mochiron ikimasu.",
+          "zh": "當然去。",
+          "key_word_kana": "もちろん",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_adv_006",
+          "level": "N4",
+          "jp": "まだ準備ができていません。",
+          "kana": "まだじゅんびができていません。",
+          "romaji": "mada junbi ga dekite imasen.",
+          "zh": "還沒準備好。",
+          "key_word_kana": "まだ",
+          "workable_fill": true
+        }
+      ]
+    },
+    "social_phrases_adv": {
+      "name_zh": "社交用語",
+      "sentences": [
+        {
+          "id": "sent_sp_001",
+          "level": "N4",
+          "jp": "お久しぶりですね。",
+          "kana": "おひさしぶりですね。",
+          "romaji": "ohisashiburi desu ne.",
+          "zh": "好久不見呢。",
+          "key_word_kana": "おひさしぶり",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_sp_002",
+          "level": "N4",
+          "jp": "今日もお疲れ様でした。",
+          "kana": "きょうもおつかれさまでした。",
+          "romaji": "kyou mo otsukaresama deshita.",
+          "zh": "今天也辛苦了。",
+          "key_word_kana": "おつかれさま",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_sp_003",
+          "level": "N4",
+          "jp": "失礼ですが、少しよろしいですか。",
+          "kana": "しつれいですが、すこしよろしいですか。",
+          "romaji": "shitsurei desu ga, sukoshi yoroshii desu ka.",
+          "zh": "打擾一下，可以嗎？",
+          "key_word_kana": "しつれい",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_sp_004",
+          "level": "N4",
+          "jp": "おめでとうございます。",
+          "kana": "おめでとうございます。",
+          "romaji": "omedetou gozaimasu.",
+          "zh": "恭喜您。",
+          "key_word_kana": "おめでとう",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_sp_005",
+          "level": "N4",
+          "jp": "試験、頑張ってください。",
+          "kana": "しけん、がんばってください。",
+          "romaji": "shiken, ganbatte kudasai.",
+          "zh": "考試加油。",
+          "key_word_kana": "がんばって",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_sp_006",
+          "level": "N4",
+          "jp": "どうぞ、お大事に。",
+          "kana": "どうぞ、おだいじに。",
+          "romaji": "douzo, odaiji ni.",
+          "zh": "請多保重。",
+          "key_word_kana": "おだいじに",
+          "workable_fill": true
+        }
+      ]
     }
   }
 }
