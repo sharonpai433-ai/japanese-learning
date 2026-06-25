@@ -2154,6 +2154,461 @@
           "workable_fill": true
         }
       ]
+    },
+    "colors_shapes": {
+      "name_zh": "顏色・形狀",
+      "sentences": [
+        {
+          "id": "sent_co_001",
+          "level": "N4",
+          "jp": "緑の山がとても美しいです。",
+          "kana": "みどりのやまがとてもうつくしいです。",
+          "romaji": "midori no yama ga totemo utsukushii desu.",
+          "zh": "綠色的山非常美麗。",
+          "key_word_kana": "みどり",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_co_002",
+          "level": "N4",
+          "jp": "黄色いタクシーが来ました。",
+          "kana": "きいろいタクシーがきました。",
+          "romaji": "kiiroi takushii ga kimashita.",
+          "zh": "黃色的計程車來了。",
+          "key_word_kana": "きいろ",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_co_003",
+          "level": "N4",
+          "jp": "丸いテーブルが好きです。",
+          "kana": "まるいテーブルがすきです。",
+          "romaji": "marui teeburu ga suki desu.",
+          "zh": "我喜歡圓桌。",
+          "key_word_kana": "まるい",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_co_004",
+          "level": "N4",
+          "jp": "暗い道は危ないです。",
+          "kana": "くらいみちはあぶないです。",
+          "romaji": "kurai michi wa abunai desu.",
+          "zh": "黑暗的路很危險。",
+          "key_word_kana": "くらい",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_co_005",
+          "level": "N4",
+          "jp": "部屋が明るいほうがいいです。",
+          "kana": "へやがあかるいほうがいいです。",
+          "romaji": "heya ga akarui hou ga ii desu.",
+          "zh": "房間明亮比較好。",
+          "key_word_kana": "あかるい",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_co_006",
+          "level": "N4",
+          "jp": "深い海の色は濃い青です。",
+          "kana": "ふかいうみのいろはこいあおです。",
+          "romaji": "fukai umi no iro wa koi ao desu.",
+          "zh": "深海的顏色是深藍色。",
+          "key_word_kana": "ふかい",
+          "workable_fill": true
+        }
+      ]
+    },
+    "nature_landscape": {
+      "name_zh": "自然・景觀",
+      "sentences": [
+        {
+          "id": "sent_nl_001",
+          "level": "N4",
+          "jp": "森の中を散歩しました。",
+          "kana": "もりのなかをさんぽしました。",
+          "romaji": "mori no naka wo sanpo shimashita.",
+          "zh": "在森林裡散步了。",
+          "key_word_kana": "もり",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_nl_002",
+          "level": "N4",
+          "jp": "あの島へ行きたいです。",
+          "kana": "あのしまへいきたいです。",
+          "romaji": "ano shima e ikitai desu.",
+          "zh": "我想去那座島。",
+          "key_word_kana": "しま",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_nl_003",
+          "level": "N4",
+          "jp": "湖の水はとても澄んでいます。",
+          "kana": "みずうみのみずはとてもすんでいます。",
+          "romaji": "mizuumi no mizu wa totemo sunde imasu.",
+          "zh": "湖水非常清澈。",
+          "key_word_kana": "みずうみ",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_nl_004",
+          "level": "N4",
+          "jp": "地震が来たら机の下に入ってください。",
+          "kana": "じしんがきたらつくえのしたにはいってください。",
+          "romaji": "jishin ga kitara tsukue no shita ni haitte kudasai.",
+          "zh": "地震來的話請躲到桌子下面。",
+          "key_word_kana": "じしん",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_nl_005",
+          "level": "N4",
+          "jp": "台風が来るので外に出ないでください。",
+          "kana": "たいふうがくるのでそとにでないでください。",
+          "romaji": "taifuu ga kuru node soto ni denaide kudasai.",
+          "zh": "颱風要來，請不要出門。",
+          "key_word_kana": "たいふう",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_nl_006",
+          "level": "N4",
+          "jp": "雨の後に虹が出ました。",
+          "kana": "あめのあとににじがでました。",
+          "romaji": "ame no ato ni niji ga demashita.",
+          "zh": "雨後出現了彩虹。",
+          "key_word_kana": "にじ",
+          "workable_fill": true
+        }
+      ]
+    },
+    "japanese_culture": {
+      "name_zh": "日本文化",
+      "sentences": [
+        {
+          "id": "sent_jc_001",
+          "level": "N4",
+          "jp": "着物を着てみたいです。",
+          "kana": "きものをきてみたいです。",
+          "romaji": "kimono wo kite mitai desu.",
+          "zh": "我想試穿和服。",
+          "key_word_kana": "きもの",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_jc_002",
+          "level": "N4",
+          "jp": "夏祭りで浴衣を着ました。",
+          "kana": "なつまつりでゆかたをきました。",
+          "romaji": "natsu matsuri de yukata wo kimashita.",
+          "zh": "在夏日祭典穿了浴衣。",
+          "key_word_kana": "ゆかた",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_jc_003",
+          "level": "N4",
+          "jp": "畳の部屋に泊まりました。",
+          "kana": "たたみのへやにとまりました。",
+          "romaji": "tatami no heya ni tomarimashita.",
+          "zh": "住了榻榻米的房間。",
+          "key_word_kana": "たたみ",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_jc_004",
+          "level": "N4",
+          "jp": "居酒屋でビールを飲みます。",
+          "kana": "いざかやでビールをのみます。",
+          "romaji": "izakaya de biiru wo nomimasu.",
+          "zh": "在居酒屋喝啤酒。",
+          "key_word_kana": "いざかや",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_jc_005",
+          "level": "N4",
+          "jp": "漫画やアニメが大好きです。",
+          "kana": "まんがやアニメがだいすきです。",
+          "romaji": "manga ya anime ga daisuki desu.",
+          "zh": "我非常喜歡漫畫和動漫。",
+          "key_word_kana": "まんが",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_jc_006",
+          "level": "N4",
+          "jp": "日本の伝統文化を楽しみます。",
+          "kana": "にほんのでんとうぶんかをたのしみます。",
+          "romaji": "nihon no dentou bunka wo tanoshimimasu.",
+          "zh": "享受日本的傳統文化。",
+          "key_word_kana": "でんとう",
+          "workable_fill": true
+        }
+      ]
+    },
+    "shopping_fashion": {
+      "name_zh": "時尚・購物進階",
+      "sentences": [
+        {
+          "id": "sent_sf_001",
+          "level": "N4",
+          "jp": "このサイズはMですか。",
+          "kana": "このサイズはMですか。",
+          "romaji": "kono saizu wa M desu ka.",
+          "zh": "這個尺寸是M嗎？",
+          "key_word_kana": "サイズ",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_sf_002",
+          "level": "N4",
+          "jp": "セール中ですか。",
+          "kana": "セールちゅうですか。",
+          "romaji": "seeru chuu desu ka.",
+          "zh": "現在有特賣嗎？",
+          "key_word_kana": "セール",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_sf_003",
+          "level": "N4",
+          "jp": "申し訳ありませんが、品切れです。",
+          "kana": "もうしわけありませんが、しなぎれです。",
+          "romaji": "moushiwake arimasen ga, shinagire desu.",
+          "zh": "非常抱歉，已經缺貨了。",
+          "key_word_kana": "しなぎれ",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_sf_004",
+          "level": "N4",
+          "jp": "その服はとても似合いますよ。",
+          "kana": "そのふくはとてもにあいますよ。",
+          "romaji": "sono fuku wa totemo niaimasu yo.",
+          "zh": "那件衣服非常適合你喔。",
+          "key_word_kana": "にあい",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_sf_005",
+          "level": "N4",
+          "jp": "大きめのサイズはありますか。",
+          "kana": "おおきめのサイズはありますか。",
+          "romaji": "ookime no saizu wa arimasu ka.",
+          "zh": "有稍大一點的尺寸嗎？",
+          "key_word_kana": "おおきめ",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_sf_006",
+          "level": "N4",
+          "jp": "この色は派手すぎます。",
+          "kana": "このいろははですぎます。",
+          "romaji": "kono iro wa hade sugimasu.",
+          "zh": "這個顏色太花俏了。",
+          "key_word_kana": "はで",
+          "workable_fill": true
+        }
+      ]
+    },
+    "verbs_movement": {
+      "name_zh": "移動・動作動詞",
+      "sentences": [
+        {
+          "id": "sent_vm_001",
+          "level": "N4",
+          "jp": "店に入る前に手を洗います。",
+          "kana": "みせにはいるまえにてをあらいます。",
+          "romaji": "mise ni hairu mae ni te wo araimasu.",
+          "zh": "進店前先洗手。",
+          "key_word_kana": "はいる",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_vm_002",
+          "level": "N4",
+          "jp": "出口から出るとすぐ見えます。",
+          "kana": "でぐちからでるとすぐみえます。",
+          "romaji": "deguchi kara deru to sugu miemasu.",
+          "zh": "從出口出去就馬上看得到。",
+          "key_word_kana": "でる",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_vm_003",
+          "level": "N4",
+          "jp": "荷物を運ぶのを手伝ってください。",
+          "kana": "にもつをはこぶのをてつだってください。",
+          "romaji": "nimotsu wo hakobu no wo tetsudatte kudasai.",
+          "zh": "請幫我搬行李。",
+          "key_word_kana": "はこぶ",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_vm_004",
+          "level": "N4",
+          "jp": "ドアを押すと開きます。",
+          "kana": "ドアをおすとあきます。",
+          "romaji": "doa wo osu to akimasu.",
+          "zh": "推門就會開。",
+          "key_word_kana": "おす",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_vm_005",
+          "level": "N4",
+          "jp": "財布を落とすな。",
+          "kana": "さいふをおとすな。",
+          "romaji": "saifu wo otosu na.",
+          "zh": "不要把錢包弄丟。",
+          "key_word_kana": "おとす",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_vm_006",
+          "level": "N4",
+          "jp": "元の場所に戻るのが大変でした。",
+          "kana": "もとのばしょにもどるのがたいへんでした。",
+          "romaji": "moto no basho ni modoru no ga taihen deshita.",
+          "zh": "回到原來的地方很辛苦。",
+          "key_word_kana": "もどる",
+          "workable_fill": true
+        }
+      ]
+    },
+    "body_parts_adv": {
+      "name_zh": "身體（詳細）",
+      "sentences": [
+        {
+          "id": "sent_ba_001",
+          "level": "N4",
+          "jp": "肩が凝っています。",
+          "kana": "かたがこっています。",
+          "romaji": "kata ga kotte imasu.",
+          "zh": "肩膀很僵硬。",
+          "key_word_kana": "かた",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_ba_002",
+          "level": "N4",
+          "jp": "背中が痛いです。",
+          "kana": "せなかがいたいです。",
+          "romaji": "senaka ga itai desu.",
+          "zh": "背部很痛。",
+          "key_word_kana": "せなか",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_ba_003",
+          "level": "N4",
+          "jp": "膝が痛くて歩けません。",
+          "kana": "ひざがいたくてあるけません。",
+          "romaji": "hiza ga itakute arukemasen.",
+          "zh": "膝蓋痛到走不了路。",
+          "key_word_kana": "ひざ",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_ba_004",
+          "level": "N4",
+          "jp": "腰を痛めました。",
+          "kana": "こしをいためました。",
+          "romaji": "koshi wo itamemashita.",
+          "zh": "傷到腰了。",
+          "key_word_kana": "こし",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_ba_005",
+          "level": "N4",
+          "jp": "指を切ってしまいました。",
+          "kana": "ゆびをきってしまいました。",
+          "romaji": "yubi wo kitte shimaimashita.",
+          "zh": "不小心切到手指了。",
+          "key_word_kana": "ゆび",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_ba_006",
+          "level": "N4",
+          "jp": "筋肉を鍛えています。",
+          "kana": "きんにくをきたえています。",
+          "romaji": "kinniku wo kitaete imasu.",
+          "zh": "正在鍛鍊肌肉。",
+          "key_word_kana": "きんにく",
+          "workable_fill": true
+        }
+      ]
+    },
+    "counters": {
+      "name_zh": "助數詞・量詞",
+      "sentences": [
+        {
+          "id": "sent_ct_001",
+          "level": "N4",
+          "jp": "コーヒーを一杯ください。",
+          "kana": "コーヒーをいっぱいください。",
+          "romaji": "koohii wo ippai kudasai.",
+          "zh": "請給我一杯咖啡。",
+          "key_word_kana": "いっぱい",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_ct_002",
+          "level": "N4",
+          "jp": "チケットを何枚買いますか。",
+          "kana": "チケットをなんまいかいますか。",
+          "romaji": "chiketto wo nanmai kaimasu ka.",
+          "zh": "要買幾張票？",
+          "key_word_kana": "なんまい",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_ct_003",
+          "level": "N4",
+          "jp": "一人で旅行しています。",
+          "kana": "ひとりでりょこうしています。",
+          "romaji": "hitori de ryokou shite imasu.",
+          "zh": "一個人旅行。",
+          "key_word_kana": "ひとり",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_ct_004",
+          "level": "N4",
+          "jp": "ビールをもう一本ください。",
+          "kana": "ビールをもういっぽんください。",
+          "romaji": "biiru wo mou ippon kudasai.",
+          "zh": "請再給我一瓶啤酒。",
+          "key_word_kana": "いっぽん",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_ct_005",
+          "level": "N4",
+          "jp": "何人で来ますか。",
+          "kana": "なんにんできますか。",
+          "romaji": "nannin de kimasu ka.",
+          "zh": "幾個人來？",
+          "key_word_kana": "なんにん",
+          "workable_fill": true
+        },
+        {
+          "id": "sent_ct_006",
+          "level": "N4",
+          "jp": "本を何冊読みましたか。",
+          "kana": "ほんをなんさつよみましたか。",
+          "romaji": "hon wo nansatsu yomimashita ka.",
+          "zh": "讀了幾本書？",
+          "key_word_kana": "なんさつ",
+          "workable_fill": true
+        }
+      ]
     }
   }
 }
