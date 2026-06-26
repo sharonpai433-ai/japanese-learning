@@ -19,6 +19,12 @@
   <div id="cat-chips" class="chip-group"></div>
 </div>
 
+<div id="weak-bar" style="display:none; background:rgba(233,69,96,0.06); border:1.5px solid rgba(233,69,96,0.2); border-radius:14px; padding:12px 20px; margin-bottom:8px; gap:12px; flex-wrap:wrap; align-items:center;">
+  <span style="font-size:14px;">🔁 有 <strong id="weak-count">0</strong> 個字需要複習</span>
+  <a id="weak-btn" class="btn" href="/journey?mode=weak" style="font-size:13px; padding:6px 14px;">快速複習弱點 →</a>
+  <span style="font-size:12px; color:var(--text-mute);">不用選情境，直接練最不熟的字</span>
+</div>
+
 <div id="stats-bar" class="section" style="display:none; background: var(--card-bg); border-radius: 14px; padding: 14px 20px; margin-bottom: 8px;">
   <div style="display:flex; gap: 24px; flex-wrap: wrap; align-items: center; font-size: 15px;">
     <span id="stat-streak" style="color: var(--primary); font-weight: 600;"></span>
@@ -205,11 +211,20 @@ function renderStatsBar() {
   document.getElementById("stat-accuracy").textContent = s.total > 0 ? `正確率 ${s.accuracy}%` : "";
 }
 
+function renderWeakBar() {
+  const reviews = getReviewList(12);
+  if (reviews.length === 0) return;
+  const bar = document.getElementById("weak-bar");
+  bar.style.display = "flex";
+  document.getElementById("weak-count").textContent = reviews.length;
+}
+
 (async () => {
   vocabData = await fetchAllVocab();
   renderLevels();
   renderCategories();
   renderStatsBar();
+  renderWeakBar();
 })();
 </script>
 {% endblock %}

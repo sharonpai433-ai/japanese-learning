@@ -153,6 +153,10 @@
     <h2>📌 錯題回顧</h2>
     <ul class="review-list" id="r-wrong-list"></ul>
   </div>
+  <div class="section" id="r-cat-section" style="display: none;">
+    <h2>📊 各情境正確率</h2>
+    <div id="r-cat-list"></div>
+  </div>
   <div class="section" id="r-words-section" style="display: none;">
     <h2 id="r-words-toggle" style="cursor: pointer; user-select: none;">
       📚 本次練習的 <span id="r-words-count">0</span> 個字
@@ -740,6 +744,51 @@ function finish() {
     document.getElementById("r-wrong-section").style.display = "none";
   }
 
+  // Category breakdown — per-word accuracy grouped by category
+  const catMap = {};
+  const wrongWordIds = new Set(session.wrongItems
+    .filter(wi => wi.word).map(wi => wi.word.id));
+  const wrongFillIds = new Set(session.wrongItems
+    .filter(wi => wi.correctWord).map(wi => wi.correctWord.id));
+  for (const w of session.words) {
+    const cat = w.category_name_zh || w.category || "其他";
+    if (!catMap[cat]) catMap[cat] = { correct: 0, total: 0 };
+    catMap[cat].total++;
+    if (!wrongWordIds.has(w.id) && !wrongFillIds.has(w.id)) catMap[cat].correct++;
+  }
+  const catKeys = Object.keys(catMap);
+  const catSection = document.getElementById("r-cat-section");
+  if (catKeys.length > 1) {
+    catSection.style.display = "block";
+    const catList = document.getElementById("r-cat-list");
+    catList.innerHTML = "";
+    catKeys.sort((a, b) =>
+      (catMap[a].correct / catMap[a].total) - (catMap[b].correct / catMap[b].total)
+    );
+    for (const cat of catKeys) {
+      const { correct, total } = catMap[cat];
+      const acc = Math.round((correct / total) * 100);
+      const color = acc >= 80 ? "var(--success)" : acc >= 60 ? "var(--primary)" : "var(--danger)";
+      const bar = Math.round(acc / 5);
+      const div = document.createElement("div");
+      div.className = "review-item";
+      div.style.cssText = "flex-direction:column; align-items:flex-start; gap:4px;";
+      div.innerHTML = `
+        <div class="review-info" style="width:100%; justify-content:space-between;">
+          <span class="review-jp" style="font-size:14px;">${cat}</span>
+          <span style="font-size:15px; font-weight:700; color:${color};">${acc}%</span>
+        </div>
+        <div style="width:100%; height:5px; background:var(--border,#eee); border-radius:3px;">
+          <div style="width:${acc}%; height:100%; background:${color}; border-radius:3px; transition:width .4s;"></div>
+        </div>
+        <span style="font-size:11px; color:var(--text-mute);">${correct} / ${total} 字答對</span>
+      `;
+      catList.appendChild(div);
+    }
+  } else {
+    catSection.style.display = "none";
+  }
+
   // Build collapsible word list for the full session
   const wordsSection = document.getElementById("r-words-section");
   const wordsList = document.getElementById("r-words-list");
@@ -860,13 +909,39 @@ function updateSrsHint() {
   const { levels, categories } = getQueryParams();
   allWords = flattenWords(vocab, levels.length ? levels : ["beginner"], categories);
   if (allWords.length < 4) {
-    // fallback: take all of beginner level
     allWords = flattenWords(vocab, ["beginner"], []);
   }
+
+  // Weak mode: override pool with SRS weakest words
+  const weakMode = new URLSearchParams(window.location.search).get("mode") === "weak";
+  if (weakMode) {
+    const reviewList = getReviewList(12);
+    const reviewKanas = new Set(reviewList.map(r => r.kana));
+    const fullPool = flattenWords(vocab, ["beginner", "n5", "n4"], []);
+    const weakWords = fullPool.filter(w => reviewKanas.has(w.kana));
+    if (weakWords.length >= 4) {
+      allWords = weakWords;
+      // Pre-select chip closest to weak word count
+      const target = Math.min(weakWords.length, 8);
+      let bestChip = null, bestDiff = Infinity;
+      document.querySelectorAll("#count-chips .chip").forEach(c => {
+        const diff = Math.abs(parseInt(c.dataset.count) - target);
+        if (diff < bestDiff) { bestDiff = diff; bestChip = c; }
+        c.classList.remove("active");
+      });
+      if (bestChip) bestChip.classList.add("active");
+      // Update setup screen text
+      document.querySelector("#screen-setup h2").textContent = "🔁 弱點複習模式";
+      document.querySelector("#screen-setup .section > p").textContent =
+        `系統挑出你最不熟的 ${weakWords.length} 個字，集中練習一次。`;
+      document.getElementById("srs-hint").textContent = `🔁 共 ${weakWords.length} 個弱點字`;
+    }
+  }
+
   if (allWords.length < 4) {
     document.getElementById("empty").style.display = "block";
   }
-  updateSrsHint();
+  if (!weakMode) updateSrsHint();
 })();
 </script>
 {% endblock %}
