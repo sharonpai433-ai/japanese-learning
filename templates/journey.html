@@ -145,6 +145,7 @@
     <button class="primary-cta" id="r-review" style="display: none;">🎯 只重練錯的 <span id="r-wrong-count">0</span> 題 →</button>
     <div class="row" style="justify-content: center; margin-top: 12px;">
       <button class="btn secondary" id="r-retry">換一批新字</button>
+      <a class="btn secondary" href="/stats">📊 查看統計</a>
       <a class="btn secondary" href="/">回首頁</a>
     </div>
   </div>
@@ -604,6 +605,18 @@ function escapeHtml(text) {
   return String(text).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
+function updateSentSeenLabel() {
+  const seen = session.sentSeenSet.size;
+  const total = session.sentences.length;
+  if (seen >= total) {
+    document.getElementById("sent-seen-label").textContent = "✅ 全部翻開！可以進入驗收";
+    document.getElementById("sent-done").style.display = "block";
+  } else {
+    document.getElementById("sent-seen-label").textContent = `已翻 ${seen} / ${total} 句 — 點卡片翻面看翻譯，全翻過後可進入驗收`;
+    document.getElementById("sent-done").style.display = "none";
+  }
+}
+
 function renderSentence() {
   const s = session.sentences[session.sentIndex];
   // Front stays plain so the learner has to try reading it first
@@ -616,27 +629,23 @@ function renderSentence() {
   document.getElementById("sent-progress").textContent = `${session.sentIndex + 1} / ${session.sentences.length}`;
   document.getElementById("sent-scene").textContent = s.scene_name_zh;
   document.getElementById("sent-card").classList.remove("flipped");
-  // Track seen sentences
-  session.sentSeenSet.add(session.sentIndex);
-  const seen = session.sentSeenSet.size;
-  const total = session.sentences.length;
-  if (seen >= total) {
-    document.getElementById("sent-seen-label").textContent = "✅ 全部看完！可以進入驗收";
-    document.getElementById("sent-done").style.display = "block";
-  } else {
-    document.getElementById("sent-seen-label").textContent = `已看 ${seen} / ${total} 句，繼續翻閱所有句子後可進入驗收`;
-    document.getElementById("sent-done").style.display = "none";
-  }
+  updateSentSeenLabel();
 }
 
 document.getElementById("sent-card").addEventListener("click", () => {
-  document.getElementById("sent-card").classList.toggle("flipped");
+  const card = document.getElementById("sent-card");
+  card.classList.toggle("flipped");
+  // Only mark as "seen" when flipping to the back (翻面看翻譯)
+  if (card.classList.contains("flipped")) {
+    session.sentSeenSet.add(session.sentIndex);
+    updateSentSeenLabel();
+  }
 });
 attachSwipe(document.getElementById("sent-card"), {
   onLeft:  () => document.getElementById("sent-next").click(),
   onRight: () => document.getElementById("sent-prev").click(),
-  onUp:    () => document.getElementById("sent-card").classList.toggle("flipped"),
-  onDown:  () => document.getElementById("sent-card").classList.toggle("flipped"),
+  onUp:    () => document.getElementById("sent-card").click(),
+  onDown:  () => document.getElementById("sent-card").click(),
 });
 document.getElementById("sent-front-speak").onclick = (ev) => {
   ev.stopPropagation();
@@ -791,16 +800,9 @@ function startReviewWrong() {
 
 document.getElementById("r-review").onclick = startReviewWrong;
 document.getElementById("r-retry").onclick = () => {
-  document.getElementById("screen-result").style.display = "none";
-  document.getElementById("r-words-section").style.display = "none";
-  document.getElementById("r-words-list").style.display = "none";
-  setStep(0);
-  document.getElementById("screen-setup").style.display = "block";
-  // restore steps bar to fresh state
-  document.querySelectorAll(".step-dot").forEach((d, i) => {
-    d.classList.remove("done");
-    d.classList.toggle("active", i === 0);
-  });
+  if (allWords.length < 4) return;
+  buildSession([...allWords]);
+  startFlashcard();
 };
 
 // ---------------- Start ----------------
@@ -826,10 +828,20 @@ document.addEventListener("keydown", (ev) => {
     if (ev.code === "Space") { ev.preventDefault(); document.getElementById("fc-card").click(); }
     else if (ev.code === "ArrowRight") document.getElementById("fc-next").click();
     else if (ev.code === "ArrowLeft") document.getElementById("fc-prev").click();
+    else if (ev.key === "Enter") {
+      const done = document.getElementById("fc-done");
+      if (done.style.display !== "none") { ev.preventDefault(); done.click(); }
+    }
   } else if (screen === "sentence") {
     if (ev.code === "Space") { ev.preventDefault(); document.getElementById("sent-card").click(); }
     else if (ev.code === "ArrowRight") document.getElementById("sent-next").click();
     else if (ev.code === "ArrowLeft") document.getElementById("sent-prev").click();
+    else if (ev.key === "Enter") {
+      ev.preventDefault();
+      const done = document.getElementById("sent-done");
+      if (done.style.display !== "none") done.click();
+      else document.getElementById("sent-next").click();
+    }
   }
 });
 
