@@ -108,11 +108,15 @@ function findKeyWord(sent) {
 }
 
 // Build a list of sentences that have a workable key word for fill mode.
+// Deduplicate by key_word_kana so the same answer never appears twice.
 function buildFillPool() {
+  const seenKeys = new Set();
   fillPool = filtered.filter(s => {
     if (!s.key_word_kana) return false;
-    // The key word must literally appear in the sentence (kanji or kana form).
-    return s.jp.includes(s.key_word_kana) || s.kana.includes(s.key_word_kana);
+    if (seenKeys.has(s.key_word_kana)) return false;
+    if (!s.jp.includes(s.key_word_kana) && !s.kana.includes(s.key_word_kana)) return false;
+    seenKeys.add(s.key_word_kana);
+    return true;
   });
   shuffleInPlace(fillPool);
 }
@@ -140,15 +144,8 @@ function renderFill() {
   document.getElementById("fill-sent").innerHTML = blanked;
   document.getElementById("fill-zh").textContent = fillCurrent.zh;
 
-  // Distractor candidates from same category preferred.
-  const pool = allWords.length > 0
-    ? allWords.filter(w => w.kana !== key)
-    : [];
-  const distractors = shuffleInPlace([...pool]).slice(0, 3);
-  // If we couldn't find distractors, fall back to a stub.
-  while (distractors.length < 3) {
-    distractors.push({ id: "stub_" + distractors.length, kanji: "?", kana: "?", meaning_zh: "" });
-  }
+  // Use same-category distractors for higher quality options
+  const distractors = sampleDistractors(allWords, correctWord, 3);
   fillOptions = shuffleInPlace([correctWord, ...distractors]);
 
   document.getElementById("fill-progress").textContent =
@@ -254,6 +251,20 @@ document.getElementById("prev-btn").onclick = () => {
 };
 document.getElementById("fill-next").onclick = renderFill;
 document.getElementById("fill-speak").onclick = () => speakJapanese(fillCurrent?.kana);
+
+document.addEventListener("keydown", (ev) => {
+  const mode = document.querySelector('input[name="mode"]:checked').value;
+  if (mode === "read") {
+    if (ev.code === "Space") { ev.preventDefault(); document.getElementById("sent-card").click(); }
+    else if (ev.code === "ArrowRight") document.getElementById("next-btn").click();
+    else if (ev.code === "ArrowLeft") document.getElementById("prev-btn").click();
+  } else if (mode === "fill") {
+    if (["1","2","3","4"].includes(ev.key) && !fillLocked) chooseFill(parseInt(ev.key) - 1);
+    else if (ev.key === "Enter" && !document.getElementById("fill-next").disabled) {
+      document.getElementById("fill-next").click();
+    }
+  }
+});
 
 document.querySelectorAll('input[name="mode"]').forEach(r => {
   r.onchange = () => {
